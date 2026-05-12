@@ -79,20 +79,23 @@
     font-weight:bold;
     text-align:center;
 }
-        }
 
         /* ================= MENU ================= */
 
-       nav ul{
+     nav ul{
     list-style:none;
-    display:flex;
-    flex-direction:row;
-    align-items:center;
-    justify-content:flex-end;
+    display:flex !important;
+    flex-direction:row !important;
+    align-items:center !important;
+    justify-content:flex-end !important;
     gap:5px;
-    flex-wrap:nowrap;
+    flex-wrap:nowrap !important;
     margin:0;
     padding:0;
+}
+
+nav ul li{
+    display:inline-block;
 }
         nav ul li {
             position: relative;
