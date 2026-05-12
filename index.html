@@ -83,16 +83,17 @@
 
         /* ================= MENU ================= */
 
-        nnav ul {
+       nav ul{
     list-style:none;
     display:flex;
     flex-direction:row;
     align-items:center;
     justify-content:flex-end;
-    gap:4px;
+    gap:5px;
     flex-wrap:nowrap;
+    margin:0;
+    padding:0;
 }
-
         nav ul li {
             position: relative;
         }
@@ -407,15 +408,17 @@ nav ul li a {
         @media(max-width:1000px) {
 
             .top-header {
-                flex-direction: column;
-                text-align: center;
-                gap: 20px;
-            }
-
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
+    flex-direction: row;
+    align-items:center;
+}
+nav{
+    display:flex;
+    align-items:center;
+}
+          nav ul {
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+}
 
             .company-text h1 {
                 font-size: 20px;
