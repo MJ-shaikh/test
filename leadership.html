@@ -2,12 +2,404 @@
 <html lang="en">
 
 <head>
-    <title>Leadership Team</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Leadership Team | NHIPMPL</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial,sans-serif;
+        }
+
+        body{
+            background:#f5f5f5;
+        }
+
+        /* HEADER */
+
+        header{
+            background:white;
+            padding:15px 40px;
+            box-shadow:0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        .header-container{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        .logo-section{
+            display:flex;
+            align-items:center;
+            gap:18px;
+        }
+
+        .logo-section img{
+            width:100px;
+        }
+
+        .company-text h1{
+            color:#0056b3;
+            font-size:30px;
+            font-weight:900;
+            line-height:1.1;
+        }
+
+        .company-text p{
+            color:#003366;
+            font-size:18px;
+            font-weight:bold;
+            margin-top:8px;
+        }
+
+        nav ul{
+            display:flex;
+            list-style:none;
+            gap:10px;
+        }
+
+        nav ul li a{
+            text-decoration:none;
+            color:#111;
+            font-weight:bold;
+            padding:12px 15px;
+        }
+
+        nav ul li a:hover{
+            color:#0056b3;
+        }
+
+        /* BANNER */
+
+        .banner{
+            background:#003f88;
+            color:white;
+            text-align:center;
+            padding:60px 20px;
+        }
+
+        .banner h2{
+            font-size:52px;
+            font-weight:900;
+        }
+
+        /* LEADERSHIP */
+
+        .leadership-section{
+            width:90%;
+            margin:70px auto;
+            display:flex;
+            justify-content:center;
+            gap:35px;
+            flex-wrap:wrap;
+        }
+
+        .leader-card{
+            background:white;
+            width:360px;
+            border-radius:20px;
+            overflow:hidden;
+            text-align:center;
+            box-shadow:0 10px 30px rgba(0,0,0,0.15);
+            transition:0.3s;
+        }
+
+        .leader-card:hover{
+            transform:translateY(-10px);
+        }
+
+        .leader-card img{
+            width:100%;
+            height:420px;
+            object-fit:cover;
+        }
+
+        .leader-card h3{
+            font-size:30px;
+            color:#003366;
+            margin:25px 10px 12px;
+        }
+
+        .leader-card span{
+            display:block;
+            color:#0056b3;
+            font-size:18px;
+            font-weight:bold;
+            margin-bottom:25px;
+        }
+
+        .leader-card p{
+            padding:0 25px 30px;
+            line-height:1.9;
+            color:#444;
+            font-size:17px;
+        }
+
+        /* FOOTER */
+
+        footer{
+            background:#003366;
+            color:white;
+            margin-top:70px;
+            padding-top:50px;
+        }
+
+        .footer-container{
+            width:90%;
+            margin:auto;
+            display:flex;
+            justify-content:space-between;
+            gap:40px;
+            flex-wrap:wrap;
+        }
+
+        .footer-box{
+            flex:1;
+            min-width:250px;
+        }
+
+        .footer-box h3{
+            color:#ffcc00;
+            margin-bottom:20px;
+            font-size:28px;
+        }
+
+        .footer-box p,
+        .footer-box li{
+            line-height:2;
+            font-size:17px;
+        }
+
+        .footer-box ul{
+            list-style:none;
+        }
+
+        .footer-bottom{
+            text-align:center;
+            margin-top:40px;
+            padding:25px;
+            border-top:1px solid rgba(255,255,255,0.2);
+        }
+
+        /* MOBILE */
+
+        @media(max-width:900px){
+
+            .header-container{
+                flex-direction:column;
+                gap:20px;
+            }
+
+            nav ul{
+                flex-wrap:wrap;
+                justify-content:center;
+            }
+
+            .company-text h1{
+                font-size:24px;
+            }
+
+            .banner h2{
+                font-size:36px;
+            }
+
+            .leader-card{
+                width:100%;
+            }
+
+        }
+
+    </style>
+
 </head>
 
 <body>
 
-    <h1>Leadership Team</h1>
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="header-container">
+
+            <div class="logo-section">
+
+                <img src="https://raw.githubusercontent.com/MJ-shaikh/test/main/Logo.jpeg">
+
+                <div class="company-text">
+
+                    <h1>
+                        NATIONAL HIGHWAYS INVIT <br>
+                        PROJECT MANAGERS <br>
+                        PRIVATE LIMITED
+                    </h1>
+
+                    <p>A wholly owned entity of NHAI</p>
+
+                </div>
+
+            </div>
+
+            <nav>
+
+                <ul>
+
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="vision.html">Vision</a></li>
+                    <li><a href="directors.html">Directors</a></li>
+                    <li><a href="leadership.html">Leadership</a></li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <!-- BANNER -->
+
+    <section class="banner">
+
+        <h2>Leadership Team</h2>
+
+    </section>
+
+    <!-- LEADERSHIP SECTION -->
+
+    <section class="leadership-section">
+
+        <!-- LEADER 1 -->
+
+        <div class="leader-card">
+
+            <img src="https://nhipmpl.in/wp-content/uploads/2024/06/Bandu-Londhe.jpeg">
+
+            <h3>Sh. Bandu Londhe</h3>
+
+            <span>Head System (ATMS & TMS)</span>
+
+            <p>
+
+                Expert professional in Intelligent Transportation Systems,
+                ATMS infrastructure, toll management systems,
+                project supervision, operational monitoring,
+                and smart highway technology integration.
+
+            </p>
+
+        </div>
+
+        <!-- LEADER 2 -->
+
+        <div class="leader-card">
+
+            <img src="https://nhipmpl.in/wp-content/uploads/2024/06/Saurabh.jpg">
+
+            <h3>Sh. Saurabh Vijay</h3>
+
+            <span>Manager – Legal & Company Secretary</span>
+
+            <p>
+
+                Experienced professional in legal affairs,
+                governance systems, infrastructure documentation,
+                compliance management, and organizational administration.
+
+            </p>
+
+        </div>
+
+        <!-- LEADER 3 -->
+
+        <div class="leader-card">
+
+            <img src="https://nhipmpl.in/wp-content/uploads/2024/06/Ajay-Batra.jpg">
+
+            <h3>Sh. Ajay Batra</h3>
+
+            <span>Head – Projects & Operations</span>
+
+            <p>
+
+                Experienced in highway project operations,
+                infrastructure supervision, project execution,
+                operational planning, and transportation management systems.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-box">
+
+                <h3>Corporate Office</h3>
+
+                <p>
+                    NHAI OLD BUILDING, G5 & G6 <br>
+                    DWARKA SECTOR 10 <br>
+                    NEW DELHI – 110075
+                </p>
+
+                <p>
+                    Email : info.nhipmpl@nhai.org
+                </p>
+
+            </div>
+
+            <div class="footer-box">
+
+                <h3>Operations</h3>
+
+                <ul>
+
+                    <li>ATMS Monitoring</li>
+                    <li>Toll Management</li>
+                    <li>ITS Infrastructure</li>
+                    <li>Highway Surveillance</li>
+
+                </ul>
+
+            </div>
+
+            <div class="footer-box">
+
+                <h3>Projects</h3>
+
+                <ul>
+
+                    <li>NHIT Assets</li>
+                    <li>RIIT Assets</li>
+                    <li>R1 to R5 Corridors</li>
+                    <li>Highway Safety</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            © 2026 NATIONAL HIGHWAYS INVIT PROJECT MANAGERS PRIVATE LIMITED
+
+        </div>
+
+    </footer>
 
 </body>
 
