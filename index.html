@@ -1,336 +1,721 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NHIPMPL</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NHIPMPL</title>
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family: Arial, sans-serif;
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-    body{
-      background:#f5f5f5;
-    }
+        body {
+            overflow-x: hidden;
+            background: #f5f5f5;
+        }
 
-    /* TOP HEADER */
-    .top-bar{
-      background:#f1f1f1;
-      padding:10px 40px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      font-size:14px;
-      border-bottom:1px solid #ccc;
-    }
+        /* ================= HEADER ================= */
 
-    .top-links a{
-      text-decoration:none;
-      color:#222;
-      margin-right:15px;
-      font-weight:500;
-    }
+        header {
+            width: 100%;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1000;
+        }
 
-    .top-links a:hover{
-      color:#0056b3;
-    }
+        .top-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+        }
 
-    /* MAIN HEADER */
-    .header{
-      background:#fff;
-      padding:15px 40px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-    }
+        /* LOGO SECTION */
 
-    .logo-section{
-      display:flex;
-      align-items:center;
-      gap:20px;
-    }
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
 
-    .logo-section img{
-      width:110px;
-      height:auto;
-    }
+        .logo-section img {
+            width: 110px;
+            height: auto;
+        }
 
-    .title h1{
-      font-size:30px;
-      color:#1a1a1a;
-      margin-bottom:8px;
-    }
+        /* COMPANY NAME */
 
-    .title p{
-      font-size:16px;
-      color:#555;
-      font-weight:bold;
-    }
+        .company-text h1 {
+            font-size: 34px;
+            font-weight: 900;
+            color: #0056b3;
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
 
-    /* NAVIGATION */
-    nav{
-      background:#002b66;
-    }
+        .company-text p {
+            margin-top: 8px;
+            color: #004080;
+            font-size: 20px;
+            font-weight: bold;
+        }
 
-    nav ul{
-      display:flex;
-      list-style:none;
-      padding-left:40px;
-    }
+        /* ================= NAVIGATION ================= */
 
-    nav ul li{
-      position:relative;
-    }
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
 
-    nav ul li a{
-      display:block;
-      padding:18px 22px;
-      color:white;
-      text-decoration:none;
-      font-weight:bold;
-      transition:0.3s;
-    }
+        nav ul li {
+            position: relative;
+        }
 
-    nav ul li a:hover{
-      background:#0047ab;
-    }
+        nav ul li a {
+            text-decoration: none;
+            color: #111;
+            padding: 14px 18px;
+            display: block;
+            font-size: 17px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
 
-    /* SLIDER */
-    .slider{
-      position:relative;
-      width:100%;
-      height:520px;
-      overflow:hidden;
-    }
+        nav ul li a:hover {
+            color: #0056b3;
+        }
 
-    .slides{
-      width:300%;
-      height:100%;
-      display:flex;
-      animation:slide 15s infinite;
-    }
+        /* ================= DROPDOWN ================= */
 
-    .slide{
-      width:100%;
-      height:100%;
-      position:relative;
-      background-size:cover;
-      background-position:center;
-    }
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 52px;
+            left: 0;
+            min-width: 250px;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+        }
 
-    .slide::before{
-      content:"";
-      position:absolute;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
-      background:rgba(0,0,0,0.45);
-    }
+        .dropdown a {
+            display: block;
+            padding: 12px 15px;
+            color: #222;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            white-space: nowrap;
+        }
 
-    .slide-content{
-      position:absolute;
-      top:50%;
-      left:50%;
-      transform:translate(-50%, -50%);
-      color:white;
-      text-align:center;
-      z-index:2;
-      width:90%;
-    }
+        .dropdown a:hover {
+            background: #0056b3;
+            color: white;
+        }
 
-    .slide-content h2{
-      font-size:52px;
-      margin-bottom:20px;
-      text-shadow:2px 2px 10px black;
-    }
+        .has-dropdown:hover>.dropdown {
+            display: block;
+        }
 
-    .slide-content p{
-      font-size:22px;
-      margin-bottom:30px;
-      line-height:1.6;
-    }
+        /* ================= SUBMENU ================= */
 
-    .btn{
-      display:inline-block;
-      padding:14px 30px;
-      background:#ffcc00;
-      color:#000;
-      text-decoration:none;
-      font-weight:bold;
-      border-radius:5px;
-      transition:0.3s;
-    }
+        .submenu-item {
+            position: relative;
+        }
 
-    .btn:hover{
-      background:white;
-    }
+        .submenu {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            min-width: 260px;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+        }
 
-    @keyframes slide{
-      0%{ transform:translateX(0); }
-      30%{ transform:translateX(0); }
+        .submenu a {
+            display: block;
+            padding: 12px 15px;
+            color: #222;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            white-space: nowrap;
+            font-size: 15px;
+        }
 
-      35%{ transform:translateX(-100%); }
-      65%{ transform:translateX(-100%); }
+        .submenu a:hover {
+            background: #0056b3;
+            color: white;
+        }
 
-      70%{ transform:translateX(-200%); }
-      100%{ transform:translateX(-200%); }
-    }
+        .submenu-item:hover>.submenu {
+            display: block;
+        }
 
-    /* FOOTER */
-    footer{
-      background:#001f4d;
-      color:white;
-      text-align:center;
-      padding:20px;
-      font-size:15px;
-    }
+        /* ================= SLIDER ================= */
 
-    /* MOBILE */
-    @media(max-width:768px){
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 78vh;
+            overflow: hidden;
+        }
 
-      .header{
-        flex-direction:column;
-        text-align:center;
-      }
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
 
-      .logo-section{
-        flex-direction:column;
-      }
+        .slide.active {
+            opacity: 1;
+        }
 
-      .title h1{
-        font-size:22px;
-      }
+        /* DARK OVERLAY */
 
-      nav ul{
-        flex-direction:column;
-        padding-left:0;
-      }
+        .slide::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.35);
+        }
 
-      .slide-content h2{
-        font-size:32px;
-      }
+        /* CONTENT */
 
-      .slide-content p{
-        font-size:18px;
-      }
+        .slide-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            width: 85%;
+            z-index: 5;
+        }
 
-      .slider{
-        height:420px;
-      }
-    }
+        .slide-content h2 {
+            font-size: 58px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px black;
+        }
 
-  </style>
+        .slide-content p {
+            font-size: 24px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 8px black;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+            background: #ffcc00;
+            color: black;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+        }
+
+        /* ================= ARROWS ================= */
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 42px;
+            color: white;
+            background: rgba(0, 0, 0, 0.4);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: 0.3s;
+        }
+
+        .arrow:hover {
+            background: #0056b3;
+        }
+
+        .prev {
+            left: 20px;
+        }
+
+        .next {
+            right: 20px;
+        }
+
+        /* ================= DOTS ================= */
+
+        .dots {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            z-index: 11;
+        }
+
+        .dot {
+            height: 14px;
+            width: 14px;
+            margin: 0 6px;
+            background: white;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background: #ffcc00;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #003366;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            font-size: 16px;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width: 1000px) {
+
+            .top-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .company-text h1 {
+                font-size: 24px;
+            }
+
+            .company-text p {
+                font-size: 16px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .slide-content h2 {
+                font-size: 34px;
+            }
+
+            .slide-content p {
+                font-size: 18px;
+            }
+
+            .slider {
+                height: 60vh;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <!-- TOP BAR -->
-  <div class="top-bar">
-    <div class="top-links">
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Projects</a>
-      <a href="#">Contact</a>
-    </div>
+    <!-- ================= HEADER ================= -->
 
-    <div>
-      <strong>Government of India</strong>
-    </div>
-  </div>
+    <header>
 
-  <!-- HEADER -->
-  <div class="header">
+        <div class="top-header">
 
-    <div class="logo-section">
+            <!-- LOGO -->
 
-      <!-- LOGO -->
-      <img src="https://raw.githubusercontent.com/MJ-shaikh/test/main/Logo.jpeg" alt="Logo">
+            <div class="logo-section">
 
-      <div class="title">
-        <h1>NATIONAL HIGHWAYS INVIT PROJECT MANAGERS PRIVATE LIMITED</h1>
-        <p>A wholly owned entity of NHAI</p>
-      </div>
+                <img src="https://raw.githubusercontent.com/MJ-shaikh/test/main/Logo.jpeg">
 
-    </div>
+                <div class="company-text">
 
-  </div>
+                    <h1>
+                        NATIONAL HIGHWAYS INVIT <br>
+                        PROJECT MANAGERS <br>
+                        PRIVATE LIMITED
+                    </h1>
 
-  <!-- NAVIGATION -->
-  <nav>
-    <ul>
-      <li><a href="#">HOME</a></li>
-      <li><a href="#">ABOUT US</a></li>
-      <li><a href="#">PROJECTS</a></li>
-      <li><a href="#">SERVICES</a></li>
-      <li><a href="#">MEDIA</a></li>
-      <li><a href="#">CAREERS</a></li>
-      <li><a href="#">CONTACT</a></li>
-    </ul>
-  </nav>
+                    <p>A wholly owned entity of NHAI</p>
 
-  <!-- SLIDER -->
-  <div class="slider">
+                </div>
 
-    <div class="slides">
+            </div>
 
-      <!-- SLIDE 1 -->
-      <div class="slide"
-        style="background-image:url('https://raw.githubusercontent.com/MJ-shaikh/test/main/h1.jpg');">
+            <!-- ================= MENU ================= -->
 
-        <div class="slide-content">
-          <h2>Modern Highway Infrastructure</h2>
-          <p>
-            Developing world-class National Highway assets with advanced
-            monitoring and project management systems.
-          </p>
+            <nav>
 
-          <a href="#" class="btn">Explore More</a>
+                <ul>
+
+                    <li><a href="#">Home</a></li>
+
+                    <!-- ABOUT -->
+
+                    <li class="has-dropdown">
+
+                        <a href="#">About ▼</a>
+
+                        <div class="dropdown">
+
+                            <a href="#">About NHIPMPL</a>
+                            <a href="#">Vision & Mission</a>
+                            <a href="#">Board of Directors</a>
+                            <a href="#">Leadership Team</a>
+                            <a href="#">Organization Chart</a>
+
+                        </div>
+
+                    </li>
+
+                    <!-- ASSETS -->
+
+                    <li class="has-dropdown">
+
+                        <a href="#">Assets ▼</a>
+
+                        <div class="dropdown">
+
+                            <!-- NHIT -->
+
+                            <div class="submenu-item">
+
+                                <a href="#">NHIT ▶</a>
+
+                                <div class="submenu">
+
+                                    <!-- R1 -->
+
+                                    <div class="submenu-item">
+
+                                        <a href="#">R1 ▶</a>
+
+                                        <div class="submenu">
+
+                                            <a href="#">1. Undvariya</a>
+                                            <a href="#">2. Khemana</a>
+                                            <a href="#">3. Kognoli</a>
+                                            <a href="#">4. Hattargi</a>
+                                            <a href="#">5. Pullur</a>
+                                            <a href="#">6. Dhaneshwar</a>
+                                            <a href="#">7. Bassi</a>
+                                            <a href="#">8. Aroli</a>
+
+                                        </div>
+
+                                    </div>
+
+                                    <!-- R2 -->
+
+                                    <div class="submenu-item">
+
+                                        <a href="#">R2 ▶</a>
+
+                                        <div class="submenu">
+
+                                            <a href="#">1. Kelapur</a>
+                                            <a href="#">2. Raibha</a>
+                                            <a href="#">3. Raksha</a>
+                                            <a href="#">4. Daroda</a>
+
+                                        </div>
+
+                                    </div>
+
+                                    <!-- R3 -->
+
+                                    <div class="submenu-item">
+
+                                        <a href="#">R3 ▶</a>
+
+                                        <div class="submenu">
+
+                                            <a href="#">1. Usaka</a>
+                                            <a href="#">2. Odaki Pipkar</a>
+                                            <a href="#">3. Kherswani</a>
+                                            <a href="#">4. Mohtara</a>
+                                            <a href="#">5. Boharipaar</a>
+                                            <a href="#">6. Patgaon</a>
+                                            <a href="#">7. Dahalapara</a>
+                                            <a href="#">8. Galia</a>
+                                            <a href="#">9. Madai</a>
+                                            <a href="#">10. Khawasa</a>
+                                            <a href="#">11. Bankapur</a>
+                                            <a href="#">12. Hebbalu</a>
+                                            <a href="#">13. Chalageri</a>
+
+                                        </div>
+
+                                    </div>
+
+                                    <!-- R4 -->
+
+                                    <div class="submenu-item">
+
+                                        <a href="#">R4 ▶</a>
+
+                                        <div class="submenu">
+
+                                            <a href="#">1. Balibhasa</a>
+                                            <a href="#">2. Chhapar</a>
+                                            <a href="#">3. Bhadarabad</a>
+                                            <a href="#">4. Madapam</a>
+                                            <a href="#">5. Nathavalasa</a>
+                                            <a href="#">6. Mahasamudram</a>
+                                            <a href="#">7. Bhojpuri</a>
+                                            <a href="#">8. Mudipar</a>
+                                            <a href="#">9. Mokha</a>
+                                            <a href="#">10. Faridpur</a>
+                                            <a href="#">11. Maigalganj</a>
+                                            <a href="#">12. Veeravalli</a>
+                                            <a href="#">13. Marripalem</a>
+                                            <a href="#">14. Dukkavanipalem</a>
+                                            <a href="#">15. Gadanki</a>
+                                            <a href="#">16. Tarpongi</a>
+
+                                        </div>
+
+                                    </div>
+
+                                    <!-- R5 -->
+
+                                    <div class="submenu-item">
+
+                                        <a href="#">R5 ▶</a>
+
+                                        <div class="submenu">
+
+                                            <a href="#">1. Kurankhed</a>
+                                            <a href="#">2. Taroda Kasba</a>
+                                            <a href="#">3. Dasarkhed</a>
+                                            <a href="#">4. Nasirabad</a>
+                                            <a href="#">5. Kalaparru</a>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- RIIT -->
+
+                            <div class="submenu-item">
+
+                                <a href="#">RIIT ▶</a>
+
+                                <div class="submenu">
+
+                                    <a href="#">Future Assets</a>
+                                    <a href="#">Upcoming Projects</a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </li>
+
+                    <li><a href="#">Procurement</a></li>
+
+                    <li><a href="#">Media</a></li>
+
+                    <li><a href="#">Employee Corner</a></li>
+
+                    <li><a href="#">Resource Center</a></li>
+
+                    <li><a href="#">Career</a></li>
+
+                    <li><a href="#">Contact</a></li>
+
+                </ul>
+
+            </nav>
+
         </div>
-      </div>
 
-      <!-- SLIDE 2 -->
-      <div class="slide"
-        style="background-image:url('https://raw.githubusercontent.com/MJ-shaikh/test/main/h2.jpg');">
+    </header>
 
-        <div class="slide-content">
-          <h2>Efficient Project Monitoring</h2>
-          <p>
-            Smart solutions for highway operations, maintenance,
-            automation, and infrastructure management.
-          </p>
+    <!-- ================= SLIDER ================= -->
 
-          <a href="#" class="btn">Our Services</a>
+    <div class="slider">
+
+        <!-- SLIDE 1 -->
+
+        <div class="slide active"
+            style="background-image:url('https://raw.githubusercontent.com/MJ-shaikh/test/main/h1.jpg');">
+
+            <div class="slide-content">
+
+                <h2>Modern Highway Infrastructure</h2>
+
+                <p>
+                    Developing advanced National Highway infrastructure
+                    with innovative project management solutions.
+                </p>
+
+                <a href="#" class="btn">Read More</a>
+
+            </div>
+
         </div>
-      </div>
 
-      <!-- SLIDE 3 -->
-      <div class="slide"
-        style="background-image:url('https://raw.githubusercontent.com/MJ-shaikh/test/main/h3.jpg');">
+        <!-- SLIDE 2 -->
 
-        <div class="slide-content">
-          <h2>Building Future Connectivity</h2>
-          <p>
-            Strengthening India's transportation network with innovation,
-            technology, and sustainable development.
-          </p>
+        <div class="slide"
+            style="background-image:url('https://raw.githubusercontent.com/MJ-shaikh/test/main/h2.jpg');">
 
-          <a href="#" class="btn">View Projects</a>
+            <div class="slide-content">
+
+                <h2>Smart Highway Monitoring</h2>
+
+                <p>
+                    Intelligent systems for highway operations,
+                    monitoring, tolling, and safety management.
+                </p>
+
+                <a href="#" class="btn">Our Services</a>
+
+            </div>
+
         </div>
-      </div>
+
+        <!-- SLIDE 3 -->
+
+        <div class="slide"
+            style="background-image:url('https://raw.githubusercontent.com/MJ-shaikh/test/main/h3.jpg');">
+
+            <div class="slide-content">
+
+                <h2>Building India's Connectivity</h2>
+
+                <p>
+                    Strengthening transportation infrastructure
+                    for a smarter and safer future.
+                </p>
+
+                <a href="#" class="btn">View Projects</a>
+
+            </div>
+
+        </div>
+
+        <!-- ARROWS -->
+
+        <div class="arrow prev">&#10094;</div>
+        <div class="arrow next">&#10095;</div>
+
+        <!-- DOTS -->
+
+        <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
 
     </div>
-  </div>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2026 NATIONAL HIGHWAYS INVIT PROJECT MANAGERS PRIVATE LIMITED |
-    All Rights Reserved
-  </footer>
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+        © 2026 NATIONAL HIGHWAYS INVIT PROJECT MANAGERS PRIVATE LIMITED
+    </footer>
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        const slides = document.querySelectorAll(".slide");
+        const dots = document.querySelectorAll(".dot");
+
+        let currentSlide = 0;
+
+        function showSlide(index) {
+
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+
+            dots.forEach((dot) => {
+                dot.classList.remove("active");
+            });
+
+            slides[index].classList.add("active");
+            dots[index].classList.add("active");
+        }
+
+        function nextSlide() {
+
+            currentSlide++;
+
+            if (currentSlide >= slides.length) {
+                currentSlide = 0;
+            }
+
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+
+            currentSlide--;
+
+            if (currentSlide < 0) {
+                currentSlide = slides.length - 1;
+            }
+
+            showSlide(currentSlide);
+        }
+
+        document.querySelector(".next")
+            .addEventListener("click", nextSlide);
+
+        document.querySelector(".prev")
+            .addEventListener("click", prevSlide);
+
+        setInterval(nextSlide, 5000);
+
+        dots.forEach((dot, index) => {
+
+            dot.addEventListener("click", () => {
+
+                currentSlide = index;
+
+                showSlide(currentSlide);
+
+            });
+
+        });
+
+    </script>
 
 </body>
+
 </html>
