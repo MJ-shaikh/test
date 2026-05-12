@@ -165,9 +165,17 @@ nav ul li a {
             box-shadow: 0 5px 18px rgba(0, 0, 0, 0.2);
         }
 
-        .submenu-item:hover>.submenu {
-            display: block;
-        }
+       .submenu-item {
+    position: relative;
+}
+
+.submenu-item > .submenu {
+    display: none;
+}
+
+.submenu-item:hover > .submenu {
+    display: block;
+}
 
         .submenu a {
             padding: 12px 15px;
@@ -565,6 +573,8 @@ nav ul li a {
                                     <!-- R1 -->
 
                                    <!-- R1 -->
+
+<<!-- R1 -->
 
 <div class="submenu-item">
 
