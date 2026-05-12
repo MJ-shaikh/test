@@ -405,19 +405,50 @@ nav ul li a {
 
         /* ================= MOBILE ================= */
 
-        @media(max-width:1000px) {
+       @media(max-width:1000px){
 
-            .top-header {
-    flex-direction: row;
-    align-items:center;
-}
-nav{
-    display:flex;
-    align-items:center;
-}
-          nav ul {
-    flex-wrap: nowrap;
-    justify-content: flex-end;
+    .top-header{
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center;
+        width:100%;
+    }
+
+    .logo-section{
+        display:flex;
+        align-items:center;
+    }
+
+    nav{
+        margin-left:auto;
+    }
+
+    nav ul{
+        display:flex;
+        flex-direction:row !important;
+        align-items:center;
+        justify-content:flex-end;
+        flex-wrap:nowrap !important;
+        gap:4px;
+    }
+
+    nav ul li{
+        display:inline-block;
+    }
+
+    nav ul li a{
+        padding:10px 10px;
+        font-size:14px;
+    }
+
+    .company-text h1{
+        font-size:18px;
+    }
+
+    .company-text p{
+        font-size:14px;
+    }
 }
 
             .company-text h1 {
