@@ -36,38 +36,49 @@
             z-index: 9999;
         }
 
-        .top-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 40px;
-        }
+        .top-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 30px;
+    width:100%;
+}
 
-        /* LOGO */
+/* LOGO + COMPANY */
 
-        .logo-section {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-        }
+.logo-section{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    min-width:450px;
+}
 
-        .logo-section img {
-            width: 105px;
-        }
+.logo-section img{
+    width:105px;
+}
 
-        .company-text h1 {
-            font-size: 21px;
-            line-height: 1.1;
-            color: #0056b3;
-            font-weight: 900;
-            text-transform: uppercase;
-        }
+/* COMPANY TEXT */
 
-        .company-text p {
-            color: #003366;
-            font-size: 19px;
-            margin-top: 8px;
-            font-weight: bold;
+.company-text{
+    text-align:center;
+}
+
+.company-text h1{
+    font-size:24px;
+    line-height:1.15;
+    color:#0056b3;
+    font-weight:900;
+    text-transform:uppercase;
+    text-align:center;
+}
+
+.company-text p{
+    color:#003366;
+    font-size:18px;
+    margin-top:8px;
+    font-weight:bold;
+    text-align:center;
+}
         }
 
         /* ================= MENU ================= */
@@ -445,13 +456,15 @@
 
                 <img src="https://raw.githubusercontent.com/MJ-shaikh/test/main/Logo.jpeg">
 
-                <div class="company-text">
-
-                    <div class="company-text">
+               <div class="company-text">
 
     <h1>
-        NATIONAL HIGHWAYS INVIT <br>
-        PROJECT MANAGERS <br>
+        NATIONAL HIGHWAYS INVIT<br>
+
+        <span style="display:block; text-align:center;">
+            PROJECT MANAGERS
+        </span>
+
         PRIVATE LIMITED
     </h1>
 
