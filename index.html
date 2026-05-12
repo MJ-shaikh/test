@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NHAI Style Interface</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#f5f5f5;
+    }
+
+    /* TOP BAR */
+    .top-bar{
+      background:#ffffff;
+      border-bottom:1px solid #ddd;
+      padding:10px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      font-size:14px;
+    }
+
+    .top-links a{
+      text-decoration:none;
+      color:#222;
+      margin-right:15px;
+    }
+
+    .top-right{
+      display:flex;
+      gap:15px;
+      align-items:center;
+    }
+
+    /* HEADER */
+    .header{
+      background:#fff;
+      padding:15px 40px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .logo-section{
+      display:flex;
+      align-items:center;
+      gap:15px;
+    }
+
+    .logo{
+      width:70px;
+    }
+
+    .title h1{
+      font-size:32px;
+      color:#1b1b1b;
+    }
+
+    .title p{
+      font-size:14px;
+      color:#555;
+    }
+
+    /* NAVBAR */
+    .navbar{
+      background:#002c66;
+    }
+
+    .navbar ul{
+      list-style:none;
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    .navbar ul li{
+      position:relative;
+    }
+
+    .navbar ul li a{
+      display:block;
+      padding:18px 25px;
+      color:white;
+      text-decoration:none;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .navbar ul li a:hover{
+      background:#004aad;
+    }
+
+    /* HERO SECTION */
+    .hero{
+      position:relative;
+      height:500px;
+      background:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+      overflow:hidden;
+    }
+
+    .overlay{
+      position:absolute;
+      width:100%;
+      height:100%;
+      background:rgba(0,0,0,0.65);
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      color:white;
+      text-align:center;
+      top:50%;
+      transform:translateY(-50%);
+      padding:20px;
+    }
+
+    .hero-content h2{
+      font-size:50px;
+      color:yellow;
+      margin-bottom:20px;
+    }
+
+    .hero-content p{
+      font-size:22px;
+      line-height:1.7;
+      margin-bottom:25px;
+      max-width:1200px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .prizes{
+      display:flex;
+      justify-content:center;
+      gap:40px;
+      flex-wrap:wrap;
+      margin-bottom:30px;
+    }
+
+    .prize-box{
+      background:rgba(255,255,255,0.1);
+      border:1px solid rgba(255,255,255,0.3);
+      padding:20px 30px;
+      border-radius:10px;
+      backdrop-filter:blur(5px);
+      min-width:250px;
+    }
+
+    .prize-box h3{
+      color:#ffea00;
+      font-size:28px;
+      margin-bottom:10px;
+    }
+
+    .prize-box span{
+      font-size:24px;
+      font-weight:bold;
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:20px;
+      background:#ffcc00;
+      color:#000;
+      padding:15px 35px;
+      text-decoration:none;
+      font-size:22px;
+      font-weight:bold;
+      border-radius:40px;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:white;
+      transform:scale(1.05);
+    }
+
+    /* WHATS NEW */
+    .news-bar{
+      background:#002c66;
+      color:white;
+      padding:15px 30px;
+      overflow:hidden;
+      white-space:nowrap;
+    }
+
+    .news-bar marquee{
+      font-size:18px;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+
+      .header{
+        flex-direction:column;
+        text-align:center;
+      }
+
+      .title h1{
+        font-size:24px;
+      }
+
+      .hero{
+        height:auto;
+        padding:60px 0;
+      }
+
+      .hero-content h2{
+        font-size:38px;
+      }
+
+      .hero-content p{
+        font-size:18px;
+      }
+
+      .navbar ul{
+        flex-direction:column;
+      }
+
+      .navbar ul li a{
+        text-align:center;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+
+    <div class="top-links">
+      <a href="#">RTI</a>
+      <a href="#">Grievance</a>
+      <a href="#">Complaint</a>
+      <a href="#">FAQs</a>
+    </div>
+
+    <div class="top-right">
+      <span>Search</span>
+      <span>A+</span>
+      <span>A</span>
+      <span>A-</span>
+      <span>English</span>
+    </div>
+
+  </div>
+
+  <!-- HEADER -->
+  <div class="header">
+
+    <div class="logo-section">
+
+      <img class="logo"
+        src="https://upload.wikimedia.org/wikipedia/en/thumb/9/99/Emblem_of_India.svg/1200px-Emblem_of_India.svg.png">
+
+      <div class="title">
+        <h1>National Highways Authority of India</h1>
+        <p>Ministry of Road Transport & Highways, Government of India</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+
+    <ul>
+      <li><a href="#">HOME</a></li>
+      <li><a href="#">ABOUT NHAI</a></li>
+      <li><a href="#">PROGRAMMES</a></li>
+      <li><a href="#">ROAD NETWORK</a></li>
+      <li><a href="#">MEDIA</a></li>
+      <li><a href="#">PROCUREMENT</a></li>
+      <li><a href="#">RESOURCE CENTER</a></li>
+      <li><a href="#">VIGILANCE</a></li>
+      <li><a href="#">HELP</a></li>
+    </ul>
+
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+
+      <p>
+        To develop innovative, scalable, and cost-effective solutions for
+        Automation & Intelligent Machine guided Construction (AIMC)
+      </p>
+
+      <h2>Hackathon 5.0</h2>
+
+      <div class="prizes">
+
+        <div class="prize-box">
+          <h3>1st Prize</h3>
+          <span>₹2.00 Lakhs</span>
+        </div>
+
+        <div class="prize-box">
+          <h3>2nd Prize</h3>
+          <span>₹1.00 Lakhs</span>
+        </div>
+
+        <div class="prize-box">
+          <h3>3rd Prize</h3>
+          <span>₹0.50 Lakhs</span>
+        </div>
+
+      </div>
+
+      <a href="#" class="btn">For Result Click Here</a>
+
+    </div>
+
+  </section>
+
+  <!-- NEWS BAR -->
+  <div class="news-bar">
+
+    <marquee scrollamount="6">
+      What's New : Asset Monetisation FY 2025-26 |
+      Road Safety Awareness |
+      Implementation of Advanced Traffic Management System |
+      Intelligent Highway Monitoring |
+      FASTag Compliance Updates
+    </marquee>
+
+  </div>
+
+</body>
+</html>
