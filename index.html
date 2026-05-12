@@ -40,8 +40,9 @@
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:12px 30px;
+    padding:12px 25px;
     width:100%;
+    flex-wrap:nowrap;
 }
 
 /* LOGO + COMPANY */
@@ -49,8 +50,7 @@
 .logo-section{
     display:flex;
     align-items:center;
-    gap:20px;
-    min-width:450px;
+    gap:15px;
 }
 
 .logo-section img{
@@ -83,26 +83,33 @@
 
         /* ================= MENU ================= */
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
+        nnav ul {
+    list-style:none;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:flex-end;
+    gap:4px;
+    flex-wrap:nowrap;
+}
 
         nav ul li {
             position: relative;
         }
 
-        nav ul li a {
-            text-decoration: none;
-            color: #111;
-            padding: 14px 16px;
-            display: block;
-            font-size: 16px;
-            font-weight: 700;
-            transition: 0.3s;
-        }
+        nav{
+    margin-left:auto;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #111;
+    padding: 14px 16px;
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    transition: 0.3s;
+}
 
         nav ul li a:hover {
             color: #0056b3;
@@ -411,7 +418,7 @@
             }
 
             .company-text h1 {
-                font-size: 24px;
+                font-size: 20px;
             }
 
             .company-text p {
