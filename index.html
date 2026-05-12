@@ -3,44 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NHAI Style Interface</title>
+  <title>NHIPMPL</title>
 
   <style>
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: Arial, sans-serif;
     }
 
     body{
       background:#f5f5f5;
     }
 
-    /* TOP BAR */
+    /* TOP HEADER */
     .top-bar{
-      background:#ffffff;
-      border-bottom:1px solid #ddd;
+      background:#f1f1f1;
       padding:10px 40px;
       display:flex;
       justify-content:space-between;
       align-items:center;
       font-size:14px;
+      border-bottom:1px solid #ccc;
     }
 
     .top-links a{
       text-decoration:none;
       color:#222;
       margin-right:15px;
+      font-weight:500;
     }
 
-    .top-right{
-      display:flex;
-      gap:15px;
-      align-items:center;
+    .top-links a:hover{
+      color:#0056b3;
     }
 
-    /* HEADER */
+    /* MAIN HEADER */
     .header{
       background:#fff;
       padding:15px 40px;
@@ -52,152 +51,146 @@
     .logo-section{
       display:flex;
       align-items:center;
-      gap:15px;
+      gap:20px;
     }
 
-    .logo{
-      width:70px;
+    .logo-section img{
+      width:110px;
+      height:auto;
     }
 
     .title h1{
-      font-size:32px;
-      color:#1b1b1b;
+      font-size:30px;
+      color:#1a1a1a;
+      margin-bottom:8px;
     }
 
     .title p{
-      font-size:14px;
+      font-size:16px;
       color:#555;
+      font-weight:bold;
     }
 
-    /* NAVBAR */
-    .navbar{
-      background:#002c66;
+    /* NAVIGATION */
+    nav{
+      background:#002b66;
     }
 
-    .navbar ul{
-      list-style:none;
+    nav ul{
       display:flex;
-      justify-content:center;
-      flex-wrap:wrap;
+      list-style:none;
+      padding-left:40px;
     }
 
-    .navbar ul li{
+    nav ul li{
       position:relative;
     }
 
-    .navbar ul li a{
+    nav ul li a{
       display:block;
-      padding:18px 25px;
+      padding:18px 22px;
       color:white;
       text-decoration:none;
       font-weight:bold;
       transition:0.3s;
     }
 
-    .navbar ul li a:hover{
-      background:#004aad;
+    nav ul li a:hover{
+      background:#0047ab;
     }
 
-    /* HERO SECTION */
-    .hero{
+    /* SLIDER */
+    .slider{
       position:relative;
-      height:500px;
-      background:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+      width:100%;
+      height:520px;
       overflow:hidden;
     }
 
-    .overlay{
-      position:absolute;
+    .slides{
+      width:300%;
+      height:100%;
+      display:flex;
+      animation:slide 15s infinite;
+    }
+
+    .slide{
       width:100%;
       height:100%;
-      background:rgba(0,0,0,0.65);
+      position:relative;
+      background-size:cover;
+      background-position:center;
     }
 
-    .hero-content{
-      position:relative;
-      z-index:2;
+    .slide::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:rgba(0,0,0,0.45);
+    }
+
+    .slide-content{
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -50%);
       color:white;
       text-align:center;
-      top:50%;
-      transform:translateY(-50%);
-      padding:20px;
+      z-index:2;
+      width:90%;
     }
 
-    .hero-content h2{
-      font-size:50px;
-      color:yellow;
+    .slide-content h2{
+      font-size:52px;
       margin-bottom:20px;
+      text-shadow:2px 2px 10px black;
     }
 
-    .hero-content p{
+    .slide-content p{
       font-size:22px;
-      line-height:1.7;
-      margin-bottom:25px;
-      max-width:1200px;
-      margin-left:auto;
-      margin-right:auto;
-    }
-
-    .prizes{
-      display:flex;
-      justify-content:center;
-      gap:40px;
-      flex-wrap:wrap;
       margin-bottom:30px;
-    }
-
-    .prize-box{
-      background:rgba(255,255,255,0.1);
-      border:1px solid rgba(255,255,255,0.3);
-      padding:20px 30px;
-      border-radius:10px;
-      backdrop-filter:blur(5px);
-      min-width:250px;
-    }
-
-    .prize-box h3{
-      color:#ffea00;
-      font-size:28px;
-      margin-bottom:10px;
-    }
-
-    .prize-box span{
-      font-size:24px;
-      font-weight:bold;
+      line-height:1.6;
     }
 
     .btn{
       display:inline-block;
-      margin-top:20px;
+      padding:14px 30px;
       background:#ffcc00;
       color:#000;
-      padding:15px 35px;
       text-decoration:none;
-      font-size:22px;
       font-weight:bold;
-      border-radius:40px;
+      border-radius:5px;
       transition:0.3s;
     }
 
     .btn:hover{
       background:white;
-      transform:scale(1.05);
     }
 
-    /* WHATS NEW */
-    .news-bar{
-      background:#002c66;
+    @keyframes slide{
+      0%{ transform:translateX(0); }
+      30%{ transform:translateX(0); }
+
+      35%{ transform:translateX(-100%); }
+      65%{ transform:translateX(-100%); }
+
+      70%{ transform:translateX(-200%); }
+      100%{ transform:translateX(-200%); }
+    }
+
+    /* FOOTER */
+    footer{
+      background:#001f4d;
       color:white;
-      padding:15px 30px;
-      overflow:hidden;
-      white-space:nowrap;
+      text-align:center;
+      padding:20px;
+      font-size:15px;
     }
 
-    .news-bar marquee{
-      font-size:18px;
-    }
-
-    /* RESPONSIVE */
+    /* MOBILE */
     @media(max-width:768px){
 
       .header{
@@ -205,29 +198,29 @@
         text-align:center;
       }
 
-      .title h1{
-        font-size:24px;
-      }
-
-      .hero{
-        height:auto;
-        padding:60px 0;
-      }
-
-      .hero-content h2{
-        font-size:38px;
-      }
-
-      .hero-content p{
-        font-size:18px;
-      }
-
-      .navbar ul{
+      .logo-section{
         flex-direction:column;
       }
 
-      .navbar ul li a{
-        text-align:center;
+      .title h1{
+        font-size:22px;
+      }
+
+      nav ul{
+        flex-direction:column;
+        padding-left:0;
+      }
+
+      .slide-content h2{
+        font-size:32px;
+      }
+
+      .slide-content p{
+        font-size:18px;
+      }
+
+      .slider{
+        height:420px;
       }
     }
 
@@ -238,22 +231,16 @@
 
   <!-- TOP BAR -->
   <div class="top-bar">
-
     <div class="top-links">
-      <a href="#">RTI</a>
-      <a href="#">Grievance</a>
-      <a href="#">Complaint</a>
-      <a href="#">FAQs</a>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
     </div>
 
-    <div class="top-right">
-      <span>Search</span>
-      <span>A+</span>
-      <span>A</span>
-      <span>A-</span>
-      <span>English</span>
+    <div>
+      <strong>Government of India</strong>
     </div>
-
   </div>
 
   <!-- HEADER -->
@@ -261,12 +248,12 @@
 
     <div class="logo-section">
 
-      <img class="logo"
-        src="https://upload.wikimedia.org/wikipedia/en/thumb/9/99/Emblem_of_India.svg/1200px-Emblem_of_India.svg.png">
+      <!-- LOGO -->
+      <img src="https://raw.githubusercontent.com/MJ-shaikh/test/main/Logo.jpeg" alt="Logo">
 
       <div class="title">
-        <h1>National Highways Authority of India</h1>
-        <p>Ministry of Road Transport & Highways, Government of India</p>
+        <h1>NATIONAL HIGHWAYS INVIT PROJECT MANAGERS PRIVATE LIMITED</h1>
+        <p>A wholly owned entity of NHAI</p>
       </div>
 
     </div>
@@ -274,73 +261,76 @@
   </div>
 
   <!-- NAVIGATION -->
-  <nav class="navbar">
-
+  <nav>
     <ul>
       <li><a href="#">HOME</a></li>
-      <li><a href="#">ABOUT NHAI</a></li>
-      <li><a href="#">PROGRAMMES</a></li>
-      <li><a href="#">ROAD NETWORK</a></li>
+      <li><a href="#">ABOUT US</a></li>
+      <li><a href="#">PROJECTS</a></li>
+      <li><a href="#">SERVICES</a></li>
       <li><a href="#">MEDIA</a></li>
-      <li><a href="#">PROCUREMENT</a></li>
-      <li><a href="#">RESOURCE CENTER</a></li>
-      <li><a href="#">VIGILANCE</a></li>
-      <li><a href="#">HELP</a></li>
+      <li><a href="#">CAREERS</a></li>
+      <li><a href="#">CONTACT</a></li>
     </ul>
-
   </nav>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
+  <!-- SLIDER -->
+  <div class="slider">
 
-    <div class="overlay"></div>
+    <div class="slides">
 
-    <div class="hero-content">
+      <!-- SLIDE 1 -->
+      <div class="slide"
+        style="background-image:url('https://raw.githubusercontent.com/MJ-shaikh/test/main/h1.jpg');">
 
-      <p>
-        To develop innovative, scalable, and cost-effective solutions for
-        Automation & Intelligent Machine guided Construction (AIMC)
-      </p>
+        <div class="slide-content">
+          <h2>Modern Highway Infrastructure</h2>
+          <p>
+            Developing world-class National Highway assets with advanced
+            monitoring and project management systems.
+          </p>
 
-      <h2>Hackathon 5.0</h2>
-
-      <div class="prizes">
-
-        <div class="prize-box">
-          <h3>1st Prize</h3>
-          <span>₹2.00 Lakhs</span>
+          <a href="#" class="btn">Explore More</a>
         </div>
-
-        <div class="prize-box">
-          <h3>2nd Prize</h3>
-          <span>₹1.00 Lakhs</span>
-        </div>
-
-        <div class="prize-box">
-          <h3>3rd Prize</h3>
-          <span>₹0.50 Lakhs</span>
-        </div>
-
       </div>
 
-      <a href="#" class="btn">For Result Click Here</a>
+      <!-- SLIDE 2 -->
+      <div class="slide"
+        style="background-image:url('https://raw.githubusercontent.com/MJ-shaikh/test/main/h2.jpg');">
+
+        <div class="slide-content">
+          <h2>Efficient Project Monitoring</h2>
+          <p>
+            Smart solutions for highway operations, maintenance,
+            automation, and infrastructure management.
+          </p>
+
+          <a href="#" class="btn">Our Services</a>
+        </div>
+      </div>
+
+      <!-- SLIDE 3 -->
+      <div class="slide"
+        style="background-image:url('https://raw.githubusercontent.com/MJ-shaikh/test/main/h3.jpg');">
+
+        <div class="slide-content">
+          <h2>Building Future Connectivity</h2>
+          <p>
+            Strengthening India's transportation network with innovation,
+            technology, and sustainable development.
+          </p>
+
+          <a href="#" class="btn">View Projects</a>
+        </div>
+      </div>
 
     </div>
-
-  </section>
-
-  <!-- NEWS BAR -->
-  <div class="news-bar">
-
-    <marquee scrollamount="6">
-      What's New : Asset Monetisation FY 2025-26 |
-      Road Safety Awareness |
-      Implementation of Advanced Traffic Management System |
-      Intelligent Highway Monitoring |
-      FASTag Compliance Updates
-    </marquee>
-
   </div>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 NATIONAL HIGHWAYS INVIT PROJECT MANAGERS PRIVATE LIMITED |
+    All Rights Reserved
+  </footer>
 
 </body>
 </html>
