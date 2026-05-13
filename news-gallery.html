@@ -52,7 +52,7 @@ color:#003366;
 font-weight:bold;
 }
 
-/* PAGE TITLE */
+/* TITLE */
 
 .page-title{
 background:#184a97;
@@ -83,11 +83,64 @@ object-fit:cover;
 border-radius:12px;
 box-shadow:0 5px 18px rgba(0,0,0,0.2);
 transition:0.3s;
-background:white;
+cursor:pointer;
 }
 
 .gallery img:hover{
 transform:scale(1.03);
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+display:none;
+position:fixed;
+z-index:9999;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:80%;
+border-radius:10px;
+}
+
+.close{
+position:absolute;
+top:20px;
+right:35px;
+color:white;
+font-size:45px;
+cursor:pointer;
+}
+
+.prev,
+.next{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+color:white;
+font-size:60px;
+font-weight:bold;
+cursor:pointer;
+padding:20px;
+user-select:none;
+}
+
+.prev{
+left:20px;
+}
+
+.next{
+right:20px;
 }
 
 /* FOOTER */
@@ -102,22 +155,6 @@ margin-top:60px;
 
 footer p{
 margin:10px 0;
-}
-
-/* MOBILE */
-
-@media(max-width:900px){
-
-.top-header{
-flex-direction:column;
-gap:20px;
-text-align:center;
-}
-
-.page-title h2{
-font-size:36px;
-}
-
 }
 
 </style>
@@ -150,7 +187,7 @@ PRIVATE LIMITED
 
 </header>
 
-<!-- PAGE TITLE -->
+<!-- TITLE -->
 
 <section class="page-title">
 
@@ -172,6 +209,20 @@ PRIVATE LIMITED
 
 </div>
 
+<!-- LIGHTBOX -->
+
+<div class="lightbox" id="lightbox">
+
+<span class="close" onclick="closeLightbox()">&times;</span>
+
+<span class="prev" onclick="changeSlide(-1)">&#10094;</span>
+
+<img id="lightbox-img">
+
+<span class="next" onclick="changeSlide(1)">&#10095;</span>
+
+</div>
+
 <!-- FOOTER -->
 
 <footer>
@@ -189,6 +240,62 @@ NEW DELHI - 110075
 </p>
 
 </footer>
+
+<!-- SCRIPT -->
+
+<script>
+
+const images = document.querySelectorAll('.gallery img');
+
+const lightbox = document.getElementById('lightbox');
+
+const lightboxImg = document.getElementById('lightbox-img');
+
+let currentIndex = 0;
+
+images.forEach((img, index) => {
+
+img.addEventListener('click', () => {
+
+currentIndex = index;
+
+showImage();
+
+lightbox.style.display = 'flex';
+
+});
+
+});
+
+function showImage(){
+
+lightboxImg.src = images[currentIndex].src;
+
+}
+
+function closeLightbox(){
+
+lightbox.style.display = 'none';
+
+}
+
+function changeSlide(direction){
+
+currentIndex += direction;
+
+if(currentIndex < 0){
+currentIndex = images.length - 1;
+}
+
+if(currentIndex >= images.length){
+currentIndex = 0;
+}
+
+showImage();
+
+}
+
+</script>
 
 </body>
 
