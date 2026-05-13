@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>News | NHIPMPL</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f5f5f5;
+}
+
+/* HEADER */
+
+.top-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+background:white;
+}
+
+.logo-section{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.logo-section img{
+width:90px;
+}
+
+.company-text h1{
+color:#0056b3;
+font-size:20px;
+line-height:1.2;
+}
+
+.company-text p{
+color:#003366;
+font-weight:bold;
+}
+
+/* MENU */
+
+nav ul{
+list-style:none;
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+nav ul li{
+position:relative;
+}
+
+nav ul li a{
+text-decoration:none;
+color:#111;
+font-weight:700;
+font-size:16px;
+padding:10px 14px;
+display:block;
+}
+
+.dropdown{
+display:none;
+position:absolute;
+top:40px;
+left:0;
+background:white;
+min-width:220px;
+box-shadow:0 5px 18px rgba(0,0,0,0.2);
+z-index:999;
+}
+
+.has-dropdown:hover .dropdown{
+display:block;
+}
+
+.dropdown a:hover{
+background:#184a97;
+color:white;
+}
+
+/* TITLE */
+
+.page-title{
+background:#184a97;
+color:white;
+text-align:center;
+padding:45px;
+}
+
+.page-title h2{
+font-size:50px;
+}
+
+/* SEARCH */
+
+.search-box{
+width:90%;
+margin:30px auto;
+}
+
+.search-box input{
+width:100%;
+padding:18px;
+border-radius:8px;
+border:1px solid #ccc;
+font-size:18px;
+}
+
+/* TABLE */
+
+.news-table{
+width:95%;
+margin:30px auto;
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+overflow:auto;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th,td{
+padding:20px;
+text-align:center;
+border-bottom:1px solid #ddd;
+}
+
+th{
+background:#f0f4ff;
+}
+
+.btn{
+background:#1d2f8a;
+color:white;
+padding:12px 20px;
+text-decoration:none;
+border-radius:5px;
+font-weight:bold;
+display:inline-block;
+}
+
+.btn:hover{
+background:#0056b3;
+}
+
+/* FOOTER */
+
+footer{
+background:#184a97;
+color:white;
+text-align:center;
+padding:40px 20px;
+margin-top:60px;
+}
+
+footer p{
+margin:10px 0;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="top-header">
+
+<div class="logo-section">
+
+<img src="https://raw.githubusercontent.com/MJ-shaikh/test/main/Logo.jpeg">
+
+<div class="company-text">
+
+<h1>
+NATIONAL HIGHWAYS INVIT <br>
+PROJECT MANAGERS <br>
+PRIVATE LIMITED
+</h1>
+
+<p>A wholly owned entity of NHAI</p>
+
+</div>
+
+</div>
+
+<nav>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li class="has-dropdown">
+
+<a href="#">Media ▼</a>
+
+<div class="dropdown">
+
+<a href="news.html">News</a>
+<a href="events.html">Events</a>
+
+</div>
+
+</li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<section class="page-title">
+
+<h2>News</h2>
+
+</section>
+
+<div class="search-box">
+
+<input type="text" placeholder="Enter your search">
+
+</div>
+
+<div class="news-table">
+
+<table>
+
+<tr>
+<th>News ID.</th>
+<th>News Name</th>
+<th>News Public Date</th>
+<th>News Resource</th>
+<th>News Photo</th>
+</tr>
+
+<tr>
+<td>001</td>
+<td>NHIPMPL Highway Monitoring</td>
+<td>13-05-2026</td>
+<td>Corporate Media</td>
+<td>
+<a href="#" class="btn">View Photo's</a>
+</td>
+</tr>
+
+</table>
+
+</div>
+
+<footer>
+
+<p>
+NHAI OLD BUILDING, G5 & G6,
+DWARKA SECTOR 10,
+NEW DELHI - 110075
+</p>
+
+<p>Email: info.nhipmpl@nhai.org</p>
+
+<p>
+© 2026 National Highways InvIT Project Managers Private Limited
+</p>
+
+</footer>
+
+</body>
+
+</html>
