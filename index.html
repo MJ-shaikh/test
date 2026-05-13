@@ -415,6 +415,27 @@ nav ul li a {
             font-size: 16px;
         }
 
+
+        .dropdown{
+display:none;
+position:absolute;
+top:40px;
+left:0;
+background:white;
+min-width:240px;
+box-shadow:0 5px 18px rgba(0,0,0,0.2);
+z-index:999;
+}
+
+.has-dropdown:hover > .dropdown{
+display:block;
+}
+
+nav ul li{
+position:relative;
+}
+
+/* ================= MOBILE ================= */
         /* ================= MOBILE ================= */
 
        @media(max-width:1000px){
@@ -739,7 +760,7 @@ nav ul li a {
 
 <!-- MEDIA -->
 
-<li class="dropdown-parent">
+<li class="has-dropdown">
     <a href="#">Media ▼</a>
 
     <div class="dropdown">
