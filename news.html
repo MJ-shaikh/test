@@ -74,22 +74,49 @@ padding:10px 14px;
 display:block;
 }
 
+/* DROPDOWN */
+
 .dropdown{
 display:none;
 position:absolute;
 top:40px;
 left:0;
 background:white;
-min-width:220px;
+min-width:240px;
 box-shadow:0 5px 18px rgba(0,0,0,0.2);
 z-index:999;
 }
 
-.has-dropdown:hover .dropdown{
+.has-dropdown:hover > .dropdown{
 display:block;
 }
 
 .dropdown a:hover{
+background:#184a97;
+color:white;
+}
+
+/* SUBMENU */
+
+.submenu-item{
+position:relative;
+}
+
+.submenu{
+display:none;
+position:absolute;
+left:100%;
+top:0;
+background:white;
+min-width:240px;
+box-shadow:0 5px 18px rgba(0,0,0,0.2);
+}
+
+.submenu-item:hover > .submenu{
+display:block;
+}
+
+.submenu a:hover{
 background:#184a97;
 color:white;
 }
@@ -149,6 +176,8 @@ th{
 background:#f0f4ff;
 }
 
+/* BUTTON */
+
 .btn{
 background:#1d2f8a;
 color:white;
@@ -177,11 +206,34 @@ footer p{
 margin:10px 0;
 }
 
+/* MOBILE */
+
+@media(max-width:900px){
+
+.top-header{
+flex-direction:column;
+gap:20px;
+text-align:center;
+}
+
+nav ul{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.page-title h2{
+font-size:36px;
+}
+
+}
+
 </style>
 
 </head>
 
 <body>
+
+<!-- HEADER -->
 
 <header class="top-header">
 
@@ -203,11 +255,134 @@ PRIVATE LIMITED
 
 </div>
 
+<!-- FULL MENU -->
+
 <nav>
 
 <ul>
 
 <li><a href="index.html">Home</a></li>
+
+<!-- ABOUT -->
+
+<li class="has-dropdown">
+
+<a href="#">About ▼</a>
+
+<div class="dropdown">
+
+<a href="about.html">About NHIPMPL</a>
+<a href="vision.html">Vision & Mission</a>
+<a href="directors.html">Board of Directors</a>
+<a href="leadership.html">Leadership Team</a>
+
+</div>
+
+</li>
+
+<!-- ASSETS -->
+
+<li class="has-dropdown">
+
+<a href="#">Assets ▼</a>
+
+<div class="dropdown">
+
+<div class="submenu-item">
+
+<a href="#">NHIT ▶</a>
+
+<div class="submenu">
+
+<div class="submenu-item">
+
+<a href="#">R1 ▶</a>
+
+<div class="submenu">
+
+<a href="Undvariya.html">Undvariya</a>
+<a href="Khemana.html">Khemana</a>
+<a href="Kognoli.html">Kognoli</a>
+<a href="Hattargi.html">Hattargi</a>
+
+</div>
+
+</div>
+
+<div class="submenu-item">
+
+<a href="#">R2 ▶</a>
+
+<div class="submenu">
+
+<a href="Kelapur.html">Kelapur</a>
+<a href="Raibha.html">Raibha</a>
+<a href="Raksha.html">Raksha</a>
+
+</div>
+
+</div>
+
+<div class="submenu-item">
+
+<a href="#">R3 ▶</a>
+
+<div class="submenu">
+
+<a href="Usaka.html">Usaka</a>
+
+</div>
+
+</div>
+
+<div class="submenu-item">
+
+<a href="#">R4 ▶</a>
+
+<div class="submenu">
+
+<a href="Balibhasa.html">Balibhasa</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</li>
+
+<!-- PROCUREMENT -->
+
+<li class="has-dropdown">
+
+<a href="#">Procurement ▼</a>
+
+<div class="dropdown">
+
+<div class="submenu-item">
+
+<a href="#">Tenders ▶</a>
+
+<div class="submenu">
+
+<a href="active-tenders.html">Active Tenders</a>
+<a href="archived-tenders.html">Archived Tenders</a>
+
+</div>
+
+</div>
+
+<a href="#">Procurement SOP</a>
+
+</div>
+
+</li>
+
+<!-- MEDIA -->
 
 <li class="has-dropdown">
 
@@ -222,11 +397,32 @@ PRIVATE LIMITED
 
 </li>
 
+<!-- RESOURCE -->
+
+<li class="has-dropdown">
+
+<a href="#">Resource Center ▼</a>
+
+<div class="dropdown">
+
+<a href="#">Policies</a>
+<a href="#">Downloads</a>
+<a href="#">Circulars</a>
+<a href="#">Project Reports</a>
+
+</div>
+
+</li>
+
+<li><a href="#">Career</a></li>
+
 </ul>
 
 </nav>
 
 </header>
+
+<!-- PAGE TITLE -->
 
 <section class="page-title">
 
@@ -234,37 +430,53 @@ PRIVATE LIMITED
 
 </section>
 
+<!-- SEARCH -->
+
 <div class="search-box">
 
 <input type="text" placeholder="Enter your search">
 
 </div>
 
+<!-- NEWS TABLE -->
+
 <div class="news-table">
 
 <table>
 
 <tr>
+
 <th>News ID.</th>
 <th>News Name</th>
 <th>News Public Date</th>
 <th>News Resource</th>
 <th>News Photo</th>
+
 </tr>
 
 <tr>
+
 <td>001</td>
+
 <td>NHIPMPL Highway Monitoring</td>
+
 <td>13-05-2026</td>
+
 <td>Corporate Media</td>
+
 <td>
+
 <a href="#" class="btn">View Photo's</a>
+
 </td>
+
 </tr>
 
 </table>
 
 </div>
+
+<!-- FOOTER -->
 
 <footer>
 
