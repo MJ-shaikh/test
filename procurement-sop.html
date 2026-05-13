@@ -21,7 +21,7 @@ body{
 background:#f5f5f5;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 .top-header{
 display:flex;
@@ -37,29 +37,7 @@ display:flex;
 align-items:center;
 gap:20px;
 }
-.top-menu{
-margin-left:auto;
-display:flex;
-justify-content:flex-end;
-align-items:center;
-}
 
-.top-menu ul{
-list-style:none;
-display:flex;
-}
-
-.top-menu ul li a{
-text-decoration:none;
-font-size:18px;
-font-weight:bold;
-color:#111;
-padding:10px 16px;
-}
-
-.top-menu ul li a:hover{
-color:#184a97;
-}
 .logo-section img{
 width:90px;
 }
@@ -75,7 +53,40 @@ color:#003366;
 font-weight:bold;
 }
 
-/* TITLE */
+/* RIGHT MENU */
+
+.top-menu{
+margin-left:auto;
+display:flex;
+justify-content:flex-end;
+align-items:center;
+}
+
+.top-menu ul{
+list-style:none;
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.top-menu ul li{
+list-style:none;
+}
+
+.top-menu ul li a{
+text-decoration:none;
+font-size:18px;
+font-weight:bold;
+color:#111;
+padding:10px 16px;
+transition:0.3s;
+}
+
+.top-menu ul li a:hover{
+color:#184a97;
+}
+
+/* ================= TITLE ================= */
 
 .page-title{
 background:#184a97;
@@ -88,7 +99,7 @@ padding:45px;
 font-size:50px;
 }
 
-/* CONTENT */
+/* ================= CONTENT ================= */
 
 .content-box{
 width:90%;
@@ -105,7 +116,7 @@ font-size:42px;
 color:#333;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
 background:#184a97;
@@ -117,6 +128,7 @@ margin-top:60px;
 
 footer p{
 margin:10px 0;
+font-size:18px;
 }
 
 </style>
@@ -124,6 +136,8 @@ margin:10px 0;
 </head>
 
 <body>
+
+<!-- HEADER -->
 
 <header class="top-header">
 
@@ -143,6 +157,8 @@ PRIVATE LIMITED
 
 </div>
 
+</div>
+
 <nav class="top-menu">
 
 <ul>
@@ -155,17 +171,23 @@ PRIVATE LIMITED
 
 </header>
 
+<!-- TITLE -->
+
 <section class="page-title">
 
 <h2>Procurement SOP</h2>
 
 </section>
 
+<!-- CONTENT -->
+
 <div class="content-box">
 
 <h3>Work in Progress</h3>
 
 </div>
+
+<!-- FOOTER -->
 
 <footer>
 
