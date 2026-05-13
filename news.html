@@ -21,7 +21,7 @@ body{
 background:#f5f5f5;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 .top-header{
 display:flex;
@@ -29,6 +29,7 @@ justify-content:space-between;
 align-items:center;
 padding:20px 40px;
 background:white;
+width:100%;
 }
 
 .logo-section{
@@ -52,68 +53,84 @@ color:#003366;
 font-weight:bold;
 }
 
-/* MENU */
+/* ================= PREMIUM MENU ================= */
+
+nav{
+margin-left:auto;
+}
 
 nav ul{
 list-style:none;
 display:flex;
 align-items:center;
-gap:20px;
+gap:8px;
+margin:0;
+padding:0;
+flex-wrap:nowrap;
 }
 
 nav ul li{
 position:relative;
+display:inline-block;
 }
 
-nav ul li a{cursor:pointer;
+nav ul li a{
 text-decoration:none;
 color:#111;
-font-weight:700;
-font-size:16px;
-padding:10px 14px;
+padding:14px 18px;
 display:block;
+font-size:15px;
+font-weight:600;
+transition:0.3s;
+border-radius:6px;
+white-space:nowrap;
+cursor:pointer;
 }
 
-/* DROPDOWN */
+nav ul li a:hover{
+color:#0056b3;
+background:rgba(0,86,179,0.08);
+}
+
+/* ================= DROPDOWN ================= */
 
 .dropdown{
 display:none;
 position:absolute;
-top:100%;
+top:45px;
 left:0;
 background:white;
-min-width:240px;
-box-shadow:0 8px 22px rgba(0,0,0,0.15);
-border-radius:8px;
-padding:6px 0;
+min-width:270px;
+border-radius:10px;
+overflow:visible;
+box-shadow:0 10px 30px rgba(0,0,0,0.18);
 z-index:9999;
-margin-top:0;
+animation:dropdownFade 0.25s ease;
 }
 
-.has-dropdown{
-position:relative;
-padding-bottom:8px;
+.dropdown a{
+padding:15px 18px;
+border-bottom:1px solid #f2f2f2;
+color:#222;
+font-size:15px;
+font-weight:500;
+background:white;
+transition:0.3s;
+display:block;
+text-decoration:none;
+}
+
+.dropdown a:hover{
+background:#184a97;
+color:white;
+padding-left:24px;
 }
 
 .has-dropdown:hover > .dropdown{
 display:block;
 }
 
-.dropdown a{
-display:block;
-padding:12px 18px;
-text-decoration:none;
-color:#111;
-transition:0.3s;
-white-space:nowrap;
-}
-
-.dropdown a:hover{
-background:#184a97;
-color:white;
-}
-
-/* SUBMENU */
+/* ================= SUBMENU ================= */
 
 .submenu-item{
 position:relative;
@@ -123,33 +140,57 @@ position:relative;
 display:none;
 position:absolute;
 top:0;
-left:100%;
+left:98%;
 background:white;
-min-width:240px;
-box-shadow:0 8px 22px rgba(0,0,0,0.15);
-border-radius:8px;
-padding:6px 0;
+min-width:250px;
+border-radius:10px;
+overflow:visible;
+box-shadow:0 10px 30px rgba(0,0,0,0.18);
+animation:dropdownFade 0.25s ease;
 z-index:9999;
+}
+
+.submenu a{
+padding:15px 18px;
+border-bottom:1px solid #f2f2f2;
+background:white;
+color:#222;
+transition:0.3s;
+display:block;
+text-decoration:none;
+}
+
+.submenu a:hover{
+background:#184a97;
+color:white;
+padding-left:24px;
 }
 
 .submenu-item:hover > .submenu{
 display:block;
 }
 
-.submenu a{
-display:block;
-padding:12px 18px;
-text-decoration:none;
-color:#111;
-transition:0.3s;
-white-space:nowrap;
+.has-dropdown{
+position:relative;
+padding-bottom:10px;
 }
 
-.submenu a:hover{
-background:#184a97;
-color:white;
+/* ================= MENU ANIMATION ================= */
+
+@keyframes dropdownFade{
+
+from{
+opacity:0;
+transform:translateY(10px);
 }
-/* TITLE */
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* ================= PAGE TITLE ================= */
 
 .page-title{
 background:#184a97;
@@ -159,14 +200,15 @@ padding:45px;
 }
 
 .page-title h2{
-font-size:50px;
+font-size:52px;
+font-weight:700;
 }
 
-/* SEARCH */
+/* ================= SEARCH ================= */
 
 .search-box{
 width:90%;
-margin:30px auto;
+margin:35px auto;
 }
 
 .search-box input{
@@ -177,7 +219,7 @@ border:1px solid #ccc;
 font-size:18px;
 }
 
-/* TABLE */
+/* ================= TABLE ================= */
 
 .news-table{
 width:95%;
@@ -202,9 +244,14 @@ border-bottom:1px solid #ddd;
 
 th{
 background:#f0f4ff;
+font-size:16px;
 }
 
-/* BUTTON */
+td{
+font-size:15px;
+}
+
+/* ================= BUTTON ================= */
 
 .btn{
 background:#1d2f8a;
@@ -214,13 +261,14 @@ text-decoration:none;
 border-radius:5px;
 font-weight:bold;
 display:inline-block;
+transition:0.3s;
 }
 
 .btn:hover{
 background:#0056b3;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
 background:#184a97;
@@ -232,21 +280,49 @@ margin-top:60px;
 
 footer p{
 margin:10px 0;
+line-height:1.7;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media(max-width:900px){
 
 .top-header{
-flex-direction:column;
-gap:20px;
-text-align:center;
+display:flex;
+flex-direction:row;
+justify-content:space-between;
+align-items:center;
+width:100%;
+}
+
+.logo-section{
+display:flex;
+align-items:center;
+}
+
+nav{
+margin-left:auto;
 }
 
 nav ul{
-flex-wrap:wrap;
-justify-content:center;
+display:flex;
+flex-direction:row !important;
+align-items:center;
+justify-content:flex-end;
+flex-wrap:nowrap !important;
+overflow-x:auto;
+gap:6px;
+padding-bottom:4px;
+}
+
+nav ul li{
+display:inline-block;
+}
+
+nav ul li a{
+cursor:pointer;
+padding:10px 10px;
+font-size:14px;
 }
 
 .page-title h2{
@@ -261,9 +337,13 @@ font-size:36px;
 
 <body>
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 
-<header class="top-header">
+<header>
+
+<div class="top-header">
+
+<!-- LOGO -->
 
 <div class="logo-section">
 
@@ -272,8 +352,12 @@ font-size:36px;
 <div class="company-text">
 
 <h1>
-NATIONAL HIGHWAYS INVIT <br>
-PROJECT MANAGERS <br>
+NATIONAL HIGHWAYS INVIT<br>
+
+<span style="display:block; text-align:center;">
+PROJECT MANAGERS
+</span>
+
 PRIVATE LIMITED
 </h1>
 
@@ -283,7 +367,7 @@ PRIVATE LIMITED
 
 </div>
 
-<!-- FULL MENU -->
+<!-- ================= MENU ================= -->
 
 <nav>
 
@@ -300,8 +384,11 @@ PRIVATE LIMITED
 <div class="dropdown">
 
 <a href="about.html">About NHIPMPL</a>
+
 <a href="vision.html">Vision & Mission</a>
+
 <a href="directors.html">Board of Directors</a>
+
 <a href="leadership.html">Leadership Team</a>
 
 </div>
@@ -316,11 +403,15 @@ PRIVATE LIMITED
 
 <div class="dropdown">
 
+<!-- NHIT -->
+
 <div class="submenu-item">
 
 <a href="#">NHIT ▶</a>
 
 <div class="submenu">
+
+<!-- R1 -->
 
 <div class="submenu-item">
 
@@ -332,10 +423,16 @@ PRIVATE LIMITED
 <a href="Khemana.html">Khemana</a>
 <a href="Kognoli.html">Kognoli</a>
 <a href="Hattargi.html">Hattargi</a>
+<a href="Pullur.html">Pullur</a>
+<a href="Dhaneshwar.html">Dhaneshwar</a>
+<a href="Bassi.html">Bassi</a>
+<a href="Aroli.html">Aroli</a>
 
 </div>
 
 </div>
+
+<!-- R2 -->
 
 <div class="submenu-item">
 
@@ -346,10 +443,13 @@ PRIVATE LIMITED
 <a href="Kelapur.html">Kelapur</a>
 <a href="Raibha.html">Raibha</a>
 <a href="Raksha.html">Raksha</a>
+<a href="Daroda.html">Daroda</a>
 
 </div>
 
 </div>
+
+<!-- R3 -->
 
 <div class="submenu-item">
 
@@ -358,10 +458,14 @@ PRIVATE LIMITED
 <div class="submenu">
 
 <a href="Usaka.html">Usaka</a>
+<a href="Odaki Pipkar.html">Odaki Pipkar</a>
+<a href="Kherswani.html">Kherswani</a>
 
 </div>
 
 </div>
+
+<!-- R4 -->
 
 <div class="submenu-item">
 
@@ -370,10 +474,42 @@ PRIVATE LIMITED
 <div class="submenu">
 
 <a href="Balibhasa.html">Balibhasa</a>
+<a href="Chhapar.html">Chhapar</a>
+<a href="Bhadarabad.html">Bhadarabad</a>
 
 </div>
 
 </div>
+
+<!-- R5 -->
+
+<div class="submenu-item">
+
+<a href="#">R5 ▶</a>
+
+<div class="submenu">
+
+<a href="#">Kurankhed</a>
+<a href="#">Taroda Kasba</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- RIIT -->
+
+<div class="submenu-item">
+
+<a href="#">RIIT ▶</a>
+
+<div class="submenu">
+
+<a href="future-assets.html">Future Assets</a>
+<a href="#">Upcoming Corridors</a>
 
 </div>
 
@@ -404,7 +540,7 @@ PRIVATE LIMITED
 
 </div>
 
-<a href="#">Procurement SOP</a>
+<a href="procurement-sop.html">Procurement SOP</a>
 
 </div>
 
@@ -441,15 +577,19 @@ Internal Complaints Committee
 
 </li>
 
-<li><a href="#">Career</a></li>
+<li>
+<a href="career.html">Career</a>
+</li>
 
 </ul>
 
 </nav>
 
+</div>
+
 </header>
 
-<!-- PAGE TITLE -->
+<!-- ================= PAGE TITLE ================= -->
 
 <section class="page-title">
 
@@ -457,7 +597,7 @@ Internal Complaints Committee
 
 </section>
 
-<!-- SEARCH -->
+<!-- ================= SEARCH ================= -->
 
 <div class="search-box">
 
@@ -465,7 +605,7 @@ Internal Complaints Committee
 
 </div>
 
-<!-- NEWS TABLE -->
+<!-- ================= NEWS TABLE ================= -->
 
 <div class="news-table">
 
@@ -493,7 +633,9 @@ Internal Complaints Committee
 
 <td>
 
-<a href="news-gallery.html" class="btn">View Photo's</a>
+<a href="news-gallery.html" class="btn">
+View Photo's
+</a>
 
 </td>
 
@@ -503,7 +645,7 @@ Internal Complaints Committee
 
 </div>
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
