@@ -21,7 +21,7 @@ body{
 background:#f5f5f5;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 .top-header{
 display:flex;
@@ -52,7 +52,7 @@ color:#003366;
 font-weight:bold;
 }
 
-/* MENU */
+/* ================= MENU ================= */
 
 nav ul{
 list-style:none;
@@ -72,7 +72,7 @@ color:#111;
 font-size:16px;
 }
 
-/* DROPDOWN */
+/* ================= DROPDOWN ================= */
 
 .dropdown{
 display:none;
@@ -100,7 +100,7 @@ color:white;
 display:block;
 }
 
-/* PAGE TITLE */
+/* ================= PAGE TITLE ================= */
 
 .page-title{
 background:#184a97;
@@ -113,25 +113,25 @@ padding:45px;
 font-size:48px;
 }
 
-/* CONTENT */
+/* ================= CONTENT ================= */
 
 .content-section{
 width:90%;
 margin:40px auto;
 background:white;
 padding:40px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
 text-align:center;
 }
 
 .content-section img{
 width:100%;
-max-width:700px;
-border-radius:8px;
+max-width:900px;
+border-radius:10px;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
 background:#184a97;
@@ -145,7 +145,7 @@ footer p{
 margin:10px 0;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media(max-width:900px){
 
@@ -157,6 +157,7 @@ text-align:center;
 
 nav ul{
 flex-direction:column;
+gap:15px;
 }
 
 .page-title h2{
@@ -171,7 +172,7 @@ font-size:36px;
 
 <body>
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 
 <header class="top-header">
 
@@ -197,11 +198,26 @@ PRIVATE LIMITED
 
 <ul>
 
-<li><a href="index.html">Home</a></li>
+<li>
+<a href="index.html">Home</a>
+</li>
 
-<li><a href="about.html">About</a></li>
+<li>
+<a href="about.html">About</a>
+</li>
 
-<li><a href="projects.html">Projects</a></li>
+<li class="has-dropdown">
+
+<a href="#">Projects ▼</a>
+
+<div class="dropdown">
+
+<a href="nhit.html">NHIT</a>
+<a href="riit.html">RIIT</a>
+
+</div>
+
+</li>
 
 <li class="has-dropdown">
 
@@ -211,7 +227,9 @@ PRIVATE LIMITED
 
 <a href="active-tenders.html">Active Tenders</a>
 
-<a href="archived-tenders.html">Archived Tenders</a>
+<a href="archived-tenders.html">
+Archived Tenders
+</a>
 
 </div>
 
@@ -245,7 +263,9 @@ Internal Complaints Committee
 
 </li>
 
-<li><a href="career.html">Career</a></li>
+<li>
+<a href="career.html">Career</a>
+</li>
 
 </ul>
 
@@ -253,15 +273,17 @@ Internal Complaints Committee
 
 </header>
 
-<!-- PAGE TITLE -->
+<!-- ================= PAGE TITLE ================= -->
 
 <section class="page-title">
 
-<h2>Internal Complaints Committee</h2>
+<h2>
+Internal Complaints Committee
+</h2>
 
 </section>
 
-<!-- CONTENT -->
+<!-- ================= CONTENT ================= -->
 
 <section class="content-section">
 
@@ -269,7 +291,7 @@ Internal Complaints Committee
 
 </section>
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -279,7 +301,9 @@ DWARKA SECTOR 10,
 NEW DELHI - 110075
 </p>
 
-<p>Email: info.nhipmpl@nhai.org</p>
+<p>
+Email: info.nhipmpl@nhai.org
+</p>
 
 <p>
 © 2026 National Highways InvIT Project Managers Private Limited
