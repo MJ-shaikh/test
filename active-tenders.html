@@ -1,4 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Active Tenders | NHIPMPL</title>
+
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f5f5f5;
+}
+
+/* ================= HEADER ================= */
+
+.top-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+background:white;
+width:100%;
+}
+
+.logo-section{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.logo-section img{
+width:90px;
+}
+
+.company-text h1{
+color:#0056b3;
+font-size:20px;
+line-height:1.2;
+}
+
+.company-text p{
+color:#003366;
+font-weight:bold;
+}
 
 /* ================= PREMIUM MENU ================= */
 
@@ -137,6 +190,90 @@ transform:translateY(0);
 }
 }
 
+/* ================= PAGE TITLE ================= */
+
+.page-title{
+background:#184a97;
+color:white;
+text-align:center;
+padding:45px;
+}
+
+.page-title h2{
+font-size:52px;
+font-weight:700;
+}
+
+/* ================= SEARCH ================= */
+
+.search-box{
+width:90%;
+margin:35px auto;
+}
+
+.search-box input{
+width:100%;
+padding:18px;
+border-radius:8px;
+border:1px solid #ccc;
+font-size:18px;
+}
+
+/* ================= TENDER CARD ================= */
+
+.tender-card{
+width:90%;
+margin:30px auto;
+background:white;
+border-radius:12px;
+padding:40px;
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+display:grid;
+grid-template-columns:1.5fr 1fr 1fr;
+gap:40px;
+}
+
+.tender-card h3{
+margin-bottom:20px;
+color:#222;
+}
+
+.tender-card p{
+line-height:1.8;
+color:#444;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+background:#1d2f8a;
+color:white;
+padding:14px 25px;
+text-decoration:none;
+border-radius:5px;
+font-weight:bold;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#0056b3;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+background:#184a97;
+color:white;
+text-align:center;
+padding:40px 20px;
+margin-top:60px;
+}
+
+footer p{
+margin:10px 0;
+line-height:1.7;
+}
+
 /* ================= MOBILE ================= */
 
 @media(max-width:900px){
@@ -188,4 +325,318 @@ grid-template-columns:1fr;
 }
 
 }
+
 </style>
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="top-header">
+
+<!-- LOGO -->
+
+<div class="logo-section">
+
+<img src="https://raw.githubusercontent.com/MJ-shaikh/test/main/Logo.jpeg">
+
+<div class="company-text">
+
+<h1>
+NATIONAL HIGHWAYS INVIT<br>
+
+<span style="display:block; text-align:center;">
+PROJECT MANAGERS
+</span>
+
+PRIVATE LIMITED
+</h1>
+
+<p>A wholly owned entity of NHAI</p>
+
+</div>
+
+</div>
+
+<!-- ================= MENU ================= -->
+
+<nav>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<!-- ABOUT -->
+
+<li class="has-dropdown">
+
+<a href="#">About ▼</a>
+
+<div class="dropdown">
+
+<a href="about.html">About NHIPMPL</a>
+<a href="vision.html">Vision & Mission</a>
+<a href="directors.html">Board of Directors</a>
+<a href="leadership.html">Leadership Team</a>
+
+</div>
+
+</li>
+
+<!-- ASSETS -->
+
+<li class="has-dropdown">
+
+<a href="#">Assets ▼</a>
+
+<div class="dropdown">
+
+<div class="submenu-item">
+
+<a href="#">NHIT ▶</a>
+
+<div class="submenu">
+
+<div class="submenu-item">
+
+<a href="#">R1 ▶</a>
+
+<div class="submenu">
+
+<a href="Undvariya.html">Undvariya</a>
+<a href="Khemana.html">Khemana</a>
+<a href="Kognoli.html">Kognoli</a>
+<a href="Hattargi.html">Hattargi</a>
+
+</div>
+
+</div>
+
+<div class="submenu-item">
+
+<a href="#">R2 ▶</a>
+
+<div class="submenu">
+
+<a href="Kelapur.html">Kelapur</a>
+<a href="Raibha.html">Raibha</a>
+<a href="Raksha.html">Raksha</a>
+
+</div>
+
+</div>
+
+<div class="submenu-item">
+
+<a href="#">R3 ▶</a>
+
+<div class="submenu">
+
+<a href="Usaka.html">Usaka</a>
+
+</div>
+
+</div>
+
+<div class="submenu-item">
+
+<a href="#">R4 ▶</a>
+
+<div class="submenu">
+
+<a href="Balibhasa.html">Balibhasa</a>
+
+</div>
+
+</div>
+
+<div class="submenu-item">
+
+<a href="#">R5 ▶</a>
+
+<div class="submenu">
+
+<a href="#">Kurankhed</a>
+<a href="#">Taroda Kasba</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="submenu-item">
+
+<a href="#">RIIT ▶</a>
+
+<div class="submenu">
+
+<a href="future-assets.html">Future Assets</a>
+<a href="#">Upcoming Corridors</a>
+
+</div>
+
+</div>
+
+</div>
+
+</li>
+
+<!-- PROCUREMENT -->
+
+<li class="has-dropdown">
+
+<a href="#">Procurement ▼</a>
+
+<div class="dropdown">
+
+<div class="submenu-item">
+
+<a href="#">Tenders ▶</a>
+
+<div class="submenu">
+
+<a href="active-tenders.html">Active Tenders</a>
+<a href="archived-tenders.html">Archived Tenders</a>
+
+</div>
+
+</div>
+
+<a href="procurement-sop.html">Procurement SOP</a>
+
+</div>
+
+</li>
+
+<!-- MEDIA -->
+
+<li class="has-dropdown">
+
+<a href="#">Media ▼</a>
+
+<div class="dropdown">
+
+<a href="news.html">News</a>
+<a href="events.html">Events</a>
+
+</div>
+
+</li>
+
+<!-- RESOURCE CENTER -->
+
+<li class="has-dropdown">
+
+<a href="#">Resource Center ▼</a>
+
+<div class="dropdown">
+
+<a href="internal-complaints.html">
+Internal Complaints Committee
+</a>
+
+</div>
+
+</li>
+
+<li>
+<a href="career.html">Career</a>
+</li>
+
+</ul>
+
+</nav>
+
+</div>
+
+</header>
+
+<!-- ================= PAGE TITLE ================= -->
+
+<section class="page-title">
+
+<h2>Active Tenders</h2>
+
+</section>
+
+<!-- ================= SEARCH ================= -->
+
+<div class="search-box">
+
+<input type="text" placeholder="Enter your search">
+
+</div>
+
+<!-- ================= TENDER CARD ================= -->
+
+<div class="tender-card">
+
+<div>
+
+<h3>RFP Name</h3>
+
+<p>
+Vendor for Supply, Installation,
+Fixing of Office Infrastructure,
+Wooden Furniture and Electrical Works
+</p>
+
+<a href="https://raw.githubusercontent.com/MJ-shaikh/test/main/RFP_Document.docx.docx"
+download
+class="btn">
+
+Download RFP
+
+</a>
+
+</div>
+
+<div>
+
+<h3>Tender No</h3>
+
+<p>Date Published</p>
+
+<p>24-11-2025 | 10:00 AM</p>
+
+</div>
+
+<div>
+
+<h3>Date</h3>
+
+<p>Bid Submission End Date</p>
+
+<p>03-12-2025 | 06:00 PM</p>
+
+</div>
+
+</div>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+1st Floor, Asia Bhawan, Road No. 205,
+Sector-9, Dwarka, New Delhi-110077
+</p>
+
+<p>Email: info.nhipmpl@nhai.org</p>
+
+<p>
+© 2026 National Highways InvIT Project Managers Private Limited
+</p>
+
+</footer>
+
+</body>
+
+</html>
