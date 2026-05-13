@@ -79,12 +79,14 @@ display:block;
 .dropdown{
 display:none;
 position:absolute;
-top:45px;
+top:42px;
 left:0;
 background:white;
 min-width:240px;
 box-shadow:0 5px 18px rgba(0,0,0,0.2);
-z-index:999;
+border-radius:8px;
+padding-top:5px;
+z-index:9999;
 }
 
 .has-dropdown:hover > .dropdown{
@@ -105,11 +107,14 @@ position:relative;
 .submenu{
 display:none;
 position:absolute;
-left:98%;
-top:0;
+left:100%;
+top:-2px;
 background:white;
 min-width:240px;
 box-shadow:0 5px 18px rgba(0,0,0,0.2);
+border-radius:8px;
+padding-top:5px;
+z-index:9999;
 }
 
 .submenu-item:hover > .submenu{
