@@ -11,108 +11,128 @@
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
 body{
-    background:#f5f5f5;
+background:#f5f5f5;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 .top-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 40px;
-    background:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+background:white;
+width:100%;
 }
 
 .logo-section{
-    display:flex;
-    align-items:center;
-    gap:20px;
+display:flex;
+align-items:center;
+gap:20px;
 }
 
 .logo-section img{
-    width:90px;
+width:90px;
 }
 
 .company-text h1{
-    color:#0056b3;
-    font-size:20px;
-    line-height:1.2;
+color:#0056b3;
+font-size:20px;
+line-height:1.2;
 }
 
 .company-text p{
-    color:#003366;
-    font-weight:bold;
+color:#003366;
+font-weight:bold;
 }
 
-/* MENU */
+/* ================= PREMIUM MENU ================= */
+
+nav{
+margin-left:auto;
+}
 
 nav ul{
-    list-style:none;
-    display:flex;
-    align-items:center;
-    gap:20px;
+list-style:none;
+display:flex;
+align-items:center;
+gap:8px;
+margin:0;
+padding:0;
+flex-wrap:nowrap;
 }
 
 nav ul li{
-    position:relative;
+position:relative;
+display:inline-block;
 }
 
 nav ul li a{
-    text-decoration:none;
-    color:#111;
-    font-weight:700;
-    font-size:16px;
-    padding:10px 14px;
-    display:block;
+text-decoration:none;
+color:#111;
+padding:14px 18px;
+display:block;
+font-size:15px;
+font-weight:600;
+transition:0.3s;
+border-radius:6px;
+white-space:nowrap;
+cursor:pointer;
+}
+
+nav ul li a:hover{
+color:#0056b3;
+background:rgba(0,86,179,0.08);
 }
 
 /* ================= DROPDOWN ================= */
 
 .has-dropdown{
 position:relative;
-padding-bottom:12px;
+padding-bottom:10px;
 }
 
 .dropdown{
 display:none;
 position:absolute;
-top:100%;
+top:45px;
 left:0;
 background:white;
-min-width:250px;
+min-width:270px;
 border-radius:10px;
-padding:6px 0;
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
+overflow:visible;
+box-shadow:0 10px 30px rgba(0,0,0,0.18);
 z-index:9999;
+animation:dropdownFade 0.25s ease;
 }
-
-.has-dropdown:hover > .dropdown{
-display:block;
-}
-
-/* DROPDOWN LINKS */
 
 .dropdown a{
-display:block;
-padding:13px 18px;
-text-decoration:none;
-color:#111;
+padding:15px 18px;
+border-bottom:1px solid #f2f2f2;
+color:#222;
 font-size:15px;
+font-weight:500;
+background:white;
 transition:0.3s;
-white-space:nowrap;
+display:block;
+text-decoration:none;
 }
 
 .dropdown a:hover{
 background:#184a97;
 color:white;
+padding-left:24px;
+}
+
+.has-dropdown:hover > .dropdown{
+display:block;
 }
 
 /* ================= SUBMENU ================= */
@@ -125,140 +145,185 @@ position:relative;
 display:none;
 position:absolute;
 top:0;
-left:100%;
+left:98%;
 background:white;
 min-width:250px;
 border-radius:10px;
-padding:6px 0;
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
+overflow:visible;
+box-shadow:0 10px 30px rgba(0,0,0,0.18);
+animation:dropdownFade 0.25s ease;
 z-index:9999;
+}
+
+.submenu a{
+padding:15px 18px;
+border-bottom:1px solid #f2f2f2;
+background:white;
+color:#222;
+transition:0.3s;
+display:block;
+text-decoration:none;
+}
+
+.submenu a:hover{
+background:#184a97;
+color:white;
+padding-left:24px;
 }
 
 .submenu-item:hover > .submenu{
 display:block;
 }
 
-/* SUBMENU LINKS */
+/* ================= MENU ANIMATION ================= */
 
-.submenu a{
-display:block;
-padding:13px 18px;
-text-decoration:none;
-color:#111;
-font-size:15px;
-transition:0.3s;
-white-space:nowrap;
+@keyframes dropdownFade{
+
+from{
+opacity:0;
+transform:translateY(10px);
 }
 
-.submenu a:hover{
-background:#184a97;
-color:white;
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
-/* TITLE */
+/* ================= PAGE TITLE ================= */
 
 .page-title{
-    background:#184a97;
-    color:white;
-    text-align:center;
-    padding:45px;
+background:#184a97;
+color:white;
+text-align:center;
+padding:45px;
 }
 
 .page-title h2{
-    font-size:50px;
+font-size:52px;
+font-weight:700;
 }
 
-/* SEARCH */
+/* ================= SEARCH ================= */
 
 .search-box{
-    width:90%;
-    margin:30px auto;
+width:90%;
+margin:35px auto;
 }
 
 .search-box input{
-    width:100%;
-    padding:18px;
-    border-radius:8px;
-    border:1px solid #ccc;
-    font-size:18px;
+width:100%;
+padding:18px;
+border-radius:8px;
+border:1px solid #ccc;
+font-size:18px;
 }
 
-/* TENDER CARD */
+/* ================= TENDER CARD ================= */
 
 .tender-card{
-    width:90%;
-    margin:30px auto;
-    background:white;
-    border-radius:12px;
-    padding:40px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.15);
-
-    display:grid;
-    grid-template-columns:1.5fr 1fr 1fr;
-    gap:40px;
+width:90%;
+margin:30px auto;
+background:white;
+border-radius:12px;
+padding:40px;
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+display:grid;
+grid-template-columns:1.5fr 1fr 1fr;
+gap:40px;
 }
 
 .tender-card h3{
-    margin-bottom:20px;
-    color:#222;
+margin-bottom:20px;
+color:#222;
 }
 
 .tender-card p{
-    line-height:1.8;
-    color:#444;
+line-height:1.8;
+color:#444;
 }
 
 .btn{
-    display:inline-block;
-    margin-top:20px;
-    background:#1d2f8a;
-    color:white;
-    padding:14px 25px;
-    text-decoration:none;
-    border-radius:5px;
-    font-weight:bold;
+display:inline-block;
+margin-top:20px;
+background:#1d2f8a;
+color:white;
+padding:14px 25px;
+text-decoration:none;
+border-radius:5px;
+font-weight:bold;
+transition:0.3s;
 }
 
 .btn:hover{
-    background:#0056b3;
+background:#0056b3;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
-    background:#184a97;
-    color:white;
-    text-align:center;
-    padding:40px 20px;
-    margin-top:60px;
+background:#184a97;
+color:white;
+text-align:center;
+padding:40px 20px;
+margin-top:60px;
 }
 
 footer p{
-    margin:10px 0;
+margin:10px 0;
+line-height:1.7;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media(max-width:900px){
 
-    .tender-card{
-        grid-template-columns:1fr;
-    }
+.top-header{
+display:flex;
+flex-direction:row;
+justify-content:space-between;
+align-items:center;
+width:100%;
+}
 
-    .top-header{
-        flex-direction:column;
-        gap:20px;
-        text-align:center;
-    }
+.logo-section{
+display:flex;
+align-items:center;
+}
 
-    nav ul{
-        flex-wrap:wrap;
-        justify-content:center;
-    }
+nav{
+margin-left:auto;
+}
 
-    .page-title h2{
-        font-size:36px;
-    }
+nav ul{
+display:flex;
+flex-direction:row !important;
+align-items:center;
+justify-content:flex-end;
+flex-wrap:nowrap !important;
+overflow-x:auto;
+gap:6px;
+padding-bottom:4px;
+}
+
+nav ul li{
+display:inline-block;
+}
+
+nav ul li a{
+cursor:pointer;
+padding:10px 10px;
+font-size:14px;
+}
+
+.page-title h2{
+font-size:36px;
+}
+
+.tender-card{
+grid-template-columns:1fr;
+}
+
 }
 
 </style>
@@ -267,9 +332,11 @@ footer p{
 
 <body>
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 
-<header class="top-header">
+<header>
+
+<div class="top-header">
 
 <!-- LOGO -->
 
@@ -280,8 +347,12 @@ footer p{
 <div class="company-text">
 
 <h1>
-NATIONAL HIGHWAYS INVIT <br>
-PROJECT MANAGERS <br>
+NATIONAL HIGHWAYS INVIT<br>
+
+<span style="display:block; text-align:center;">
+PROJECT MANAGERS
+</span>
+
 PRIVATE LIMITED
 </h1>
 
@@ -291,7 +362,7 @@ PRIVATE LIMITED
 
 </div>
 
-<!-- MENU -->
+<!-- ================= MENU ================= -->
 
 <nav>
 
@@ -330,8 +401,6 @@ PRIVATE LIMITED
 
 <div class="submenu">
 
-<!-- R1 -->
-
 <div class="submenu-item">
 
 <a href="#">R1 ▶</a>
@@ -347,8 +416,6 @@ PRIVATE LIMITED
 
 </div>
 
-<!-- R2 -->
-
 <div class="submenu-item">
 
 <a href="#">R2 ▶</a>
@@ -363,8 +430,6 @@ PRIVATE LIMITED
 
 </div>
 
-<!-- R3 -->
-
 <div class="submenu-item">
 
 <a href="#">R3 ▶</a>
@@ -377,8 +442,6 @@ PRIVATE LIMITED
 
 </div>
 
-<!-- R4 -->
-
 <div class="submenu-item">
 
 <a href="#">R4 ▶</a>
@@ -390,6 +453,32 @@ PRIVATE LIMITED
 </div>
 
 </div>
+
+<div class="submenu-item">
+
+<a href="#">R5 ▶</a>
+
+<div class="submenu">
+
+<a href="#">Kurankhed</a>
+<a href="#">Taroda Kasba</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="submenu-item">
+
+<a href="#">RIIT ▶</a>
+
+<div class="submenu">
+
+<a href="future-assets.html">Future Assets</a>
+<a href="#">Upcoming Corridors</a>
 
 </div>
 
@@ -420,7 +509,7 @@ PRIVATE LIMITED
 
 </div>
 
-<a href="#">Procurement SOP</a>
+<a href="procurement-sop.html">Procurement SOP</a>
 
 </div>
 
@@ -435,7 +524,6 @@ PRIVATE LIMITED
 <div class="dropdown">
 
 <a href="news.html">News</a>
-
 <a href="events.html">Events</a>
 
 </div>
@@ -458,15 +546,19 @@ Internal Complaints Committee
 
 </li>
 
-<li><a href="#">Career</a></li>
+<li>
+<a href="career.html">Career</a>
+</li>
 
 </ul>
 
 </nav>
 
+</div>
+
 </header>
 
-<!-- TITLE -->
+<!-- ================= PAGE TITLE ================= -->
 
 <section class="page-title">
 
@@ -474,7 +566,7 @@ Internal Complaints Committee
 
 </section>
 
-<!-- SEARCH -->
+<!-- ================= SEARCH ================= -->
 
 <div class="search-box">
 
@@ -482,7 +574,7 @@ Internal Complaints Committee
 
 </div>
 
-<!-- TENDER 1 -->
+<!-- ================= TENDER 1 ================= -->
 
 <div class="tender-card">
 
@@ -525,7 +617,7 @@ in Gujarat and Rajasthan
 
 </div>
 
-<!-- TENDER 2 -->
+<!-- ================= TENDER 2 ================= -->
 
 <div class="tender-card">
 
@@ -568,7 +660,7 @@ and Maintenance Transfer
 
 </div>
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
