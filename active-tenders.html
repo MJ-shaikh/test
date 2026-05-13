@@ -58,7 +58,7 @@ nav ul{
     list-style:none;
     display:flex;
     align-items:center;
-    gap:25px;
+    gap:20px;
 }
 
 nav ul li{
@@ -70,6 +70,8 @@ nav ul li a{
     color:#111;
     font-weight:700;
     font-size:16px;
+    padding:10px 14px;
+    display:block;
 }
 
 /* DROPDOWN */
@@ -77,17 +79,16 @@ nav ul li a{
 .dropdown{
     display:none;
     position:absolute;
-    top:35px;
+    top:40px;
     left:0;
     background:white;
-    min-width:230px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+    min-width:250px;
+    box-shadow:0 5px 18px rgba(0,0,0,0.2);
     z-index:999;
 }
 
 .dropdown a{
-    display:block;
-    padding:12px 15px;
+    border-bottom:1px solid #eee;
 }
 
 .dropdown a:hover{
@@ -95,8 +96,33 @@ nav ul li a{
     color:white;
 }
 
-.has-dropdown:hover .dropdown{
+.has-dropdown:hover > .dropdown{
     display:block;
+}
+
+/* SUBMENU */
+
+.submenu-item{
+    position:relative;
+}
+
+.submenu{
+    display:none;
+    position:absolute;
+    left:100%;
+    top:0;
+    background:white;
+    min-width:240px;
+    box-shadow:0 5px 18px rgba(0,0,0,0.2);
+}
+
+.submenu-item:hover > .submenu{
+    display:block;
+}
+
+.submenu a:hover{
+    background:#184a97;
+    color:white;
 }
 
 /* TITLE */
@@ -215,57 +241,200 @@ footer p{
 
 <header class="top-header">
 
-    <!-- LOGO -->
+<!-- LOGO -->
 
-    <div class="logo-section">
+<div class="logo-section">
 
-        <img src="https://raw.githubusercontent.com/MJ-shaikh/test/main/Logo.jpeg">
+<img src="https://raw.githubusercontent.com/MJ-shaikh/test/main/Logo.jpeg">
 
-        <div class="company-text">
+<div class="company-text">
 
-            <h1>
-                NATIONAL HIGHWAYS INVIT <br>
-                PROJECT MANAGERS <br>
-                PRIVATE LIMITED
-            </h1>
+<h1>
+NATIONAL HIGHWAYS INVIT <br>
+PROJECT MANAGERS <br>
+PRIVATE LIMITED
+</h1>
 
-            <p>A wholly owned entity of NHAI</p>
+<p>A wholly owned entity of NHAI</p>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
-    <!-- MENU -->
+<!-- MENU -->
 
-    <nav>
+<nav>
 
-        <ul>
+<ul>
 
-            <li><a href="index.html">Home</a></li>
+<li><a href="index.html">Home</a></li>
 
-            <li><a href="about.html">About</a></li>
+<!-- ABOUT -->
 
-            <li class="has-dropdown">
+<li class="has-dropdown">
 
-                <a href="#">Procurement ▼</a>
+<a href="#">About ▼</a>
 
-                <div class="dropdown">
+<div class="dropdown">
 
-                    <a href="active-tenders.html">Active Tenders</a>
+<a href="about.html">About NHIPMPL</a>
+<a href="vision.html">Vision & Mission</a>
+<a href="directors.html">Board of Directors</a>
+<a href="leadership.html">Leadership Team</a>
 
-                    <a href="archived-tenders.html">Archived Tenders</a>
+</div>
 
-                </div>
+</li>
 
-            </li>
+<!-- ASSETS -->
 
-            <li><a href="#">Media</a></li>
+<li class="has-dropdown">
 
-            <li><a href="#">Career</a></li>
+<a href="#">Assets ▼</a>
 
-        </ul>
+<div class="dropdown">
 
-    </nav>
+<div class="submenu-item">
+
+<a href="#">NHIT ▶</a>
+
+<div class="submenu">
+
+<!-- R1 -->
+
+<div class="submenu-item">
+
+<a href="#">R1 ▶</a>
+
+<div class="submenu">
+
+<a href="Undvariya.html">Undvariya</a>
+<a href="Khemana.html">Khemana</a>
+<a href="Kognoli.html">Kognoli</a>
+<a href="Hattargi.html">Hattargi</a>
+
+</div>
+
+</div>
+
+<!-- R2 -->
+
+<div class="submenu-item">
+
+<a href="#">R2 ▶</a>
+
+<div class="submenu">
+
+<a href="Kelapur.html">Kelapur</a>
+<a href="Raibha.html">Raibha</a>
+<a href="Raksha.html">Raksha</a>
+
+</div>
+
+</div>
+
+<!-- R3 -->
+
+<div class="submenu-item">
+
+<a href="#">R3 ▶</a>
+
+<div class="submenu">
+
+<a href="Usaka.html">Usaka</a>
+
+</div>
+
+</div>
+
+<!-- R4 -->
+
+<div class="submenu-item">
+
+<a href="#">R4 ▶</a>
+
+<div class="submenu">
+
+<a href="Balibhasa.html">Balibhasa</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</li>
+
+<!-- PROCUREMENT -->
+
+<li class="has-dropdown">
+
+<a href="#">Procurement ▼</a>
+
+<div class="dropdown">
+
+<div class="submenu-item">
+
+<a href="#">Tenders ▶</a>
+
+<div class="submenu">
+
+<a href="active-tenders.html">Active Tenders</a>
+<a href="archived-tenders.html">Archived Tenders</a>
+
+</div>
+
+</div>
+
+<a href="#">Procurement SOP</a>
+
+</div>
+
+</li>
+
+<!-- MEDIA -->
+
+<li class="has-dropdown">
+
+<a href="#">Media ▼</a>
+
+<div class="dropdown">
+
+<a href="#">Photo Gallery</a>
+<a href="#">Video Gallery</a>
+<a href="#">Press Release</a>
+<a href="#">News Updates</a>
+
+</div>
+
+</li>
+
+<!-- RESOURCE -->
+
+<li class="has-dropdown">
+
+<a href="#">Resource Center ▼</a>
+
+<div class="dropdown">
+
+<a href="#">Policies</a>
+<a href="#">Downloads</a>
+<a href="#">Circulars</a>
+<a href="#">Project Reports</a>
+
+</div>
+
+</li>
+
+<li><a href="#">Career</a></li>
+
+</ul>
+
+</nav>
 
 </header>
 
@@ -320,44 +489,6 @@ Wooden Furniture and Electrical Works
 <p>Bid Submission End Date</p>
 
 <p>03-12-2025 | 06:00 PM</p>
-
-</div>
-
-</div>
-
-<!-- TENDER 2 -->
-
-<div class="tender-card">
-
-<div>
-
-<h3>EOI Name</h3>
-
-<p>
-Hiring of Office Space on Lease
-</p>
-
-<a href="#" class="btn">View Details</a>
-
-</div>
-
-<div>
-
-<h3>EOI</h3>
-
-<p>Date Published</p>
-
-<p>04-07-2025 | 10:00 AM</p>
-
-</div>
-
-<div>
-
-<h3>Date</h3>
-
-<p>EOI Submission End Date</p>
-
-<p>11-08-2025 | 05:30 PM</p>
 
 </div>
 
