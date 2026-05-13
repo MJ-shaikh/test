@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Internal Complaints Committee | NHIPMPL</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f5f5f5;
+}
+
+/* HEADER */
+
+.top-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+background:white;
+}
+
+.logo-section{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.logo-section img{
+width:90px;
+}
+
+.company-text h1{
+color:#0056b3;
+font-size:20px;
+line-height:1.2;
+}
+
+.company-text p{
+color:#003366;
+font-weight:bold;
+}
+
+/* MENU */
+
+nav ul{
+list-style:none;
+display:flex;
+gap:25px;
+align-items:center;
+}
+
+nav ul li{
+position:relative;
+}
+
+nav ul li a{
+text-decoration:none;
+font-weight:bold;
+color:#111;
+font-size:16px;
+}
+
+/* DROPDOWN */
+
+.dropdown{
+display:none;
+position:absolute;
+top:40px;
+left:0;
+background:white;
+min-width:240px;
+box-shadow:0 5px 18px rgba(0,0,0,0.2);
+z-index:999;
+}
+
+.dropdown a{
+display:block;
+padding:14px;
+border-bottom:1px solid #eee;
+}
+
+.dropdown a:hover{
+background:#184a97;
+color:white;
+}
+
+.has-dropdown:hover > .dropdown{
+display:block;
+}
+
+/* PAGE TITLE */
+
+.page-title{
+background:#184a97;
+color:white;
+text-align:center;
+padding:45px;
+}
+
+.page-title h2{
+font-size:48px;
+}
+
+/* CONTENT */
+
+.content-section{
+width:90%;
+margin:40px auto;
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.content-section img{
+width:100%;
+max-width:700px;
+border-radius:8px;
+}
+
+/* FOOTER */
+
+footer{
+background:#184a97;
+color:white;
+text-align:center;
+padding:40px 20px;
+margin-top:60px;
+}
+
+footer p{
+margin:10px 0;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.top-header{
+flex-direction:column;
+gap:20px;
+text-align:center;
+}
+
+nav ul{
+flex-direction:column;
+}
+
+.page-title h2{
+font-size:36px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="top-header">
+
+<div class="logo-section">
+
+<img src="https://raw.githubusercontent.com/MJ-shaikh/test/main/Logo.jpeg">
+
+<div class="company-text">
+
+<h1>
+NATIONAL HIGHWAYS INVIT <br>
+PROJECT MANAGERS <br>
+PRIVATE LIMITED
+</h1>
+
+<p>A wholly owned entity of NHAI</p>
+
+</div>
+
+</div>
+
+<nav>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="projects.html">Projects</a></li>
+
+<li class="has-dropdown">
+
+<a href="#">Procurement ▼</a>
+
+<div class="dropdown">
+
+<a href="active-tenders.html">Active Tenders</a>
+
+<a href="archived-tenders.html">Archived Tenders</a>
+
+</div>
+
+</li>
+
+<li class="has-dropdown">
+
+<a href="#">Media ▼</a>
+
+<div class="dropdown">
+
+<a href="news.html">News</a>
+
+<a href="events.html">Events</a>
+
+</div>
+
+</li>
+
+<li class="has-dropdown">
+
+<a href="#">Resource Center ▼</a>
+
+<div class="dropdown">
+
+<a href="internal-complaints.html">
+Internal Complaints Committee
+</a>
+
+</div>
+
+</li>
+
+<li><a href="career.html">Career</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<!-- PAGE TITLE -->
+
+<section class="page-title">
+
+<h2>Internal Complaints Committee</h2>
+
+</section>
+
+<!-- CONTENT -->
+
+<section class="content-section">
+
+<img src="https://raw.githubusercontent.com/MJ-shaikh/test/main/Internal_Complaints.jpg">
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+NHAI OLD BUILDING, G5 & G6,
+DWARKA SECTOR 10,
+NEW DELHI - 110075
+</p>
+
+<p>Email: info.nhipmpl@nhai.org</p>
+
+<p>
+© 2026 National Highways InvIT Project Managers Private Limited
+</p>
+
+</footer>
+
+</body>
+
+</html>
