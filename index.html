@@ -718,6 +718,42 @@ max-width:100%;
 display:block;
 margin:auto;
 }
+        /* ABOUT TITLE */
+
+.about-title{
+font-size:38px;
+font-weight:900;
+color:#0056b3;
+margin-bottom:28px;
+position:relative;
+padding-bottom:14px;
+text-transform:uppercase;
+letter-spacing:1px;
+text-shadow:0 2px 8px rgba(0,0,0,0.10);
+text-align:left;
+}
+
+.about-title::after{
+content:'';
+position:absolute;
+left:0;
+bottom:0;
+width:120px;
+height:5px;
+background:linear-gradient(to right,#0056b3,#4da6ff);
+border-radius:10px;
+}
+
+/* ABOUT TEXT */
+
+.about-text{
+font-size:18px;
+line-height:2;
+color:#222;
+text-align:justify;
+margin-bottom:22px;
+font-weight:700;
+}
     </style>
 
 </head>
@@ -1617,31 +1653,39 @@ Round 5
 
 <div class="about-box">
 
-<h2>About NHIPMPL</h2>
+<h2 class="about-title">
+About NHIPMPL
+</h2>
 
-<p>
+<p class="about-text">
+
+<strong>
 National Highways InvIT Project Managers Private Limited (NHIPMPL)
-        is a wholly owned entity of the National Highways Authority of India(NHAI) established for professional management, operation, maintenance,
-        and monitoring of highway assets under NHIT and Rajmarg Infra Investment Trust frameworks.
- 
+is a wholly owned entity of the National Highways Authority of India (NHAI),
+established for professional management, operation, maintenance,
+and monitoring of highway assets under NHIT and Rajmarg Infra Investment Trust frameworks.
+</strong>
+
 </p>
 
-<p>
+<p class="about-text">
+
+<strong>
 NHIPMPL manages Toll Management Systems (TMS),
-        Advanced Traffic Management Systems (ATMS),
-        FASTag ecosystem, centralized surveillance systems,
-        digital highway monitoring, and integrated infrastructure
-        operations across multiple National Highway corridors.
- The organization supports intelligent toll operations,
-        operational analytics, highway monitoring,
-        digital infrastructure management,
-        and real-time technology-driven operational solutions across India.
+Advanced Traffic Management Systems (ATMS),
+FASTag ecosystem, centralized surveillance systems,
+digital highway monitoring, and integrated infrastructure operations
+across multiple National Highway corridors.
+
+The organization supports intelligent toll operations,
+operational analytics, highway monitoring,
+digital infrastructure management,
+and real-time technology-driven operational solutions across India.
+</strong>
+
 </p>
 
 </div>
-
-</div>
-
 </section>
     <!-- ================= FOOTER ================= -->
 
