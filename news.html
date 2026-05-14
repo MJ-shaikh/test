@@ -612,15 +612,19 @@ Internal Complaints Committee
 
 <table>
 
-<tr>
+<thead>
 
+<tr>
 <th>News ID.</th>
 <th>News Name</th>
 <th>News Public Date</th>
 <th>News Resource</th>
 <th>News Photo</th>
-
 </tr>
+
+</thead>
+
+<tbody>
 
 <tr>
 
@@ -633,18 +637,16 @@ Internal Complaints Committee
 <td>Corporate Media</td>
 
 <td>
-
 <a href="news-gallery.html" class="btn">
 View Photo's
 </a>
-
 </td>
 
 </tr>
 
-</table>
+</tbody>
 
-</div>
+</table>
 
 <!-- ================= FOOTER ================= -->
 
@@ -662,7 +664,37 @@ Sector-9, Dwarka, New Delhi-110077
 </p>
 
 </footer>
+<script>
 
+const searchInput = document.querySelector(".search-box input");
+
+const newsRows = document.querySelectorAll("tbody tr");
+searchInput.addEventListener("keyup", function(){
+
+const searchValue =
+this.value.toLowerCase();
+
+newsRows.forEach(row => {
+
+const newsName =
+row.cells[1].innerText.toLowerCase();
+
+if(newsName.includes(searchValue)){
+
+row.style.display = "";
+
+}
+else{
+
+row.style.display = "none";
+
+}
+
+});
+
+});
+
+</script>
 </body>
 
 </html>
