@@ -95,31 +95,29 @@ background:rgba(0,86,179,0.08);
 
 /* ================= DROPDOWN ================= */
 
+.has-dropdown{
+position:relative;
+}
+
 .dropdown{
 display:none;
 position:absolute;
 top:100%;
 left:0;
-margin-top:0;
 background:white;
 min-width:270px;
 border-radius:10px;
-overflow:visible;
 box-shadow:0 10px 30px rgba(0,0,0,0.18);
 z-index:9999;
-animation:dropdownFade 0.25s ease;
 }
 
 .dropdown a{
+display:block;
 padding:15px 18px;
 border-bottom:1px solid #f2f2f2;
-color:#222;
-font-size:15px;
-font-weight:500;
-background:white;
-transition:0.3s;
-display:block;
 text-decoration:none;
+color:#222;
+transition:0.3s;
 }
 
 .dropdown a:hover{
@@ -146,20 +144,17 @@ left:100%;
 background:white;
 min-width:250px;
 border-radius:10px;
-overflow:visible;
 box-shadow:0 10px 30px rgba(0,0,0,0.18);
-animation:dropdownFade 0.25s ease;
 z-index:9999;
 }
 
 .submenu a{
+display:block;
 padding:15px 18px;
 border-bottom:1px solid #f2f2f2;
-background:white;
+text-decoration:none;
 color:#222;
 transition:0.3s;
-display:block;
-text-decoration:none;
 }
 
 .submenu a:hover{
@@ -170,25 +165,6 @@ padding-left:24px;
 
 .submenu-item:hover > .submenu{
 display:block;
-}
-
-.has-dropdown{
-position:relative;
-}
-
-/* ================= MENU ANIMATION ================= */
-
-@keyframes dropdownFade{
-
-from{
-opacity:0;
-transform:translateY(10px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
 }
 
 /* ================= PAGE TITLE ================= */
@@ -202,7 +178,6 @@ padding:45px;
 
 .page-title h2{
 font-size:52px;
-font-weight:700;
 }
 
 /* ================= SEARCH ================= */
@@ -232,12 +207,6 @@ border:1px solid #ccc;
 font-size:22px;
 outline:none;
 box-shadow:0 4px 12px rgba(0,0,0,0.08);
-transition:0.3s;
-}
-
-.search-box input:focus{
-border-color:#184a97;
-box-shadow:0 4px 15px rgba(24,74,151,0.18);
 }
 
 /* ================= TABLE ================= */
@@ -264,7 +233,8 @@ border-bottom:1px solid #ddd;
 }
 
 th{
-background:#f0f4ff;
+background:#184a97;
+color:white;
 font-size:16px;
 }
 
@@ -302,59 +272,6 @@ margin-top:60px;
 footer p{
 margin:10px 0;
 line-height:1.7;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:900px){
-
-.top-header{
-display:flex;
-flex-direction:row;
-justify-content:space-between;
-align-items:center;
-width:100%;
-}
-
-.logo-section{
-display:flex;
-align-items:center;
-}
-
-nav{
-margin-left:auto;
-}
-
-nav ul{
-display:flex;
-flex-direction:row !important;
-align-items:center;
-justify-content:flex-end;
-flex-wrap:nowrap !important;
-overflow-x:auto;
-gap:6px;
-padding-bottom:4px;
-}
-
-nav ul li{
-display:inline-block;
-}
-
-nav ul li a{
-cursor:pointer;
-padding:10px 10px;
-font-size:14px;
-}
-
-.page-title h2{
-font-size:36px;
-}
-
-.search-box input{
-font-size:18px;
-padding:18px 18px 18px 58px;
-}
-
 }
 
 </style>
@@ -399,6 +316,8 @@ PRIVATE LIMITED
 
 <li><a href="index.html">Home</a></li>
 
+<!-- ABOUT -->
+
 <li class="has-dropdown">
 
 <a href="#">About ▼</a>
@@ -414,6 +333,101 @@ PRIVATE LIMITED
 
 </li>
 
+<!-- ASSETS -->
+
+<li class="has-dropdown">
+
+<a href="#">Assets ▼</a>
+
+<div class="dropdown">
+
+<div class="submenu-item">
+
+<a href="#">NHIT ▶</a>
+
+<div class="submenu">
+
+<div class="submenu-item">
+
+<a href="#">R1 ▶</a>
+
+<div class="submenu">
+
+<a href="Undvariya.html">Undvariya</a>
+<a href="Khemana.html">Khemana</a>
+<a href="Kognoli.html">Kognoli</a>
+<a href="Hattargi.html">Hattargi</a>
+
+</div>
+
+</div>
+
+<div class="submenu-item">
+
+<a href="#">R2 ▶</a>
+
+<div class="submenu">
+
+<a href="Kelapur.html">Kelapur</a>
+<a href="Raibha.html">Raibha</a>
+<a href="Raksha.html">Raksha</a>
+
+</div>
+
+</div>
+
+<div class="submenu-item">
+
+<a href="#">R3 ▶</a>
+
+<div class="submenu">
+
+<a href="Usaka.html">Usaka</a>
+<a href="Kherswani.html">Kherswani</a>
+<a href="Bankapur.html">Bankapur</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="submenu-item">
+
+<a href="#">RIIT ▶</a>
+
+<div class="submenu">
+
+<a href="future-assets.html">Future Assets</a>
+
+</div>
+
+</div>
+
+</div>
+
+</li>
+
+<!-- PROCUREMENT -->
+
+<li class="has-dropdown">
+
+<a href="#">Procurement ▼</a>
+
+<div class="dropdown">
+
+<a href="active-tenders.html">Active Tenders</a>
+<a href="archived-tenders.html">Archived Tenders</a>
+<a href="procurement-sop.html">Procurement SOP</a>
+
+</div>
+
+</li>
+
+<!-- MEDIA -->
+
 <li class="has-dropdown">
 
 <a href="#">Media ▼</a>
@@ -422,6 +436,22 @@ PRIVATE LIMITED
 
 <a href="news.html">News</a>
 <a href="events.html">Events</a>
+
+</div>
+
+</li>
+
+<!-- RESOURCE -->
+
+<li class="has-dropdown">
+
+<a href="#">Resource Center ▼</a>
+
+<div class="dropdown">
+
+<a href="internal-complaints.html">
+Internal Complaints Committee
+</a>
 
 </div>
 
@@ -453,7 +483,8 @@ PRIVATE LIMITED
 
 <span class="search-icon">🔍</span>
 
-<input type="text" placeholder="Search News">
+<input type="text" id="newsSearch"
+placeholder="Search all news content">
 
 </div>
 
@@ -461,9 +492,7 @@ PRIVATE LIMITED
 
 <div class="news-table">
 
-<table>
-
-<thead>
+<table id="newsTable">
 
 <tr>
 
@@ -474,10 +503,6 @@ PRIVATE LIMITED
 <th>News Photo</th>
 
 </tr>
-
-</thead>
-
-<tbody>
 
 <tr>
 
@@ -519,7 +544,25 @@ View Photo's
 
 </tr>
 
-</tbody>
+<tr>
+
+<td>003</td>
+
+<td>Advanced Toll Monitoring Audit Conducted</td>
+
+<td>18-05-2026</td>
+
+<td>NHIT Operations</td>
+
+<td>
+
+<a href="news-gallery.html" class="btn">
+View Photo's
+</a>
+
+</td>
+
+</tr>
 
 </table>
 
@@ -547,29 +590,31 @@ Sector-9, Dwarka, New Delhi-110077
 <script>
 
 const searchInput =
-document.querySelector(".search-box input");
+document.getElementById("newsSearch");
 
-const newsRows =
-document.querySelectorAll("tbody tr");
+const rows =
+document.querySelectorAll("#newsTable tr");
 
 searchInput.addEventListener("keyup", function(){
 
-const searchValue =
+const value =
 this.value.toLowerCase();
 
-newsRows.forEach(row => {
+rows.forEach((row,index)=>{
 
-const newsName =
-row.cells[1].innerText.toLowerCase();
+if(index===0) return;
 
-if(newsName.includes(searchValue)){
+const text =
+row.innerText.toLowerCase();
 
-row.style.display = "";
+if(text.includes(value)){
+
+row.style.display="";
 
 }
 else{
 
-row.style.display = "none";
+row.style.display="none";
 
 }
 
