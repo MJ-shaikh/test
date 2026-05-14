@@ -451,19 +451,21 @@ align-items:center;
             padding-top: 60px;
         }
 
-        .footer-container {
-            width: 90%;
-            margin: auto;
-            display: flex;
-            gap: 40px;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
+       .footer-container{
+width:95%;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+gap:25px;
+flex-wrap:nowrap;
+padding-bottom:25px;
+}
 
-        .footer-box {
-            flex: 1;
-            min-width: 280px;
-        }
+        .footer-box{
+flex:1;
+min-width:0;
+}
 
         .footer-box h3 {
             font-size: 28px;
@@ -560,10 +562,9 @@ align-items:center;
                 height: 100vh;
             }
 
-            .footer-container {
-                flex-direction: column;
-            }
-
+            .footer-container{
+flex-direction:row;
+}
             .home-info h2 {
                 font-size: 32px;
             }
