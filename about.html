@@ -59,25 +59,151 @@
             margin-top:8px;
         }
 
-        /* MENU */
+        /* ================= HEADER ================= */
 
-        nav ul{
-            display:flex;
-            list-style:none;
-            gap:10px;
-        }
+.top-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+background:white;
+width:100%;
+}
 
-        nav ul li a{
-            text-decoration:none;
-            color:#111;
-            font-weight:bold;
-            padding:12px 15px;
-        }
+.logo-section{
+display:flex;
+align-items:center;
+gap:20px;
+}
 
-        nav ul li a:hover{
-            color:#0056b3;
-        }
+.logo-section img{
+width:90px;
+}
 
+.company-text h1{
+color:#0056b3;
+font-size:20px;
+line-height:1.2;
+}
+
+.company-text p{
+color:#003366;
+font-weight:bold;
+}
+
+/* ================= PREMIUM MENU ================= */
+
+nav{
+margin-left:auto;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+align-items:center;
+justify-content:flex-end;
+gap:6px;
+margin:0;
+padding:0;
+flex-wrap:nowrap;
+}
+
+nav ul li{
+position:relative;
+display:inline-block;
+}
+
+nav ul li a{
+text-decoration:none;
+color:#111;
+padding:14px 18px;
+display:block;
+font-size:15px;
+font-weight:600;
+transition:0.3s;
+border-radius:6px;
+white-space:nowrap;
+cursor:pointer;
+}
+
+nav ul li a:hover{
+color:#0056b3;
+background:rgba(0,86,179,0.08);
+}
+
+/* ================= DROPDOWN ================= */
+
+.has-dropdown{
+position:relative;
+}
+
+.dropdown{
+display:none;
+position:absolute;
+top:100%;
+left:0;
+background:white;
+min-width:270px;
+border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,0.18);
+z-index:9999;
+}
+
+.dropdown a{
+display:block;
+padding:15px 18px;
+border-bottom:1px solid #f2f2f2;
+text-decoration:none;
+color:#222;
+transition:0.3s;
+}
+
+.dropdown a:hover{
+background:#184a97;
+color:white;
+padding-left:24px;
+}
+
+.has-dropdown:hover > .dropdown{
+display:block;
+}
+
+/* ================= SUBMENU ================= */
+
+.submenu-item{
+position:relative;
+}
+
+.submenu{
+display:none;
+position:absolute;
+top:-2px;
+left:100%;
+background:white;
+min-width:250px;
+border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,0.18);
+z-index:9999;
+}
+
+.submenu a{
+display:block;
+padding:15px 18px;
+border-bottom:1px solid #f2f2f2;
+text-decoration:none;
+color:#222;
+transition:0.3s;
+}
+
+.submenu a:hover{
+background:#184a97;
+color:white;
+padding-left:24px;
+}
+
+.submenu-item:hover > .submenu{
+display:block;
+}
         /* BANNER */
 
         .banner{
