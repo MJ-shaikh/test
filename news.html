@@ -210,14 +210,17 @@ font-weight:700;
 .search-box{
 width:90%;
 margin:35px auto;
+position:relative;
 }
 
-.search-box input{
-width:100%;
-padding:18px;
-border-radius:8px;
-border:1px solid #ccc;
-font-size:18px;
+.search-icon{
+position:absolute;
+left:18px;
+top:50%;
+transform:translateY(-50%);
+font-size:22px;
+color:#666;
+pointer-events:none;
 }
 
 /* ================= TABLE ================= */
@@ -589,6 +592,8 @@ Internal Complaints Committee
 <!-- ================= SEARCH ================= -->
 
 <div class="search-box">
+
+<span class="search-icon">🔍</span>
 
 <input type="text" placeholder="Search News">
 
