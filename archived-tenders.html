@@ -63,7 +63,8 @@ nav ul{
 list-style:none;
 display:flex;
 align-items:center;
-gap:8px;
+justify-content:flex-end;
+gap:6px;
 margin:0;
 padding:0;
 flex-wrap:nowrap;
@@ -96,14 +97,14 @@ background:rgba(0,86,179,0.08);
 
 .has-dropdown{
 position:relative;
-padding-bottom:10px;
 }
 
 .dropdown{
 display:none;
 position:absolute;
-top:45px;
+top:100%;
 left:0;
+margin-top:0;
 background:white;
 min-width:270px;
 border-radius:10px;
@@ -144,8 +145,8 @@ position:relative;
 .submenu{
 display:none;
 position:absolute;
-top:0;
-left:98%;
+top:-2px;
+left:100%;
 background:white;
 min-width:250px;
 border-radius:10px;
