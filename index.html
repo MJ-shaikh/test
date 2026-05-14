@@ -253,9 +253,9 @@ transform:translateY(0);
 }
         /* ================= SLIDER ================= */
 
-  .slider{
+ .slider{
 width:100%;
-height:52vh;
+height:62vh;
 position:relative;
 overflow:hidden;
 z-index:1;
@@ -368,9 +368,6 @@ transition: opacity 1s ease-in-out;
         }
 
         .scrolling-text{
-position:sticky;
-top:88px;
-z-index:999;
 background:#f0d548;
 color:black;
 padding:15px;
@@ -379,8 +376,10 @@ font-weight:bold;
 overflow:hidden;
 white-space:nowrap;
 box-shadow:0 3px 10px rgba(0,0,0,0.15);
+position:relative;
+top:0;
+z-index:10;
 }
-
         .dot.active {
             background: #ffcc00;
         }
