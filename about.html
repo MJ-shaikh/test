@@ -140,6 +140,7 @@ background:rgba(0,86,179,0.08);
 
 .has-dropdown{
 position:relative;
+z-index:9999;
 }
 
 .dropdown{
@@ -148,7 +149,8 @@ position:absolute;
 top:100%;
 left:0;
 background:white;
-min-width:270px;
+min-width:320px;
+overflow:visible;
 border-radius:10px;
 box-shadow:0 10px 30px rgba(0,0,0,0.18);
 z-index:9999;
@@ -177,15 +179,17 @@ display:block;
 
 .submenu-item{
 position:relative;
+z-index:9999;
 }
 
 .submenu{
 display:none;
 position:absolute;
-top:-2px;
+top:0;
 left:100%;
 background:white;
-min-width:250px;
+min-width:260px;
+overflow:visible;
 border-radius:10px;
 box-shadow:0 10px 30px rgba(0,0,0,0.18);
 z-index:9999;
@@ -541,6 +545,7 @@ PRIVATE LIMITED
 </div>
 
 </div>
+    
 <!-- PROCUREMENT -->
 
 <li class="has-dropdown">
