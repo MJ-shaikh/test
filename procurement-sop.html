@@ -32,25 +32,51 @@ background:white;
 width:100%;
 }
 
+/* LOGO SECTION */
+
 .logo-section{
 display:flex;
 align-items:center;
-gap:20px;
+gap:18px;
+min-width:540px;
 }
+
+/* LOGO */
 
 .logo-section img{
-width:90px;
+width:100px;
+height:auto;
+display:block;
 }
 
-.company-text h1{
+/* COMPANY TEXT */
+
+.company-text{
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+/* COMPANY NAME */
+
+.company-heading{
+font-size:16px;
+line-height:1.08;
+font-weight:900;
 color:#0056b3;
-font-size:20px;
-line-height:1.2;
+text-transform:uppercase;
+margin:0;
+letter-spacing:0.2px;
 }
 
-.company-text p{
+/* SUB TEXT */
+
+.company-subtext{
+font-size:10px;
+font-weight:700;
 color:#003366;
-font-weight:bold;
+margin-top:5px;
+text-align:left;
 }
 
 /* ================= PREMIUM MENU ================= */
@@ -314,23 +340,18 @@ font-size:30px;
 
 <div class="company-text">
 
-<h1 style="line-height:1.1; text-align:left;">
+<h1 class="company-heading">
 
-<span style="display:block;">
-NATIONAL HIGHWAYS INVIT
-</span>
+NATIONAL HIGHWAYS INVIT PROJECT MANAGERS
+<br>
 
-<span style="display:block;">
-PROJECT MANAGERS
-</span>
-
-<span style="display:block;">
 PRIVATE LIMITED
-</span>
 
 </h1>
 
-<p>A wholly owned entity of NHAI</p>
+<p class="company-subtext">
+A wholly owned entity of NHAI
+</p>
 
 </div>
 
