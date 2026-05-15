@@ -59,7 +59,7 @@
     margin-top:8px;
 }
 
-  /* ================= HEADER ================= */
+ /* ================= HEADER ================= */
 
 .top-header{
 display:flex;
@@ -77,48 +77,61 @@ gap:20px;
 }
 
 .logo-section img{
-width:105px;
+width:90px;
 }
 
 .company-text h1{
 color:#0056b3;
-font-size:16px;
-line-height:1.05;
-font-weight:800;
+font-size:20px;
+line-height:1.2;
 }
 
 .company-text p{
 color:#003366;
-font-size:11px;
-font-weight:600;
-margin-top:3px;
+font-weight:bold;
 }
+
+/* ================= PREMIUM MENU ================= */
+
+nav{
+margin-left:auto;
+}
+
 nav ul{
-display:flex;
 list-style:none;
-gap:10px;
+display:flex;
 align-items:center;
+justify-content:flex-end;
+gap:6px;
 margin:0;
 padding:0;
+flex-wrap:nowrap;
 }
 
 nav ul li{
 position:relative;
-list-style:none;
+display:inline-block;
 }
 
 nav ul li a{
 text-decoration:none;
 color:#111;
-font-weight:bold;
-padding:12px 15px;
+padding:14px 18px;
 display:block;
+font-size:15px;
+font-weight:600;
+transition:0.3s;
+border-radius:6px;
+white-space:nowrap;
+cursor:pointer;
 }
 
 nav ul li a:hover{
 color:#0056b3;
+background:rgba(0,86,179,0.08);
 }
-        /* ================= DROPDOWN ================= */
+
+/* ================= DROPDOWN ================= */
 
 .has-dropdown{
 position:relative;
@@ -129,21 +142,26 @@ display:none;
 position:absolute;
 top:100%;
 left:0;
+margin-top:0;
 background:white;
 min-width:270px;
 border-radius:10px;
+overflow:visible;
 box-shadow:0 10px 30px rgba(0,0,0,0.18);
 z-index:9999;
+animation:dropdownFade 0.25s ease;
 }
 
 .dropdown a{
-display:block;
 padding:15px 18px;
 border-bottom:1px solid #f2f2f2;
-text-decoration:none;
 color:#222;
+font-size:15px;
+font-weight:500;
+background:white;
 transition:0.3s;
-white-space:nowrap;
+display:block;
+text-decoration:none;
 }
 
 .dropdown a:hover{
@@ -170,18 +188,20 @@ left:100%;
 background:white;
 min-width:250px;
 border-radius:10px;
+overflow:visible;
 box-shadow:0 10px 30px rgba(0,0,0,0.18);
+animation:dropdownFade 0.25s ease;
 z-index:9999;
 }
 
 .submenu a{
-display:block;
 padding:15px 18px;
 border-bottom:1px solid #f2f2f2;
-text-decoration:none;
+background:white;
 color:#222;
 transition:0.3s;
-white-space:nowrap;
+display:block;
+text-decoration:none;
 }
 
 .submenu a:hover{
@@ -194,6 +214,20 @@ padding-left:24px;
 display:block;
 }
 
+/* ================= MENU ANIMATION ================= */
+
+@keyframes dropdownFade{
+
+from{
+opacity:0;
+transform:translateY(10px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
         /* BANNER */
 
         .banner{
@@ -343,31 +377,45 @@ display:block;
 
 <body>
 
-    <!-- HEADER -->
+  <!-- ================= HEADER ================= -->
 
-    <header>
+<header>
 
-        <div class="header-container">
+<div class="top-header">
 
-            <div class="logo-section">
+<!-- LOGO -->
 
-             <img src="https://raw.githubusercontent.com/MJ-shaikh/test/main/Logo.jpeg">
-                
-                <div class="company-text">
+<div class="logo-section">
 
-                    <h1>
-                        NATIONAL HIGHWAYS INVIT <br>
-                        PROJECT MANAGERS <br>
-                        PRIVATE LIMITED
-                    </h1>
+<img src="https://raw.githubusercontent.com/MJ-shaikh/test/main/Logo.jpeg">
 
-                    <p>A wholly owned entity of NHAI</p>
+<div class="company-text">
 
-                </div>
+<h1 style="line-height:1.1; text-align:left;">
 
-            </div>
+<span style="display:block;">
+NATIONAL HIGHWAYS INVIT
+</span>
 
-           <nav>
+<span style="display:block;">
+PROJECT MANAGERS
+</span>
+
+<span style="display:block;">
+PRIVATE LIMITED
+</span>
+
+</h1>
+
+<p>A wholly owned entity of NHAI</p>
+
+</div>
+
+</div>
+
+<!-- ================= MENU ================= -->
+
+<nav>
 
 <ul>
 
@@ -398,15 +446,13 @@ display:block;
 
 <div class="dropdown">
 
-<!-- NHIT -->
-
 <div class="submenu-item">
 
 <a href="#">NHIT ▶</a>
 
 <div class="submenu">
 
-<!-- R1 -->
+<!-- ================= R1 ================= -->
 
 <div class="submenu-item">
 
@@ -427,7 +473,7 @@ display:block;
 
 </div>
 
-<!-- R2 -->
+<!-- ================= R2 ================= -->
 
 <div class="submenu-item">
 
@@ -444,7 +490,7 @@ display:block;
 
 </div>
 
-<!-- R3 -->
+<!-- ================= R3 ================= -->
 
 <div class="submenu-item">
 
@@ -453,16 +499,24 @@ display:block;
 <div class="submenu">
 
 <a href="Usaka.html">Usaka</a>
-<a href="Odaki Pipkar.html">Odaki Pipkar</a>
+<a href="Odaki-Pipkar.html">Odaki Pipkar</a>
 <a href="Kherswani.html">Kherswani</a>
 <a href="Mohtara.html">Mohtara</a>
 <a href="Boharipaar.html">Boharipaar</a>
+<a href="Patgaon.html">Patgaon</a>
+<a href="Dahalapara.html">Dahalapara</a>
+<a href="Galia.html">Galia</a>
+<a href="Madai.html">Madai</a>
+<a href="Khawasa.html">Khawasa</a>
+<a href="Bankapur.html">Bankapur</a>
+<a href="Hebbalu.html">Hebbalu</a>
+<a href="Chalageri.html">Chalageri</a>
 
 </div>
 
 </div>
 
-<!-- R4 -->
+<!-- ================= R4 ================= -->
 
 <div class="submenu-item">
 
@@ -491,7 +545,7 @@ display:block;
 
 </div>
 
-<!-- R5 -->
+<!-- ================= R5 ================= -->
 
 <div class="submenu-item">
 
@@ -499,8 +553,8 @@ display:block;
 
 <div class="submenu">
 
-<a href="Kurankheda.html">Kurankheda</a>
-<a href="Taroda Kasba.html">Taroda Kasba</a>
+<a href="Kurankhed.html">Kurankhed</a>
+<a href="Taroda-Kasba.html">Taroda Kasba</a>
 <a href="Dasarkhed.html">Dasarkhed</a>
 <a href="Nasirabad.html">Nasirabad</a>
 <a href="Kalaparru.html">Kalaparru</a>
@@ -513,26 +567,14 @@ display:block;
 
 </div>
 
-<!-- RIIT -->
-
 <div class="submenu-item">
 
 <a href="#">RIIT ▶</a>
 
 <div class="submenu">
 
-<div class="submenu-item">
-
-<a href="#">R1 ▶</a>
-
-<div class="submenu">
-
-<a href="Chittorgarh Kota.html">Chittorgarh Kota</a>
-<a href="Udaipur Bypass.html">Udaipur Bypass</a>
-
-</div>
-
-</div>
+<a href="future-assets.html">Future Assets</a>
+<a href="#">Upcoming Corridors</a>
 
 </div>
 
@@ -541,8 +583,6 @@ display:block;
 </div>
 
 </li>
-
-<!-- PROCUREMENT -->
 
 <!-- PROCUREMENT -->
 
@@ -613,6 +653,7 @@ Internal Complaints Committee
 </div>
 
 </header>
+
 
     <!-- BANNER -->
 
