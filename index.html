@@ -906,6 +906,45 @@ font-size:18px;
 }
 
 }
+      /* MOBILE MENU FIX */
+
+@media screen and (max-width:900px){
+
+.dropdown{
+position:static;
+display:none;
+width:100%;
+box-shadow:none;
+border-radius:0;
+}
+
+.submenu{
+position:static;
+display:none;
+width:100%;
+box-shadow:none;
+margin-left:15px;
+}
+
+.submenu-item:hover .submenu{
+display:block;
+}
+
+nav ul{
+flex-direction:column;
+align-items:flex-start;
+width:100%;
+}
+
+nav ul li{
+width:100%;
+}
+
+nav ul li a{
+width:100%;
+}
+
+}  
     </style>
 
 </head>
@@ -2078,7 +2117,49 @@ All Rights Reserved
         });
 
     </script>
+<script>
 
+/* MOBILE DROPDOWN MENU FIX */
+
+document.querySelectorAll('.has-dropdown > a').forEach(menu => {
+
+menu.addEventListener('click', function(e) {
+
+if(window.innerWidth <= 900){
+
+e.preventDefault();
+
+let dropdown = this.nextElementSibling;
+
+/* CLOSE OTHER MENUS */
+
+document.querySelectorAll('.dropdown').forEach(d => {
+
+if(d !== dropdown){
+d.style.display = 'none';
+}
+
+});
+
+/* TOGGLE CURRENT MENU */
+
+if(dropdown.style.display === 'block'){
+
+dropdown.style.display = 'none';
+
+}else{
+
+dropdown.style.display = 'block';
+
+}
+
+}
+
+});
+
+});
+
+</script>
 </body>
 
 </html>
