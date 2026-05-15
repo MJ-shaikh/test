@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Manage News | NHIPMPL</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f5f7fb;
+padding:40px;
+}
+
+h1{
+color:#003366;
+margin-bottom:30px;
+}
+
+.form-container{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,0.12);
+margin-bottom:40px;
+}
+
+input,
+textarea{
+width:100%;
+padding:14px;
+margin-bottom:18px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:15px;
+}
+
+button{
+padding:14px 25px;
+background:#0056b3;
+color:white;
+border:none;
+border-radius:8px;
+font-size:15px;
+font-weight:bold;
+cursor:pointer;
+}
+
+button:hover{
+background:#003366;
+}
+
+.news-list{
+display:grid;
+gap:20px;
+}
+
+.news-card{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.news-card h3{
+color:#003366;
+margin-bottom:10px;
+}
+
+.news-card p{
+line-height:1.7;
+margin-bottom:10px;
+}
+
+.delete-btn{
+background:red;
+margin-top:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Manage News</h1>
+
+<!-- FORM -->
+
+<div class="form-container">
+
+<input type="text"
+id="newsTitle"
+placeholder="News Title">
+
+<textarea
+id="newsDescription"
+placeholder="News Description">
+</textarea>
+
+<input type="date"
+id="newsDate">
+
+<button onclick="addNews()">
+
+Add News
+
+</button>
+
+</div>
+
+<!-- NEWS LIST -->
+
+<div class="news-list"
+id="newsList">
+
+</div>
+
+<script type="module">
+
+import { db } from './firebase-config.js';
+
+import {
+
+collection,
+addDoc,
+getDocs,
+deleteDoc,
+doc
+
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+// ADD NEWS
+
+async function addNews(){
+
+const title =
+document.getElementById("newsTitle").value;
+
+const description =
+document.getElementById("newsDescription").value;
+
+const date =
+document.getElementById("newsDate").value;
+
+if(title === "" || description === ""){
+
+alert("Please fill all fields");
+
+return;
+
+}
+
+await addDoc(collection(db,"news"),{
+
+title,
+description,
+date
+
+});
+
+alert("News Added Successfully");
+
+location.reload();
+
+}
+
+window.addNews = addNews;
+
+// LOAD NEWS
+
+async function loadNews(){
+
+const querySnapshot =
+await getDocs(collection(db,"news"));
+
+const newsList =
+document.getElementById("newsList");
+
+newsList.innerHTML = "";
+
+querySnapshot.forEach((docItem)=>{
+
+const data = docItem.data();
+
+newsList.innerHTML += `
+
+<div class="news-card">
+
+<h3>${data.title}</h3>
+
+<p>${data.description}</p>
+
+<p><strong>Date:</strong> ${data.date}</p>
+
+<button class="delete-btn"
+onclick="deleteNews('${docItem.id}')">
+
+Delete
+
+</button>
+
+</div>
+
+`;
+
+});
+
+}
+
+loadNews();
+
+// DELETE NEWS
+
+async function deleteNews(id){
+
+await deleteDoc(doc(db,"news",id));
+
+alert("News Deleted");
+
+location.reload();
+
+}
+
+window.deleteNews = deleteNews;
+
+</script>
+
+</body>
+
+</html>
