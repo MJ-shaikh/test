@@ -20,57 +20,174 @@ body{
     background:#f5f5f5;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 .top-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 40px;
-    background:#fff;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+background:white;
+width:100%;
 }
 
 .logo-section{
-    display:flex;
-    align-items:center;
-    gap:20px;
+display:flex;
+align-items:center;
+gap:20px;
 }
 
 .logo-section img{
-    width:90px;
-}
-
-.company-text{
-    text-align:center;
+width:90px;
 }
 
 .company-text h1{
-    color:#0056b3;
-    font-size:20px;
-    font-weight:900;
-    line-height:1.1;
+color:#0056b3;
+font-size:20px;
+line-height:1.2;
 }
 
 .company-text p{
-    color:#003366;
-    font-size:14px;
-    font-weight:bold;
+color:#003366;
+font-weight:bold;
 }
 
-/* MENU */
+/* ================= PREMIUM MENU ================= */
+
+nav{
+margin-left:auto;
+}
 
 nav ul{
-    list-style:none;
-    display:flex;
-    align-items:center;
-    gap:25px;
+list-style:none;
+display:flex;
+align-items:center;
+justify-content:flex-end;
+gap:6px;
+margin:0;
+padding:0;
+flex-wrap:nowrap;
+}
+
+nav ul li{
+position:relative;
+display:inline-block;
 }
 
 nav ul li a{
-    text-decoration:none;
-    color:#111;
-    font-weight:700;
-    font-size:16px;
+text-decoration:none;
+color:#111;
+padding:14px 18px;
+display:block;
+font-size:15px;
+font-weight:600;
+transition:0.3s;
+border-radius:6px;
+white-space:nowrap;
+cursor:pointer;
+}
+
+nav ul li a:hover{
+color:#0056b3;
+background:rgba(0,86,179,0.08);
+}
+
+/* ================= DROPDOWN ================= */
+
+.has-dropdown{
+position:relative;
+}
+
+.dropdown{
+display:none;
+position:absolute;
+top:100%;
+left:0;
+margin-top:0;
+background:white;
+min-width:270px;
+border-radius:10px;
+overflow:visible;
+box-shadow:0 10px 30px rgba(0,0,0,0.18);
+z-index:9999;
+animation:dropdownFade 0.25s ease;
+}
+
+.dropdown a{
+padding:15px 18px;
+border-bottom:1px solid #f2f2f2;
+color:#222;
+font-size:15px;
+font-weight:500;
+background:white;
+transition:0.3s;
+display:block;
+text-decoration:none;
+}
+
+.dropdown a:hover{
+background:#184a97;
+color:white;
+padding-left:24px;
+}
+
+.has-dropdown:hover > .dropdown{
+display:block;
+}
+
+/* ================= SUBMENU ================= */
+
+.submenu-item{
+position:relative;
+}
+
+.submenu{
+display:none;
+position:absolute;
+top:-2px;
+left:100%;
+background:white;
+min-width:250px;
+border-radius:10px;
+overflow:visible;
+box-shadow:0 10px 30px rgba(0,0,0,0.18);
+animation:dropdownFade 0.25s ease;
+z-index:9999;
+}
+
+.submenu a{
+padding:15px 18px;
+border-bottom:1px solid #f2f2f2;
+background:white;
+color:#222;
+transition:0.3s;
+display:block;
+text-decoration:none;
+}
+
+.submenu a:hover{
+background:#184a97;
+color:white;
+padding-left:24px;
+}
+
+.submenu-item:hover > .submenu{
+display:block;
+}
+
+/* ================= MENU ANIMATION ================= */
+
+@keyframes dropdownFade{
+
+from{
+opacity:0;
+transform:translateY(10px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 /* PAGE TITLE */
@@ -167,36 +284,280 @@ footer p{
 
 <body>
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 
-<header class="top-header">
+<header>
+
+<div class="top-header">
+
+<!-- LOGO -->
 
 <div class="logo-section">
 
-<img src="Logo.jpeg">
+<img src="https://raw.githubusercontent.com/MJ-shaikh/test/main/Logo.jpeg">
 
 <div class="company-text">
-<h1>
-NATIONAL HIGHWAYS INVIT <br>
-PROJECT MANAGERS <br>
+
+<h1 style="line-height:1.1; text-align:left;">
+
+<span style="display:block;">
+NATIONAL HIGHWAYS INVIT
+</span>
+
+<span style="display:block;">
+PROJECT MANAGERS
+</span>
+
+<span style="display:block;">
 PRIVATE LIMITED
+</span>
+
 </h1>
 
 <p>A wholly owned entity of NHAI</p>
-</div>
 
 </div>
 
- <nav>
+</div>
+
+<!-- ================= MENU ================= -->
+
+<nav>
+
 <ul>
 
 <li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="vision.html">Vision</a></li>
-<li><a href="directors.html">Board</a></li>
+
+<!-- ABOUT -->
+
+<li class="has-dropdown">
+
+<a href="#">About ▼</a>
+
+<div class="dropdown">
+
+<a href="about.html">About NHIPMPL</a>
+<a href="vision.html">Vision & Mission</a>
+<a href="directors.html">Board of Directors</a>
+<a href="leadership.html">Leadership Team</a>
+
+</div>
+
+</li>
+
+<!-- ASSETS -->
+
+<li class="has-dropdown">
+
+<a href="#">Assets ▼</a>
+
+<div class="dropdown">
+
+<div class="submenu-item">
+
+<a href="#">NHIT ▶</a>
+
+<div class="submenu">
+
+<!-- ================= R1 ================= -->
+
+<div class="submenu-item">
+
+<a href="#">R1 ▶</a>
+
+<div class="submenu">
+
+<a href="Undvariya.html">Undvariya</a>
+<a href="Khemana.html">Khemana</a>
+<a href="Kognoli.html">Kognoli</a>
+<a href="Hattargi.html">Hattargi</a>
+<a href="Pullur.html">Pullur</a>
+<a href="Dhaneshwar.html">Dhaneshwar</a>
+<a href="Bassi.html">Bassi</a>
+<a href="Aroli.html">Aroli</a>
+
+</div>
+
+</div>
+
+<!-- ================= R2 ================= -->
+
+<div class="submenu-item">
+
+<a href="#">R2 ▶</a>
+
+<div class="submenu">
+
+<a href="Kelapur.html">Kelapur</a>
+<a href="Raibha.html">Raibha</a>
+<a href="Raksha.html">Raksha</a>
+<a href="Daroda.html">Daroda</a>
+
+</div>
+
+</div>
+
+<!-- ================= R3 ================= -->
+
+<div class="submenu-item">
+
+<a href="#">R3 ▶</a>
+
+<div class="submenu">
+
+<a href="Usaka.html">Usaka</a>
+<a href="Odaki-Pipkar.html">Odaki Pipkar</a>
+<a href="Kherswani.html">Kherswani</a>
+<a href="Mohtara.html">Mohtara</a>
+<a href="Boharipaar.html">Boharipaar</a>
+<a href="Patgaon.html">Patgaon</a>
+<a href="Dahalapara.html">Dahalapara</a>
+<a href="Galia.html">Galia</a>
+<a href="Madai.html">Madai</a>
+<a href="Khawasa.html">Khawasa</a>
+<a href="Bankapur.html">Bankapur</a>
+<a href="Hebbalu.html">Hebbalu</a>
+<a href="Chalageri.html">Chalageri</a>
+
+</div>
+
+</div>
+
+<!-- ================= R4 ================= -->
+
+<div class="submenu-item">
+
+<a href="#">R4 ▶</a>
+
+<div class="submenu">
+
+<a href="Balibhasa.html">Balibhasa</a>
+<a href="Chhapar.html">Chhapar</a>
+<a href="Bhadarabad.html">Bhadarabad</a>
+<a href="Madapam.html">Madapam</a>
+<a href="Nathavalasa.html">Nathavalasa</a>
+<a href="Mahasamudram.html">Mahasamudram</a>
+<a href="Bhojpuri.html">Bhojpuri</a>
+<a href="Mudipar.html">Mudipar</a>
+<a href="Mokha.html">Mokha</a>
+<a href="Faridpur.html">Faridpur</a>
+<a href="Maigalganj.html">Maigalganj</a>
+<a href="Veeravalli.html">Veeravalli</a>
+<a href="Marripalem.html">Marripalem</a>
+<a href="Dukkavanipalem.html">Dukkavanipalem</a>
+<a href="Gadanki.html">Gadanki</a>
+<a href="Tarpongi.html">Tarpongi</a>
+
+</div>
+
+</div>
+
+<!-- ================= R5 ================= -->
+
+<div class="submenu-item">
+
+<a href="#">R5 ▶</a>
+
+<div class="submenu">
+
+<a href="Kurankhed.html">Kurankhed</a>
+<a href="Taroda-Kasba.html">Taroda Kasba</a>
+<a href="Dasarkhed.html">Dasarkhed</a>
+<a href="Nasirabad.html">Nasirabad</a>
+<a href="Kalaparru.html">Kalaparru</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="submenu-item">
+
+<a href="#">RIIT ▶</a>
+
+<div class="submenu">
+
+<a href="future-assets.html">Future Assets</a>
+<a href="#">Upcoming Corridors</a>
+
+</div>
+
+</div>
+
+</div>
+
+</li>
+
+<!-- PROCUREMENT -->
+
+<li class="has-dropdown">
+
+<a href="#">Procurement ▼</a>
+
+<div class="dropdown">
+
+<div class="submenu-item">
+
+<a href="#">Tenders ▶</a>
+
+<div class="submenu">
+
+<a href="active-tenders.html">Active Tenders</a>
+<a href="archived-tenders.html">Archived Tenders</a>
+
+</div>
+
+</div>
+
+<a href="procurement-sop.html">Procurement SOP</a>
+
+</div>
+
+</li>
+
+<!-- MEDIA -->
+
+<li class="has-dropdown">
+
+<a href="#">Media ▼</a>
+
+<div class="dropdown">
+
+<a href="news.html">News</a>
+<a href="events.html">Events</a>
+
+</div>
+
+</li>
+
+<!-- RESOURCE CENTER -->
+
+<li class="has-dropdown">
+
+<a href="#">Resource Center ▼</a>
+
+<div class="dropdown">
+
+<a href="internal-complaints.html">
+Internal Complaints Committee
+</a>
+
+</div>
+
+</li>
+
+<li>
+<a href="career.html">Career</a>
+</li>
 
 </ul>
+
 </nav>
+
+</div>
 
 </header>
 
