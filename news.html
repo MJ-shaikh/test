@@ -898,7 +898,50 @@ await getDocs(collection(db,"news"));
 const newsContainer =
 document.getElementById("newsContainer");
 
+let count = 4;
+
 querySnapshot.forEach((doc)=>{
+
+const data = doc.data();
+
+/* DATE FORMAT */
+
+const formattedDate =
+new Date(data.date)
+.toLocaleDateString('en-GB');
+
+/* AUTO ID */
+
+const newsId =
+String(count).padStart(3,'0');
+
+newsContainer.innerHTML += `
+
+<tr>
+
+<td>${newsId}</td>
+
+<td>${data.title}</td>
+
+<td>${formattedDate}</td>
+
+<td>${data.resource || "NHIPMPL Media"}</td>
+
+<td>
+
+<a href="#" class="btn">
+View Photo's
+</a>
+
+</td>
+
+</tr>
+
+`;
+
+count++;
+
+});
 
 const data = doc.data();
 
