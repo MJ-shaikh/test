@@ -825,9 +825,7 @@ View Photo's
 </div>
 <!-- FIREBASE NEWS -->
 
-<div class="news-container" id="newsContainer">
 
-</div>
 <!-- ================= FOOTER ================= -->
 
 <footer>
@@ -906,8 +904,6 @@ const data = doc.data();
 
 newsContainer.innerHTML += `
 
-<table class="news-table">
-
 <tr>
 
 <td>${data.id || "001"}</td>
@@ -928,7 +924,8 @@ View Photo's
 
 </tr>
 
-</table>
+<tbody id="newsContainer"></tbody>
+
 
 `;
 
