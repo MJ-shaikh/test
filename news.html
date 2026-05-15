@@ -906,15 +906,29 @@ const data = doc.data();
 
 newsContainer.innerHTML += `
 
-<div class="news-card">
+<table class="news-table">
 
-<h2>${data.title}</h2>
+<tr>
 
-<p>${data.description}</p>
+<td>${data.id || "001"}</td>
 
-<p><strong>Date:</strong> ${data.date}</p>
+<td>${data.title}</td>
 
-</div>
+<td>${data.date}</td>
+
+<td>${data.resource || "NHIPMPL Media"}</td>
+
+<td>
+
+<a href="#" class="btn">
+View Photo's
+</a>
+
+</td>
+
+</tr>
+
+</table>
 
 `;
 
