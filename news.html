@@ -423,6 +423,30 @@ font-size:18px;
 }
 
 }
+  .news-container{
+width:90%;
+margin:40px auto;
+display:grid;
+gap:25px;
+}
+
+.news-card{
+background:white;
+padding:30px;
+border-radius:14px;
+box-shadow:0 5px 18px rgba(0,0,0,0.12);
+}
+
+.news-card h2{
+color:#003366;
+margin-bottom:15px;
+}
+
+.news-card p{
+line-height:1.8;
+color:#444;
+margin-bottom:10px;
+}
 </style>
 
 </head>
@@ -799,7 +823,11 @@ View Photo's
 </table>
 
 </div>
+<!-- FIREBASE NEWS -->
 
+<div class="news-container" id="newsContainer">
+
+</div>
 <!-- ================= FOOTER ================= -->
 
 <footer>
@@ -855,7 +883,48 @@ row.style.display="none";
 });
 
 </script>
+<script type="module">
 
+import { db } from './firebase-config.js';
+
+import {
+collection,
+getDocs
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+async function loadNews(){
+
+const querySnapshot =
+await getDocs(collection(db,"news"));
+
+const newsContainer =
+document.getElementById("newsContainer");
+
+querySnapshot.forEach((doc)=>{
+
+const data = doc.data();
+
+newsContainer.innerHTML += `
+
+<div class="news-card">
+
+<h2>${data.title}</h2>
+
+<p>${data.description}</p>
+
+<p><strong>Date:</strong> ${data.date}</p>
+
+</div>
+
+`;
+
+});
+
+}
+
+loadNews();
+
+</script>
 </body>
 
 </html>
