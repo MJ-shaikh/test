@@ -319,7 +319,106 @@ font-size:30px;
 }
 
 }
+/* ================= MOBILE VIEW ================= */
 
+@media screen and (max-width:900px){
+
+/* HEADER */
+
+.top-header{
+flex-direction:column;
+align-items:flex-start;
+padding:15px;
+gap:15px;
+}
+
+/* LOGO */
+
+.logo-section{
+width:100%;
+gap:12px;
+}
+
+.logo-section img{
+width:75px;
+}
+
+/* COMPANY NAME */
+
+.company-heading{
+font-size:11px;
+white-space:normal;
+line-height:1.2;
+}
+
+.company-subtext{
+font-size:10px;
+}
+
+/* MENU */
+
+nav{
+width:100%;
+overflow-x:auto;
+}
+
+nav ul{
+display:flex;
+flex-wrap:nowrap;
+gap:8px;
+padding-bottom:6px;
+}
+
+nav ul li a{
+font-size:13px;
+padding:10px 12px;
+white-space:nowrap;
+}
+
+/* PAGE TITLE */
+
+.page-title h2{
+font-size:34px;
+}
+
+/* SEARCH */
+
+.search-box{
+width:95%;
+}
+
+.search-box input{
+font-size:16px;
+padding:16px 16px 16px 50px;
+}
+
+/* CARDS */
+
+.tender-card{
+grid-template-columns:1fr;
+padding:25px;
+gap:25px;
+}
+
+/* FOOTER */
+
+.footer-container{
+grid-template-columns:1fr;
+text-align:center;
+gap:30px;
+}
+
+.footer-box,
+.footer-box:nth-child(2),
+.footer-box:nth-child(3){
+text-align:center;
+}
+
+.visitor-counter h3{
+font-size:18px;
+}
+
+}
 </style>
 
 </head>
