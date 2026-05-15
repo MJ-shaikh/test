@@ -971,6 +971,9 @@ padding:15px;
 .menu-toggle{
 display:block;
 margin-left:auto;
+font-size:42px;
+padding-right:10px;
+line-height:1;
 }
 
 /* HIDE MENU */
@@ -978,6 +981,11 @@ margin-left:auto;
 nav{
 width:100%;
 display:none;
+margin-top:15px;
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,0.12);
 }
 
 /* SHOW MENU WHEN CLICKED */
@@ -985,15 +993,27 @@ display:none;
 nav.active{
 display:block;
 }
+/* HIDE DESKTOP MENU */
 
+nav ul{
+display:none;
+}
+
+/* SHOW MOBILE MENU */
+
+nav.active ul{
+display:flex;
+}
 /* MOBILE MENU STYLE */
 
 nav ul{
+display:flex;
 flex-direction:column;
 align-items:flex-start;
 width:100%;
 gap:0;
-margin-top:10px;
+margin:0;
+padding:0;
 }
 
 nav ul li{
@@ -1001,9 +1021,12 @@ width:100%;
 }
 
 nav ul li a{
+display:block;
 width:100%;
-padding:14px;
-border-bottom:1px solid #ddd;
+padding:14px 18px;
+border-bottom:1px solid #e5e5e5;
+font-size:15px;
+background:white;
 }
 
 /* MOBILE DROPDOWN */
