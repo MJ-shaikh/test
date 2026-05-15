@@ -943,35 +943,6 @@ count++;
 
 });
 
-const data = doc.data();
-
-newsContainer.innerHTML += `
-
-<tr>
-
-<td>${data.id || "001"}</td>
-
-<td>${data.title}</td>
-
-<td>${data.date}</td>
-
-<td>${data.resource || "NHIPMPL Media"}</td>
-
-<td>
-
-<a href="#" class="btn">
-View Photo's
-</a>
-
-</td>
-
-</tr>
-
-
-`;
-
-});
-
 }
 
 loadNews();
