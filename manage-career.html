@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Manage Career | NHIPMPL</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f4f7fc;
+padding:40px;
+}
+
+/* MAIN CONTAINER */
+
+.main-container{
+width:100%;
+background:white;
+border-radius:18px;
+padding:25px;
+box-shadow:0 5px 18px rgba(0,0,0,0.12);
+}
+
+/* PAGE TITLE */
+
+.page-title{
+font-size:38px;
+font-weight:bold;
+color:#184a97;
+margin-bottom:25px;
+}
+
+/* SEARCH BOX */
+
+.search-box{
+width:100%;
+background:white;
+border-radius:18px;
+padding:18px 25px;
+margin-bottom:35px;
+display:flex;
+align-items:center;
+gap:15px;
+box-shadow:0 4px 15px rgba(0,0,0,0.10);
+border:1px solid #ddd;
+}
+
+.search-icon{
+font-size:34px;
+color:#184a97;
+}
+
+.search-box input{
+width:100%;
+border:none;
+outline:none;
+font-size:20px;
+background:none;
+color:#333;
+}
+
+/* ADD BUTTON */
+
+.add-btn{
+display:inline-block;
+background:#184a97;
+color:white;
+padding:14px 24px;
+border-radius:10px;
+text-decoration:none;
+font-size:16px;
+font-weight:bold;
+margin-bottom:25px;
+transition:0.3s;
+}
+
+.add-btn:hover{
+background:#0d3477;
+}
+
+/* TABLE */
+
+.table-wrapper{
+overflow-x:auto;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:1200px;
+}
+
+thead{
+background:#184a97;
+color:white;
+}
+
+th{
+padding:18px 14px;
+font-size:17px;
+font-weight:bold;
+text-align:center;
+}
+
+td{
+padding:22px 14px;
+border:1px solid #d8d8d8;
+text-align:center;
+font-size:16px;
+line-height:1.7;
+}
+
+/* BUTTONS */
+
+.action-btn{
+display:inline-block;
+padding:12px 18px;
+border-radius:8px;
+text-decoration:none;
+font-size:15px;
+font-weight:bold;
+color:white;
+transition:0.3s;
+margin:4px;
+min-width:110px;
+}
+
+.download-btn{
+background:#27379b;
+}
+
+.edit-btn{
+background:#ff9800;
+}
+
+.delete-btn{
+background:#d32f2f;
+}
+
+.action-btn:hover{
+opacity:0.88;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+body{
+padding:15px;
+}
+
+.page-title{
+font-size:30px;
+}
+
+.search-box input{
+font-size:16px;
+}
+
+th{
+font-size:15px;
+padding:14px 10px;
+}
+
+td{
+font-size:14px;
+padding:18px 10px;
+}
+
+.action-btn{
+font-size:13px;
+padding:10px 14px;
+min-width:90px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="main-container">
+
+<div class="page-title">
+Manage Career Openings
+</div>
+
+<!-- SEARCH -->
+
+<div class="search-box">
+
+<span class="search-icon">🔍</span>
+
+<input type="text"
+id="searchInput"
+placeholder="Search Career Openings">
+
+</div>
+
+<!-- ADD BUTTON -->
+
+<a href="add-career.html"
+class="add-btn">
+
++ Add New Career
+
+</a>
+
+<!-- TABLE -->
+
+<div class="table-wrapper">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Number</th>
+<th>Age Limit</th>
+<th>Apply Now</th>
+<th>Education Qualification</th>
+<th>End Date</th>
+<th>Job Role</th>
+<th>Minimum Experience</th>
+<th>Number of Posts</th>
+<th>View Details</th>
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>01</td>
+
+<td>50</td>
+
+<td>
+
+<a href="apply.html"
+class="action-btn download-btn">
+
+Apply Now
+
+</a>
+
+</td>
+
+<td>
+Degree in Commerce/Accounts
+</td>
+
+<td>
+15 April 2026
+</td>
+
+<td>
+General Manager
+(Finance & Accounts)
+</td>
+
+<td>
+15 years of experience
+</td>
+
+<td>
+01
+</td>
+
+<td>
+
+<a href="GM-Finance.pdf"
+download
+class="action-btn download-btn">
+
+View Details
+
+</a>
+
+</td>
+
+<td>
+
+<a href="#"
+class="action-btn edit-btn">
+
+Edit
+
+</a>
+
+<a href="#"
+class="action-btn delete-btn">
+
+Delete
+
+</a>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>02</td>
+
+<td>40</td>
+
+<td>
+
+<a href="apply.html"
+class="action-btn download-btn">
+
+Apply Now
+
+</a>
+
+</td>
+
+<td>
+Degree in Commerce
+</td>
+
+<td>
+10 April 2026
+</td>
+
+<td>
+Manager
+(Finance & Accounts)
+</td>
+
+<td>
+08 years of experience
+</td>
+
+<td>
+01
+</td>
+
+<td>
+
+<a href="Manager-Finance.pdf"
+download
+class="action-btn download-btn">
+
+View Details
+
+</a>
+
+</td>
+
+<td>
+
+<a href="#"
+class="action-btn edit-btn">
+
+Edit
+
+</a>
+
+<a href="#"
+class="action-btn delete-btn">
+
+Delete
+
+</a>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>03</td>
+
+<td>55</td>
+
+<td>
+
+<a href="apply.html"
+class="action-btn download-btn">
+
+Apply Now
+
+</a>
+
+</td>
+
+<td>
+B.Tech / B.E Degree
+</td>
+
+<td>
+24 February 2026
+</td>
+
+<td>
+Head (Technical)
+</td>
+
+<td>
+20 years of experience
+</td>
+
+<td>
+01
+</td>
+
+<td>
+
+<a href="Head-Technical.pdf"
+download
+class="action-btn download-btn">
+
+View Details
+
+</a>
+
+</td>
+
+<td>
+
+<a href="#"
+class="action-btn edit-btn">
+
+Edit
+
+</a>
+
+<a href="#"
+class="action-btn delete-btn">
+
+Delete
+
+</a>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<!-- SEARCH FUNCTION -->
+
+<script>
+
+const searchInput =
+document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup", function(){
+
+let filter =
+this.value.toLowerCase();
+
+let rows =
+document.querySelectorAll("tbody tr");
+
+rows.forEach(row => {
+
+let text =
+row.innerText.toLowerCase();
+
+row.style.display =
+text.includes(filter)
+? ""
+: "none";
+
+});
+
+});
+
+</script>
+
+</body>
+
+</html>
