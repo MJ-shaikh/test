@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Add Career | NHIPMPL</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f4f7fc;
+padding:40px;
+}
+
+/* CONTAINER */
+
+.form-container{
+max-width:900px;
+margin:auto;
+background:white;
+padding:35px;
+border-radius:18px;
+box-shadow:0 5px 18px rgba(0,0,0,0.12);
+}
+
+/* TITLE */
+
+.page-title{
+font-size:38px;
+font-weight:bold;
+color:#184a97;
+margin-bottom:30px;
+}
+
+/* FORM */
+
+.form-group{
+margin-bottom:22px;
+}
+
+label{
+display:block;
+margin-bottom:10px;
+font-size:17px;
+font-weight:bold;
+color:#184a97;
+}
+
+input,
+textarea,
+select{
+width:100%;
+padding:16px;
+border:1px solid #ccc;
+border-radius:10px;
+font-size:16px;
+outline:none;
+}
+
+textarea{
+resize:vertical;
+min-height:120px;
+}
+
+/* BUTTON */
+
+.submit-btn{
+background:#184a97;
+color:white;
+border:none;
+padding:16px 28px;
+font-size:18px;
+font-weight:bold;
+border-radius:10px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.submit-btn:hover{
+background:#0f3270;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+body{
+padding:15px;
+}
+
+.form-container{
+padding:22px;
+}
+
+.page-title{
+font-size:30px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="form-container">
+
+<div class="page-title">
+
+Add Career Opening
+
+</div>
+
+<form>
+
+<div class="form-group">
+
+<label>
+Job Role
+</label>
+
+<input type="text"
+placeholder="Enter Job Role">
+
+</div>
+
+<div class="form-group">
+
+<label>
+Age Limit
+</label>
+
+<input type="number"
+placeholder="Enter Age Limit">
+
+</div>
+
+<div class="form-group">
+
+<label>
+Education Qualification
+</label>
+
+<textarea placeholder="Enter Qualification Details"></textarea>
+
+</div>
+
+<div class="form-group">
+
+<label>
+Minimum Experience
+</label>
+
+<input type="text"
+placeholder="Enter Experience">
+
+</div>
+
+<div class="form-group">
+
+<label>
+Number of Posts
+</label>
+
+<input type="number"
+placeholder="Enter Number of Posts">
+
+</div>
+
+<div class="form-group">
+
+<label>
+End Date
+</label>
+
+<input type="date">
+
+</div>
+
+<div class="form-group">
+
+<label>
+Upload PDF Notification
+</label>
+
+<input type="file">
+
+</div>
+
+<button type="submit"
+class="submit-btn">
+
+Save Career Opening
+
+</button>
+
+</form>
+
+</div>
+
+</body>
+
+</html>
