@@ -244,13 +244,28 @@ class="add-btn">
 
 </thead>
 
-<tbody>
+<script>
+
+/* GET CAREERS */
+
+let careers =
+JSON.parse(localStorage.getItem("careers"))
+|| [];
+
+const tableBody =
+document.getElementById("careerTableBody");
+
+/* DISPLAY DATA */
+
+careers.forEach((career,index)=>{
+
+tableBody.innerHTML += `
 
 <tr>
 
-<td>01</td>
+<td>${index + 1}</td>
 
-<td>50</td>
+<td>${career.ageLimit}</td>
 
 <td>
 
@@ -263,31 +278,19 @@ Apply Now
 
 </td>
 
-<td>
-Degree in Commerce/Accounts
-</td>
+<td>${career.qualification}</td>
 
-<td>
-15 April 2026
-</td>
+<td>${career.endDate}</td>
 
-<td>
-General Manager
-(Finance & Accounts)
-</td>
+<td>${career.jobRole}</td>
 
-<td>
-15 years of experience
-</td>
+<td>${career.experience}</td>
 
-<td>
-01
-</td>
+<td>${career.posts}</td>
 
 <td>
 
-<a href="GM-Finance.pdf"
-download
+<a href="#"
 class="action-btn download-btn">
 
 View Details
@@ -306,7 +309,8 @@ Edit
 </a>
 
 <a href="#"
-class="action-btn delete-btn">
+class="action-btn delete-btn"
+onclick="deleteCareer(${index})">
 
 Delete
 
@@ -316,146 +320,30 @@ Delete
 
 </tr>
 
-<tr>
+`;
 
-<td>02</td>
+});
 
-<td>40</td>
+/* DELETE FUNCTION */
 
-<td>
+function deleteCareer(index){
 
-<a href="apply.html"
-class="action-btn download-btn">
+let careers =
+JSON.parse(localStorage.getItem("careers"))
+|| [];
 
-Apply Now
+careers.splice(index,1);
 
-</a>
+localStorage.setItem(
+"careers",
+JSON.stringify(careers)
+);
 
-</td>
+location.reload();
 
-<td>
-Degree in Commerce
-</td>
+}
 
-<td>
-10 April 2026
-</td>
-
-<td>
-Manager
-(Finance & Accounts)
-</td>
-
-<td>
-08 years of experience
-</td>
-
-<td>
-01
-</td>
-
-<td>
-
-<a href="Manager-Finance.pdf"
-download
-class="action-btn download-btn">
-
-View Details
-
-</a>
-
-</td>
-
-<td>
-
-<a href="#"
-class="action-btn edit-btn">
-
-Edit
-
-</a>
-
-<a href="#"
-class="action-btn delete-btn">
-
-Delete
-
-</a>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>03</td>
-
-<td>55</td>
-
-<td>
-
-<a href="apply.html"
-class="action-btn download-btn">
-
-Apply Now
-
-</a>
-
-</td>
-
-<td>
-B.Tech / B.E Degree
-</td>
-
-<td>
-24 February 2026
-</td>
-
-<td>
-Head (Technical)
-</td>
-
-<td>
-20 years of experience
-</td>
-
-<td>
-01
-</td>
-
-<td>
-
-<a href="Head-Technical.pdf"
-download
-class="action-btn download-btn">
-
-View Details
-
-</a>
-
-</td>
-
-<td>
-
-<a href="#"
-class="action-btn edit-btn">
-
-Edit
-
-</a>
-
-<a href="#"
-class="action-btn delete-btn">
-
-Delete
-
-</a>
-
-</td>
-
-</tr>
-
-</tbody>
+</script>
 
 </table>
 
