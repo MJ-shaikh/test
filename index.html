@@ -123,41 +123,50 @@ color:#333;
 }
 
 /* LOGO + COMPANY */
-
 .logo-section{
-    display:flex;
-    align-items:center;
-    gap:15px;
+display:flex;
+align-items:center;
+gap:18px;
+min-width:540px;
 }
 
+/* LOGO */
+
 .logo-section img{
-    width:115px;
+width:105px;
+height:auto;
+display:block;
 }
 
 /* COMPANY TEXT */
 
 .company-text{
-text-align:left;
-padding-left:10px;
+display:flex;
+flex-direction:column;
+justify-content:center;
 }
 
-.company-text h1{
-font-size:18px;
-line-height:1.2;
+/* COMPANY NAME */
+
+.company-heading{
+font-size:15px;
+line-height:1.08;
+font-weight:900;
 color:#0056b3;
-font-weight:800;
 text-transform:uppercase;
-text-align:center;
+margin:0;
+letter-spacing:0.2px;
 }
 
-.company-text p{
+/* SUB TEXT */
+
+.company-subtext{
+font-size:12px;
+font-weight:700;
 color:#003366;
-font-size:13px;
-margin-top:4px;
-font-weight:600;
-text-align:center;
+margin-top:5px;
+text-align:left;
 }
-
         /* ================= MENU ================= */
 
      nav ul{
@@ -1459,30 +1468,27 @@ border-top:4px solid #f1f1f1;
 
             <div class="logo-section">
 
-                <img src="https://raw.githubusercontent.com/MJ-shaikh/test/main/Logo.jpeg">
+<img src="https://raw.githubusercontent.com/MJ-shaikh/test/main/Logo.jpeg">
 
-               <div class="company-text">
+<div class="company-text">
 
-  <h1 style="line-height:1.1;">
+<h1 class="company-heading">
 
-<span style="display:block;">
 NATIONAL HIGHWAYS INVIT PROJECT MANAGERS
-</span>
+<br>
 
-<span style="
-display:block;
-margin-left:0;
-">
 PRIVATE LIMITED
-</span>
 
 </h1>
 
-    <p>A wholly owned entity of NHAI</p>
+<p class="company-subtext">
+A wholly owned entity of NHAI
+</p>
 
 </div>
 
-            </div>
+</div>
+
 
             <!-- ================= MENU ================= -->
 <div class="menu-toggle" onclick="toggleMenu()">
