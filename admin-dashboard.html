@@ -181,8 +181,53 @@ Open
 import { auth } from './firebase-config.js';
 
 import {
-signOut
+signOut,
+onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+/* LOGIN CHECK */
+
+onAuthStateChanged(auth,(user)=>{
+
+if(!user){
+
+window.location.href = "login.html";
+
+}
+
+});
+
+/* AUTO LOGOUT AFTER INACTIVITY */
+
+let timeout;
+
+function resetTimer(){
+
+clearTimeout(timeout);
+
+timeout = setTimeout(()=>{
+
+alert("Session expired. Please login again.");
+
+logout();
+
+}, 10 * 60 * 1000);
+
+/* 10 minutes */
+
+}
+
+/* USER ACTIVITY */
+
+window.onload = resetTimer;
+
+document.onmousemove = resetTimer;
+
+document.onkeypress = resetTimer;
+
+document.onclick = resetTimer;
+
+/* LOGOUT */
 
 function logout(){
 
@@ -190,8 +235,7 @@ signOut(auth)
 
 .then(()=>{
 
-window.location.href =
-"login.html";
+window.location.href = "login.html";
 
 });
 
