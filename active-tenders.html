@@ -809,10 +809,9 @@ Download RFP
 
 <!-- SECOND TENDER -->
 
-<div class="tender-card searchable-card">
+<div id="tenderContainer">
 
-<div>
-
+</div>
 <h3>RFP Name</h3>
 
 <p>
@@ -904,7 +903,92 @@ card.style.display="none";
 });
 
 </script>
+<script type="module">
 
+import { db } from './firebase-config.js';
+
+import {
+collection,
+getDocs
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+async function loadTenders(){
+
+const querySnapshot =
+await getDocs(collection(db,"tenders"));
+
+const tenderContainer =
+document.getElementById("tenderContainer");
+
+querySnapshot.forEach((doc)=>{
+
+const data = doc.data();
+
+/* SHOW ONLY ACTIVE */
+
+if(data.status !== "Active") return;
+
+/* DATE FORMAT */
+
+const d = new Date(data.date);
+
+const formattedDate =
+String(d.getDate()).padStart(2,'0') + "-" +
+String(d.getMonth()+1).padStart(2,'0') + "-" +
+d.getFullYear();
+
+tenderContainer.innerHTML += `
+
+<div class="tender-card searchable-card">
+
+<div>
+
+<h3>RFP Name</h3>
+
+<p>
+
+${data.title}
+
+</p>
+
+<a href="#"
+class="btn">
+
+Download RFP
+
+</a>
+
+</div>
+
+<div>
+
+<h3>Tender No</h3>
+
+<p>${data.number}</p>
+
+<p>${formattedDate}</p>
+
+</div>
+
+<div>
+
+<h3>Status</h3>
+
+<p>${data.status}</p>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+loadTenders();
+
+</script>
 </body>
 
 </html>
