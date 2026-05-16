@@ -29,22 +29,16 @@ margin-bottom:50px;
 }
 
 .project-slider{
-
 display:flex;
-gap:30px;
-overflow-x:auto;
-overflow-y:visible;
+gap:20px;
+overflow:hidden;
 scroll-behavior:smooth;
-padding:20px 70px;
-box-sizing:border-box;
-scrollbar-width:none;
-
+width:100%;
 }
-
 .project-card{
 
-min-width:380px;
-max-width:380px;
+flex:0 0 calc(25% - 15px);
+max-width:calc(25% - 15px);
 background:#fff;
 border-radius:25px;
 overflow:hidden;
@@ -910,15 +904,7 @@ margin-bottom:50px;
 
 }
 
-.project-slider{
 
-display:flex;
-gap:30px;
-overflow-x:auto;
-scroll-behavior:smooth;
-padding-bottom:20px;
-
-}
 
 .project-slider::-webkit-scrollbar{
 
@@ -926,17 +912,7 @@ display:none;
 
 }
 
-.project-card{
 
-min-width:370px;
-background:white;
-border-radius:25px;
-overflow:hidden;
-text-decoration:none;
-box-shadow:0 5px 20px rgba(0,0,0,0.15);
-transition:0.3s;
-
-}
 
 .project-card:hover{
 
@@ -973,59 +949,95 @@ color:#333;
 
 }
         .projects-wrapper{
-
-position:relative;
-display:flex;
-align-items:center;
-overflow:visible;
-padding:0 30px;
-
+    position:relative;
+    width:100%;
+    overflow:hidden;
+    padding:0 70px;
 }
 
 .project-slider{
-
-display:flex;
-gap:30px;
-overflow:hidden;
-scroll-behavior:smooth;
-padding:20px;
-
+    display:flex;
+    gap:20px;
+    overflow:hidden;
+    scroll-behavior:smooth;
+    width:100%;
 }
 
 .project-card{
-
-min-width:360px;
-max-width:360px;
-flex-shrink:0;
-
+    flex:0 0 calc(25% - 15px);
+    max-width:calc(25% - 15px);
+    background:#fff;
+    border-radius:22px;
+    overflow:hidden;
+    text-decoration:none;
+    box-shadow:0 5px 20px rgba(0,0,0,0.12);
+    transition:0.3s;
 }
 
-/* ARROW BUTTONS */
+.project-card:hover{
+    transform:translateY(-6px);
+}
+
+.project-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    display:block;
+}
+
+.project-content{
+    padding:18px;
+}
+
+.project-content h3{
+    font-size:20px;
+    color:#184a97;
+    margin-bottom:10px;
+    line-height:1.4;
+}
+
+.project-content p{
+    font-size:17px;
+    color:#333;
+}
+
+/* ARROWS */
 
 .slider-btn{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-width:70px;
-height:70px;
-border-radius:50%;
-background:#0b3d91;
-color:#fff;
-border:none;
-font-size:42px;
-cursor:pointer;
-z-index:9999;
-box-shadow:0 4px 15px rgba(0,0,0,0.2);
-display:flex;
-align-items:center;
-justify-content:center;
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    border:none;
+    background:rgba(255,255,255,0.92);
+    color:#184a97;
+    font-size:34px;
+    font-weight:bold;
+    cursor:pointer;
+    z-index:999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 4px 12px rgba(0,0,0,0.18);
+    transition:0.3s;
+}
+
+.slider-btn:hover{
+    background:#184a97;
+    color:white;
 }
 
 .prev-btn{
-left:-5px;
+    left:5px;
+}
+
+.next-btn{
+    right:5px;
 }
 .next-btn{
-right:-5px;
+right:5px;
 }      /* IMAGE POPUP */
 
 .image-popup{
@@ -1138,34 +1150,46 @@ margin-bottom:25px;
 }
 
 .video-container{
-display:flex;
-gap:35px;
-justify-content:center;
-flex-wrap:wrap;
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:nowrap;
 }
 
 .video-card{
-width:31%;
-background:white;
-border-radius:28px;
-overflow:hidden;
-box-shadow:0 5px 20px rgba(0,0,0,0.15);
-transition:0.3s;
-}
-
-.video-card:hover{
-transform:translateY(-8px);
+    width:32%;
+    border-radius:22px;
+    overflow:hidden;
+    background:white;
+    box-shadow:0 5px 20px rgba(0,0,0,0.12);
 }
 
 .video-card video{
-width:100%;
-height:320px;
-object-fit:cover;
-display:block;
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    display:block;
 }
 
 @media screen and (max-width:900px){
+.project-card{
+    flex:0 0 85%;
+    max-width:85%;
+}
 
+.video-container{
+    flex-wrap:wrap;
+}
+
+.video-card{
+    width:100%;
+}
+
+.slider-btn{
+    width:48px;
+    height:48px;
+    font-size:28px;
+}
 .video-card{
 width:100%;
 }
@@ -1197,7 +1221,7 @@ font-size:34px;
 /* LOGO */
 
 .logo-section{
-width:100%;
+width:auto;
 gap:12px;
 }
 
@@ -2605,7 +2629,7 @@ NHIT TMS Projects
 <a href="shivpuri-jhansi-2.html" class="project-card">
 <img src="https://raw.githubusercontent.com/MJ-shaikh/test/main/SHIVPURI%20JAHANSI%202%20-%20UP.jpg">
 <div class="project-content">
-<h3>Shivpuri – Jhansi/h3>
+<h3>Shivpuri – Jhansi</h3>
 <p>State : Uttar Pradesh</p>
 </div>
 </a>
@@ -2768,7 +2792,7 @@ NHIT TMS Projects
 <p>State : Uttar Pradesh</p>
 </div>
 </a>
-</a>
+
 <a href="aburoad-swaropganj-2.html" class="project-card">
 <img src="https://raw.githubusercontent.com/MJ-shaikh/test/main/ABUROAD-%20SWAROPGANJ%202%20-RAJASTHAN.jpg">
 <div class="project-content">
@@ -3180,27 +3204,21 @@ this.parentElement.classList.toggle('active');
 
 const slider = document.querySelector('.project-slider');
 
-document.querySelector('.next-btn')
-.addEventListener('click', () => {
+document.querySelector('.next-btn').addEventListener('click', () => {
 
-slider.scrollBy({
-
-left:400,
-behavior:'smooth'
-
-});
+    slider.scrollBy({
+        left: slider.clientWidth,
+        behavior: 'smooth'
+    });
 
 });
 
-document.querySelector('.prev-btn')
-.addEventListener('click', () => {
+document.querySelector('.prev-btn').addEventListener('click', () => {
 
-slider.scrollBy({
-
-left:-400,
-behavior:'smooth'
-
-});
+    slider.scrollBy({
+        left: -slider.clientWidth,
+        behavior: 'smooth'
+    });
 
 });
 
