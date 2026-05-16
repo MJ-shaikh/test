@@ -958,7 +958,64 @@ font-size:18px;
 color:#333;
 
 }
-        
+        .projects-wrapper{
+
+position:relative;
+display:flex;
+align-items:center;
+
+}
+
+.project-slider{
+
+display:flex;
+gap:30px;
+overflow:hidden;
+scroll-behavior:smooth;
+padding:20px;
+
+}
+
+.project-card{
+
+min-width:350px;
+flex-shrink:0;
+
+}
+
+/* ARROW BUTTONS */
+
+.slider-btn{
+
+width:55px;
+height:55px;
+background:#184a97;
+color:white;
+font-size:34px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+cursor:pointer;
+position:absolute;
+z-index:99;
+top:45%;
+transform:translateY(-50%);
+box-shadow:0 5px 15px rgba(0,0,0,0.25);
+
+}
+
+.prev-btn{
+
+left:-10px;
+
+}
+
+.next-btn{
+
+right:-10px;
+
+}
         /* ================= MOBILE VIEW ================= */
 
 @media screen and (max-width:900px){
@@ -2179,6 +2236,9 @@ NHIT TMS Projects
 
 
 
+<div class="projects-wrapper">
+
+<div class="slider-btn prev-btn">&#10094;</div>
 
 <div class="project-slider">
 
@@ -2435,6 +2495,10 @@ class="project-card">
 
 </div>
 
+<div class="slider-btn next-btn">&#10095;</div>
+
+</div>
+
 </section>
     <section class="company-footer">
 
@@ -2678,6 +2742,35 @@ e.preventDefault();
 this.parentElement.classList.toggle('active');
 
 }
+
+});
+
+});
+
+</script>
+    <script>
+
+const slider = document.querySelector('.project-slider');
+
+document.querySelector('.next-btn')
+.addEventListener('click', () => {
+
+slider.scrollBy({
+
+left:400,
+behavior:'smooth'
+
+});
+
+});
+
+document.querySelector('.prev-btn')
+.addEventListener('click', () => {
+
+slider.scrollBy({
+
+left:-400,
+behavior:'smooth'
 
 });
 
