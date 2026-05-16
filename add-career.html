@@ -239,44 +239,31 @@ Save Career Opening
 </form>
 
 </div>
-<script>
+<script type="module">
+
+import { db } from './firebase-config.js';
+
+import {
+collection,
+addDoc
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const form =
 document.getElementById("careerForm");
 
-form.addEventListener("submit", function(e){
+form.addEventListener("submit",
+async function(e){
 
 e.preventDefault();
-
-/* GET FORM VALUES */
 
 const careerData = {
 
 jobRole:
-document.querySelectorAll("input")[0].value,
+document.querySelectorAll('input[type="text"]')[0].value,
 
 ageLimit:
-document.querySelectorAll("input")[1].value,
-
-experience:
-<script>
-
-const form =
-document.getElementById("careerForm");
-
-form.addEventListener("submit", function(e){
-
-e.preventDefault();
-
-/* GET FORM VALUES */
-
-const careerData = {
-
-jobRole:
-document.querySelector('input[type="text"]').value,
-
-ageLimit:
-document.querySelector('input[type="number"]').value,
+document.querySelectorAll('input[type="number"]')[0].value,
 
 qualification:
 document.querySelector("textarea").value,
@@ -288,41 +275,39 @@ posts:
 document.querySelectorAll('input[type="number"]')[1].value,
 
 endDate:
-document.querySelector('input[type="date"]').value
+document.querySelector('input[type="date"]').value,
+
+createdAt:new Date()
 
 };
 
-/* GET OLD DATA */
+try{
 
-let careers =
-JSON.parse(localStorage.getItem("careers"))
-|| [];
-
-/* ADD NEW DATA */
-
-careers.push(careerData);
-
-/* SAVE */
-
-localStorage.setItem(
-"careers",
-JSON.stringify(careers)
+await addDoc(
+collection(db,"careers"),
+careerData
 );
-
-/* SUCCESS MESSAGE */
 
 alert(
 "Career Opening Saved Successfully!"
 );
 
-/* RESET FORM */
-
 form.reset();
+
+}
+catch(error){
+
+alert(
+"Error Saving Career Opening"
+);
+
+console.error(error);
+
+}
 
 });
 
 </script>
-
 </body>
 
 </html>
