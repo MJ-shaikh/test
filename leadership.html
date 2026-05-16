@@ -232,54 +232,62 @@ transform:translateY(0);
         /* LEADERSHIP */
 
         .leadership-section{
-            width:90%;
-            margin:70px auto;
-            display:flex;
-            justify-content:center;
-            gap:35px;
-            flex-wrap:wrap;
-        }
+width:90%;
+margin:70px auto;
+display:flex;
+flex-direction:column;
+gap:40px;
+}
 
-        .leader-card{
-            background:white;
-            width:360px;
-            border-radius:20px;
-            overflow:hidden;
-            text-align:center;
-            box-shadow:0 10px 30px rgba(0,0,0,0.15);
-            transition:0.3s;
-        }
+.leader-card{
+background:white;
+width:100%;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+display:flex;
+align-items:center;
+gap:40px;
+padding:30px;
+transition:0.3s;
+}
 
-        .leader-card:hover{
-            transform:translateY(-10px);
-        }
+.leader-card:hover{
+transform:translateY(-8px);
+}
 
-        .leader-card img{
-            width:100%;
-            height:420px;
-            object-fit:cover;
-        }
+.leader-card img{
+width:340px;
+height:420px;
+object-fit:cover;
+border-radius:18px;
+flex-shrink:0;
+}
 
-        .leader-card h3{
-            font-size:30px;
-            color:#003366;
-            margin:25px 10px 12px;
-        }
+.leader-info{
+flex:1;
+}
 
-        .leader-card span{
-            display:block;
-            color:#0056b3;
-            font-size:18px;
-            font-weight:bold;
-            margin-bottom:25px;
-        }
+.leader-info h3{
+font-size:38px;
+color:#003366;
+margin-bottom:12px;
+}
 
-        .leader-card p{
-            padding:0 25px 30px;
-            line-height:1.9;
-            color:#444;
-            font-size:17px;
-        }
+.leader-info span{
+display:block;
+font-size:22px;
+font-weight:700;
+color:#0056b3;
+margin-bottom:22px;
+}
+
+.leader-info p{
+font-size:18px;
+line-height:1.9;
+color:#444;
+text-align:justify;
+}
 
         /* FOOTER */
 
@@ -746,65 +754,129 @@ Internal Complaints Committee
 
         <!-- LEADER 1 -->
 
+        <!-- DIRECTOR 1 -->
+
+<div class="director-card">
+
+<img src="https://raw.githubusercontent.com/MJ-shaikh/test/main/CEO.png">
+
+<div class="director-info">
+
+<h3>Sh. Sunil Yadav</h3>
+
+<span>Chief Executive Officer & Director</span>
+
+<p>
+
+Sh. Sunil Yadav possesses extensive experience in infrastructure
+development, highway operations, project management,
+strategic leadership, National Highway projects,
+operational monitoring, arbitration,
+and infrastructure governance systems.
+
+</p>
+
+</div>
+
+</div>
+        <!-- DIRECTOR 2 -->
+
+<div class="director-card">
+
+<img src="https://raw.githubusercontent.com/MJ-shaikh/test/main/director.jpg">
+
+<div class="director-info">
+
+<h3>Sh. Ashish Kumar Singh</h3>
+
+<span>Director</span>
+
+<p>
+
+Experienced professional in finance,
+infrastructure management,
+project finance, governance systems,
+operational supervision,
+infrastructure accounting,
+and strategic asset management.
+
+</p>
+
+</div>
+
+</div>
         <div class="leader-card">
 
-            <img src="https://raw.githubusercontent.com/MJ-shaikh/test/main/Londhe.jpg">
+            
+<img src="https://raw.githubusercontent.com/MJ-shaikh/test/main/Londhe.jpg">
 
-            <h3>Sh. Bandu Londhe</h3>
+<div class="leader-info">
 
-            <span>Head System (ATMS & TMS)</span>
+<h3>Sh. Bandu Londhe</h3>
 
-            <p>
+<span>Head System (ATMS & TMS)</span>
 
-                Expert professional in Intelligent Transportation Systems,
-                ATMS infrastructure, toll management systems,
-                project supervision, operational monitoring,
-                and smart highway technology integration.
+<p>
+Expert professional in Intelligent Transportation Systems,
+ATMS infrastructure, toll management systems,
+project supervision, operational monitoring,
+and smart highway technology integration.
+</p>
 
-            </p>
+</div>
 
-        </div>
-
+</div>
         <!-- LEADER 2 -->
+<!-- LEADER 2 -->
 
-        <div class="leader-card">
+<div class="leader-card">
 
-            <img src="https://raw.githubusercontent.com/MJ-shaikh/test/main/Saurabh.jpg">
+<img src="https://raw.githubusercontent.com/MJ-shaikh/test/main/Saurabh.jpg">
 
-            <h3>Sh. Saurabh Vijay</h3>
+<div class="leader-info">
 
-            <span>Manager – Legal & Company Secretary</span>
+<h3>Sh. Saurabh Vijay</h3>
 
-            <p>
+<span>Manager – Legal & Company Secretary</span>
 
-                Experienced professional in legal affairs,
-                governance systems, infrastructure documentation,
-                compliance management, and organizational administration.
+<p>
 
-            </p>
+Experienced professional in legal affairs,
+governance systems, infrastructure documentation,
+compliance management, corporate governance,
+contract administration, and organizational legal operations.
 
-        </div>
+</p>
+
+</div>
+
+</div>
+        <!-- LEADER 3 -->
 
         <!-- LEADER 3 -->
 
-        <div class="leader-card">
+<div class="leader-card">
 
-            <img src="https://raw.githubusercontent.com/MJ-shaikh/test/main/Batra.jpg">
+<img src="https://raw.githubusercontent.com/MJ-shaikh/test/main/Batra.jpg">
 
-            <h3>Sh. Ajay Batra</h3>
+<div class="leader-info">
 
-            <span>Head – Projects & Operations</span>
+<h3>Sh. Ajay Batra</h3>
 
-            <p>
+<span>Head – Projects & Operations</span>
 
-                Experienced in highway project operations,
-                infrastructure supervision, project execution,
-                operational planning, and transportation management systems.
+<p>
 
-            </p>
+Experienced in highway project operations,
+infrastructure supervision, project execution,
+operational planning, transportation management systems,
+and large-scale highway infrastructure monitoring.
 
-        </div>
+</p>
 
+</div>
+
+</div>
     </section>
 
     <!-- FOOTER -->
