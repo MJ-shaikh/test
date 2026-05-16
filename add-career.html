@@ -23,7 +23,29 @@ padding:40px;
 }
 
 /* CONTAINER */
+/* TOP BAR */
 
+.top-bar{
+display:flex;
+justify-content:flex-end;
+margin-bottom:20px;
+}
+
+/* BACK BUTTON */
+
+.back-btn{
+background:#184a97;
+color:white;
+padding:12px 20px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+}
+
+.back-btn:hover{
+background:#0f3270;
+}
 .form-container{
 max-width:900px;
 margin:auto;
@@ -115,14 +137,23 @@ font-size:30px;
 <body>
 
 <div class="form-container">
+<div class="top-bar">
 
+<a href="admin-dashboard.html"
+class="back-btn">
+
+← Back Dashboard
+
+</a>
+
+</div>
 <div class="page-title">
 
 Add Career Opening
 
 </div>
 
-<form>
+<form id="careerForm">
 
 <div class="form-group">
 
@@ -208,6 +239,89 @@ Save Career Opening
 </form>
 
 </div>
+<script>
+
+const form =
+document.getElementById("careerForm");
+
+form.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+/* GET FORM VALUES */
+
+const careerData = {
+
+jobRole:
+document.querySelectorAll("input")[0].value,
+
+ageLimit:
+document.querySelectorAll("input")[1].value,
+
+experience:
+<script>
+
+const form =
+document.getElementById("careerForm");
+
+form.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+/* GET FORM VALUES */
+
+const careerData = {
+
+jobRole:
+document.querySelector('input[type="text"]').value,
+
+ageLimit:
+document.querySelector('input[type="number"]').value,
+
+qualification:
+document.querySelector("textarea").value,
+
+experience:
+document.querySelectorAll('input[type="text"]')[1].value,
+
+posts:
+document.querySelectorAll('input[type="number"]')[1].value,
+
+endDate:
+document.querySelector('input[type="date"]').value
+
+};
+
+/* GET OLD DATA */
+
+let careers =
+JSON.parse(localStorage.getItem("careers"))
+|| [];
+
+/* ADD NEW DATA */
+
+careers.push(careerData);
+
+/* SAVE */
+
+localStorage.setItem(
+"careers",
+JSON.stringify(careers)
+);
+
+/* SUCCESS MESSAGE */
+
+alert(
+"Career Opening Saved Successfully!"
+);
+
+/* RESET FORM */
+
+form.reset();
+
+});
+
+</script>
 
 </body>
 
