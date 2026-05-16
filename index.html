@@ -523,47 +523,27 @@ align-items:center;
 <section class="video-section">
 
 <h2 class="video-title">
-
 Toll Operations and ITS Highway
-
 </h2>
 
 <div class="video-container">
 
-<!-- VIDEO 1 -->
-
 <div class="video-card">
-
 <video controls autoplay muted loop playsinline>
-
 <source src="https://raw.githubusercontent.com/MJ-shaikh/test/main/VID%201%20(1).mp4" type="video/mp4">
-
 </video>
-
 </div>
 
-<!-- VIDEO 2 -->
-
 <div class="video-card">
-
 <video controls autoplay muted loop playsinline>
-
 <source src="https://raw.githubusercontent.com/MJ-shaikh/test/main/VIDEO%201%20(video-converter.com).mp4" type="video/mp4">
-
 </video>
-
 </div>
 
-<!-- VIDEO 3 -->
-
 <div class="video-card">
-
 <video controls autoplay muted loop playsinline>
-
 <source src="https://raw.githubusercontent.com/MJ-shaikh/test/main/Video%202.mp4" type="video/mp4">
-
 </video>
-
 </div>
 
 </div>
@@ -1228,22 +1208,25 @@ gap:25px;
 
 /* FOOTER */
 
+/* FOOTER */
+
 .footer-container{
-grid-template-columns:1fr;
-text-align:center;
-gap:30px;
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+gap:60px;
+text-align:left;
 }
 
-.footer-box,
-.footer-box:nth-child(2),
+.footer-box{
+text-align:left;
+}
+
+.footer-box:nth-child(2){
+text-align:center;
+}
+
 .footer-box:nth-child(3){
-text-align:center;
-}
-
-.visitor-counter h3{
-font-size:18px;
-}
-
+text-align:right;
 }
 
 
