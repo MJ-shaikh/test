@@ -795,7 +795,9 @@ View Photo's
 </td>
 
 </tr>
+<tbody id="eventContainer">
 
+</tbody>
 </table>
 
 </div>
@@ -855,7 +857,67 @@ row.style.display="none";
 });
 
 </script>
+<script type="module">
 
+import { db } from './firebase-config.js';
+
+import {
+collection,
+getDocs
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+async function loadEvents(){
+
+const querySnapshot =
+await getDocs(collection(db,"events"));
+
+const eventContainer =
+document.getElementById("eventContainer");
+
+let count = 4;
+
+querySnapshot.forEach((doc)=>{
+
+const data = doc.data();
+
+const formattedDate =
+new Date(data.date)
+.toLocaleDateString('en-GB');
+
+const eventId =
+String(count).padStart(3,'0');
+
+eventContainer.innerHTML += `
+
+<tr>
+
+<td>${eventId}</td>
+
+<td>${data.title}</td>
+
+<td>${formattedDate}</td>
+
+<td>
+
+<a href="#" class="btn">
+View Details
+</a>
+
+</td>
+
+</tr>
+
+`;
+
+count++;
+
+});
+
+}
+
+loadEvents();
+
+</script>
 </body>
 
 </html>
