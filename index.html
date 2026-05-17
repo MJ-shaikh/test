@@ -411,23 +411,24 @@ margin-top:5px;
 
         /* ARROWS */
 
-     .arrow{
+ .arrow{
 
 position:absolute;
 top:50%;
 transform:translateY(-50%);
-width:60px;
-height:60px;
-background:rgba(0,51,153,0.65);
+width:46px;
+height:46px;
+background:rgba(0,51,153,0.35);
 color:white;
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:34px;
+font-size:26px;
 cursor:pointer;
 z-index:50;
 transition:0.3s;
+backdrop-filter:blur(3px);
 
 }
 
@@ -1001,15 +1002,15 @@ box-sizing:border-box;
 /* ARROWS */
 
 
-   .slider-btn{
+  .slider-btn{
 
 position:absolute;
 top:50%;
 transform:translateY(-50%);
-width:50px;
-height:50px;
-font-size:28px;
-background:#184a97;
+width:46px;
+height:46px;
+font-size:24px;
+background:rgba(0,51,153,0.40);
 color:white;
 border:none;
 border-radius:50%;
@@ -1018,13 +1019,14 @@ z-index:20;
 display:flex;
 align-items:center;
 justify-content:center;
-box-shadow:0 4px 10px rgba(0,0,0,0.25);
+backdrop-filter:blur(3px);
+transition:0.3s;
 
 }
+.slider-btn:hover.arrow:hover{
 
-.slider-btn:hover{
-    background:#184a97;
-    color:white;
+background:rgba(0,51,153,0.75);
+
 }
 
 .prev-btn{
@@ -3059,7 +3061,35 @@ document.querySelector(".prev").addEventListener("click", prevSlide);
 /* AUTO SLIDE */
 
 setInterval(nextSlide, 4000);
+/* ================= PROJECT SLIDER ================= */
 
+const projectSlider = document.querySelector('.project-slider');
+
+const nextBtn = document.querySelector('.next-btn');
+
+const prevBtn = document.querySelector('.prev-btn');
+
+nextBtn.addEventListener('click', () => {
+
+projectSlider.scrollBy({
+
+left:350,
+behavior:'smooth'
+
+});
+
+});
+
+prevBtn.addEventListener('click', () => {
+
+projectSlider.scrollBy({
+
+left:-350,
+behavior:'smooth'
+
+});
+
+});
 </script>
 </body>
 
