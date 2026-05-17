@@ -1165,53 +1165,13 @@ margin-bottom:25px;
 }
 
 @media screen and (max-width:900px){
-.project-card{
-    flex:0 0 85%;
-    max-width:85%;
-}
 
-.video-container{
-    flex-wrap:wrap;
-}
-
-.video-card{
-    width:100%;
-}
-
-.slider-btn{
-    width:48px;
-    height:48px;
-    font-size:28px;
-}
-.video-card{
-width:100%;
-}
-
-.video-title{
-font-size:34px;
-}
-
-}
-        /* ================= MOBILE VIEW ================= */
-
-@media screen and (max-width:900px){
-.video-card{
-
-width:100%;
-
-}
-
-.video-title{
-
-font-size:34px;
-
-}
-}
 /* HEADER */
 
-
-
-/* LOGO */
+.top-header{
+flex-wrap:wrap;
+padding:15px;
+}
 
 .logo-section{
 width:auto;
@@ -1222,11 +1182,8 @@ gap:12px;
 width:75px;
 }
 
-/* COMPANY NAME */
-
 .company-heading{
 font-size:11px;
-white-space:normal;
 line-height:1.2;
 }
 
@@ -1234,99 +1191,19 @@ line-height:1.2;
 font-size:10px;
 }
 
-@media screen and (max-width:900px){
-
-.top-header{
-flex-direction:column;
-align-items:flex-start;
-padding:15px;
-gap:15px;
-}
-
-}
-
-/* PAGE TITLE */
-
-.page-title h2{
-font-size:34px;
-}
-
-/* SEARCH */
-
-.search-box{
-width:95%;
-}
-
-.search-box input{
-font-size:16px;
-padding:16px 16px 16px 50px;
-}
-
-/* CARDS */
-
-.tender-card{
-grid-template-columns:1fr;
-padding:25px;
-gap:25px;
-}
-
-/* FOOTER */
-
-/* FOOTER */
-
-.footer-container{
-display:grid;
-grid-template-columns:1fr 1fr 1fr;
-gap:60px;
-text-align:left;
-}
-
-.footer-box{
-text-align:left;
-}
-
-.footer-box:nth-child(2){
-text-align:center;
-}
-
-.footer-box:nth-child(3){
-text-align:right;
-}
-
-
-        /* ================= MOBILE MENU ================= */
+/* HAMBURGER */
 
 .menu-toggle{
-display:none;
-font-size:32px;
+display:block;
+margin-left:auto;
+font-size:42px;
 cursor:pointer;
 color:#0056b3;
 font-weight:bold;
 z-index:99999;
 }
 
-/* MOBILE VIEW */
-
-@media screen and (max-width:900px){
-
-/* HEADER */
-
-.top-header{
-flex-wrap:wrap;
-padding:15px;
-}
-
-/* SHOW ☰ BUTTON */
-
-.menu-toggle{
-display:block;
-margin-left:auto;
-font-size:42px;
-padding-right:10px;
-line-height:1;
-}
-
-/* HIDE MENU */
+/* NAVIGATION */
 
 nav{
 width:100%;
@@ -1342,30 +1219,18 @@ nav.active{
 display:block !important;
 }
 
-/* SHOW MENU WHEN CLICKED */
-
-
-/* HIDE DESKTOP MENU */
-
-
-
-/* SHOW MOBILE MENU */
-
 nav.active ul{
 display:flex !important;
-flex-direction:column;
+flex-direction:column !important;
 }
-/* MOBILE MENU STYLE */
 
 nav ul{
-    list-style:none;
-    display:flex;
-    align-items:center;
-    justify-content:flex-end;
-    gap:5px;
-    flex-wrap:nowrap;
-    margin:0;
-    padding:0;
+display:flex;
+flex-direction:column;
+width:100%;
+gap:0;
+margin:0;
+padding:0;
 }
 
 nav ul li{
@@ -1381,19 +1246,17 @@ font-size:15px;
 background:white;
 }
 
-/* MOBILE DROPDOWN */
+/* DROPDOWN */
 
 .dropdown,
 .submenu{
 position:static;
 display:none;
 width:100%;
+background:#f8f8f8;
 box-shadow:none;
 border-radius:0;
-background:#f8f8f8;
 }
-
-/* OPEN DROPDOWN */
 
 .has-dropdown.active > .dropdown{
 display:block;
@@ -1401,6 +1264,33 @@ display:block;
 
 .submenu-item.active > .submenu{
 display:block;
+}
+
+/* PROJECTS */
+
+.project-card{
+flex:0 0 85%;
+max-width:85%;
+}
+
+/* VIDEOS */
+
+.video-container{
+flex-wrap:wrap;
+}
+
+.video-card{
+width:100%;
+}
+
+.video-title{
+font-size:34px;
+}
+
+.slider-btn{
+width:48px;
+height:48px;
+font-size:28px;
 }
 
 }
