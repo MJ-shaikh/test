@@ -1147,25 +1147,61 @@ margin-bottom:25px;
 }
 
 .video-container{
-    display:flex;
-    gap:20px;
-    justify-content:center;
-    flex-wrap:nowrap;
+
+display:flex;
+gap:30px;
+justify-content:center;
+align-items:stretch;
+flex-wrap:nowrap;
+margin-top:40px;
+padding:0 40px;
+
 }
 
 .video-card{
-    width:32%;
-    border-radius:22px;
-    overflow:hidden;
-    background:white;
-    box-shadow:0 5px 20px rgba(0,0,0,0.12);
+
+width:32%;
+background:white;
+border-radius:22px;
+overflow:hidden;
+box-shadow:0 8px 25px rgba(0,0,0,0.12);
+transition:0.4s ease;
+position:relative;
+
+}
+        .video-card:hover{
+
+transform:scale(1.06);
+box-shadow:0 14px 35px rgba(0,51,153,0.30);
+z-index:10;
+
 }
 
 .video-card video{
-    width:100%;
-    height:260px;
-    object-fit:cover;
-    display:block;
+
+width:100%;
+height:320px;
+object-fit:cover;
+display:block;
+transition:0.4s ease;
+
+}
+       .video-card h3{
+
+font-size:24px;
+padding:18px;
+text-align:center;
+color:#003366;
+font-weight:700;
+transition:0.3s;
+
+}
+
+.video-card:hover h3{
+
+color:#0056b3;
+letter-spacing:1px;
+
 }
 .menu-toggle{
 display:none;
@@ -1204,7 +1240,18 @@ line-height:1.2;
 font-size:10px;
 }
 
+.video-container{
+flex-wrap:wrap;
+padding:0 15px;
+}
 
+.video-card{
+width:100%;
+}
+
+.video-card video{
+height:240px;
+}
 /* HAMBURGER */
 
 
