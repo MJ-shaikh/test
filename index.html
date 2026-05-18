@@ -2867,6 +2867,15 @@ NHIT TMS PROJECTS
 </div>
 
 </section>
+    <!-- IMAGE POPUP -->
+
+<div class="image-popup" id="imagePopup">
+
+<span class="close-popup" onclick="closePopup()">&times;</span>
+
+<img id="popupImg">
+
+</div>
     <!-- ================= VIDEO SECTION ================= -->
 
 <section class="video-section">
@@ -3148,7 +3157,38 @@ behavior:'smooth'
 });
 
 });
-</script>
+
+/* ================= IMAGE POPUP ================= */
+
+function openPopup(event,card){
+
+event.preventDefault();
+
+let img = card.querySelector("img").src;
+
+document.getElementById("popupImg").src = img;
+
+document.getElementById("imagePopup").style.display = "flex";
+
+}
+
+function closePopup(){
+
+document.getElementById("imagePopup").style.display = "none";
+
+}
+
+/* CLOSE POPUP OUTSIDE */
+
+document.getElementById("imagePopup").addEventListener("click", function(e){
+
+if(e.target.id === "imagePopup"){
+
+closePopup();
+
+}
+
+});
 </body>
 
 </html>
