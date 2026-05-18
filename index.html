@@ -3170,15 +3170,19 @@ document.getElementById("popupImg").src = img;
 
 document.getElementById("imagePopup").style.display = "flex";
 
+document.body.style.overflow = "hidden";
+
 }
 
 function closePopup(){
 
 document.getElementById("imagePopup").style.display = "none";
 
+document.body.style.overflow = "auto";
+
 }
 
-/* CLOSE POPUP OUTSIDE */
+/* CLOSE POPUP ON OUTSIDE CLICK */
 
 document.getElementById("imagePopup").addEventListener("click", function(e){
 
@@ -3189,6 +3193,7 @@ closePopup();
 }
 
 });
+        </script>
 </body>
 
 </html>
