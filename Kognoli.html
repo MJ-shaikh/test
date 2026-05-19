@@ -20,7 +20,7 @@ body{
 background:#f5f5f5;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 .top-header{
 display:flex;
@@ -52,6 +52,8 @@ color:#003366;
 font-weight:bold;
 }
 
+/* ================= MENU ================= */
+
 nav{
 margin-left:auto;
 }
@@ -59,22 +61,78 @@ margin-left:auto;
 nav ul{
 list-style:none;
 display:flex;
-gap:10px;
+align-items:center;
+justify-content:flex-end;
+gap:6px;
+margin:0;
+padding:0;
+flex-wrap:nowrap;
+}
+
+nav ul li{
+position:relative;
+display:inline-block;
 }
 
 nav ul li a{
 text-decoration:none;
 color:#111;
-font-weight:600;
-padding:12px 15px;
+padding:14px 18px;
 display:block;
+font-size:15px;
+font-weight:600;
+transition:0.3s;
+border-radius:6px;
+white-space:nowrap;
+cursor:pointer;
 }
 
 nav ul li a:hover{
 color:#0056b3;
+background:rgba(0,86,179,0.08);
 }
 
-/* PAGE TITLE */
+/* ================= DROPDOWN ================= */
+
+.has-dropdown{
+position:relative;
+}
+
+.dropdown{
+display:none;
+position:absolute;
+top:100%;
+left:0;
+background:white;
+min-width:270px;
+border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,0.18);
+z-index:9999;
+}
+
+.dropdown a{
+padding:15px 18px;
+border-bottom:1px solid #f2f2f2;
+color:#222;
+font-size:15px;
+font-weight:500;
+background:white;
+transition:0.3s;
+display:block;
+text-decoration:none;
+}
+
+.dropdown a:hover{
+background:#184a97;
+color:white;
+padding-left:24px;
+}
+
+.has-dropdown:hover > .dropdown{
+display:block;
+}
+
+/* ================= PAGE TITLE ================= */
 
 .page-banner{
 background:#184a97;
@@ -89,7 +147,7 @@ font-size:55px;
 font-weight:900;
 }
 
-/* CONTENT */
+/* ================= CONTENT ================= */
 
 .content-section{
 background:#fff;
@@ -135,7 +193,7 @@ cursor:pointer;
 transform:scale(1.02);
 }
 
-/* IMAGE POPUP */
+/* ================= IMAGE POPUP ================= */
 
 .popup{
 display:none;
@@ -186,7 +244,7 @@ left:30px;
 right:30px;
 }
 
-/* INFO BOX */
+/* ================= INFO BOX ================= */
 
 .info-box{
 margin-top:40px;
@@ -202,7 +260,7 @@ margin-bottom:15px;
 font-size:28px;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
 background:#184a97;
@@ -222,6 +280,8 @@ font-size:16px;
 
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header>
 
 <div class="top-header">
@@ -232,10 +292,20 @@ font-size:16px;
 
 <div class="company-text">
 
-<h1>
-NATIONAL HIGHWAYS INVIT<br>
-PROJECT MANAGERS<br>
+<h1 style="line-height:1.1; text-align:left;">
+
+<span style="display:block;">
+NATIONAL HIGHWAYS INVIT
+</span>
+
+<span style="display:block;">
+PROJECT MANAGERS
+</span>
+
+<span style="display:block;">
 PRIVATE LIMITED
+</span>
+
 </h1>
 
 <p>A wholly owned entity of NHAI</p>
@@ -250,7 +320,20 @@ PRIVATE LIMITED
 
 <li><a href="index.html">Home</a></li>
 
-<li><a href="about.html">About</a></li>
+<li class="has-dropdown">
+
+<a href="#">About ▼</a>
+
+<div class="dropdown">
+
+<a href="about.html">About NHIPMPL</a>
+<a href="vision.html">Vision & Mission</a>
+<a href="directors.html">Board of Directors</a>
+<a href="leadership.html">Leadership Team</a>
+
+</div>
+
+</li>
 
 <li><a href="career.html">Career</a></li>
 
@@ -262,7 +345,7 @@ PRIVATE LIMITED
 
 </header>
 
-<!-- PAGE TITLE -->
+<!-- ================= TITLE ================= -->
 
 <section class="page-banner">
 
@@ -270,7 +353,7 @@ PRIVATE LIMITED
 
 </section>
 
-<!-- CONTENT -->
+<!-- ================= CONTENT ================= -->
 
 <section class="content-section">
 
@@ -289,20 +372,11 @@ onclick="openPopup(1)">
 <h3>Belgaum – Kagal Highway Corridor</h3>
 
 <p>
-
-Kognoli Toll Plaza is part of the Belgaum – Kagal National Highway corridor
-located in Karnataka. The corridor plays an important role in interstate
-transportation and freight movement between Karnataka and Maharashtra.
-
+The asset starts from north of Belgaum (km 515+000) in the state of Karnataka and ends at Kagal (km 592+705) near Karnataka – Maharashtra border in the state of Karnataka. The asset has two toll plazas at Hattargi (km 537.770) and Kognoli (km 591+240).
 </p>
 
 <p>
-
-The toll plaza supports intelligent toll collection systems,
-highway traffic management, CCTV surveillance,
-electronic toll collection (FASTag),
-and integrated highway operations management.
-
+The toll plaza supports ETC operations, FASTag management, CCTV surveillance, ATMS systems, traffic monitoring, and integrated highway operational infrastructure.
 </p>
 
 <div class="info-box">
@@ -323,7 +397,7 @@ and integrated highway operations management.
 
 </section>
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -335,7 +409,7 @@ and integrated highway operations management.
 
 </footer>
 
-<!-- IMAGE POPUP -->
+<!-- ================= IMAGE POPUP ================= -->
 
 <div id="popup" class="popup">
 
