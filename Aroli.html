@@ -5,19 +5,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Aroli Toll Plaza | NHIPMPL</title>
+<title>Dhaneshwar Toll Plaza | NHIPMPL</title>
 
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
 }
 
 body{
-background:#f5f5f5;
+    background:#f5f5f5;
 }
 
 /* ================= HEADER ================= */
@@ -103,11 +103,14 @@ display:none;
 position:absolute;
 top:100%;
 left:0;
+margin-top:0;
 background:white;
 min-width:270px;
 border-radius:10px;
+overflow:visible;
 box-shadow:0 10px 30px rgba(0,0,0,0.18);
 z-index:9999;
+animation:dropdownFade 0.25s ease;
 }
 
 .dropdown a{
@@ -132,68 +135,120 @@ padding-left:24px;
 display:block;
 }
 
-/* ================= PAGE TITLE ================= */
+/* ================= SUBMENU ================= */
+
+.submenu-item{
+position:relative;
+}
+
+.submenu{
+display:none;
+position:absolute;
+top:-2px;
+left:100%;
+background:white;
+min-width:250px;
+border-radius:10px;
+overflow:visible;
+box-shadow:0 10px 30px rgba(0,0,0,0.18);
+animation:dropdownFade 0.25s ease;
+z-index:9999;
+}
+
+.submenu a{
+padding:15px 18px;
+border-bottom:1px solid #f2f2f2;
+background:white;
+color:#222;
+transition:0.3s;
+display:block;
+text-decoration:none;
+}
+
+.submenu a:hover{
+background:#184a97;
+color:white;
+padding-left:24px;
+}
+
+.submenu-item:hover > .submenu{
+display:block;
+}
+
+/* ================= MENU ANIMATION ================= */
+
+@keyframes dropdownFade{
+
+from{
+opacity:0;
+transform:translateY(10px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* PAGE TITLE */
 
 .page-banner{
-background:#184a97;
-color:#fff;
-text-align:center;
-padding:50px 20px;
-border-bottom:5px solid gold;
+    background:#184a97;
+    color:#fff;
+    text-align:center;
+    padding:50px 20px;
+    border-bottom:5px solid gold;
 }
 
 .page-banner h2{
-font-size:55px;
-font-weight:900;
+    font-size:55px;
+    font-weight:900;
 }
 
-/* ================= CONTENT ================= */
+/* CONTENT */
 
 .content-section{
-background:#fff;
-margin:40px auto;
-width:90%;
-padding:60px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-text-align:center;
+    background:#fff;
+    margin:40px auto;
+    width:90%;
+    padding:60px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    text-align:center;
 }
 
 .content-section h3{
-font-size:30px;
-margin-bottom:25px;
-color:#184a97;
+    font-size:24px;
+    margin-bottom:25px;
+    color:#222;
 }
 
 .content-section p{
-font-size:22px;
-line-height:1.8;
-color:#444;
-margin-bottom:20px;
+    font-size:22px;
+    line-height:1.8;
+    color:#444;
+    margin-bottom:20px;
 }
-
 .image-gallery{
-display:flex;
-gap:25px;
-justify-content:center;
-flex-wrap:wrap;
-margin-bottom:40px;
+    display:flex;
+    gap:25px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-bottom:40px;
 }
 
 .project-image{
-width:48%;
-min-width:320px;
-border-radius:12px;
-box-shadow:0 5px 18px rgba(0,0,0,0.2);
-transition:0.3s;
-cursor:pointer;
+    width:48%;
+    min-width:320px;
+    border-radius:12px;
+    box-shadow:0 5px 18px rgba(0,0,0,0.2);
+    transition:0.3s;
 }
 
 .project-image:hover{
-transform:scale(1.02);
+    transform:scale(1.02);
 }
-
-/* ================= IMAGE POPUP ================= */
+    /* ================= IMAGE POPUP ================= */
 
 .popup{
 display:none;
@@ -244,35 +299,35 @@ left:30px;
 right:30px;
 }
 
-/* ================= INFO BOX ================= */
+/* INFO BOX */
 
 .info-box{
-margin-top:40px;
-background:#f0f4ff;
-padding:30px;
-border-left:6px solid #184a97;
-text-align:left;
+    margin-top:40px;
+    background:#f0f4ff;
+    padding:30px;
+    border-left:6px solid #184a97;
+    text-align:left;
 }
 
 .info-box h4{
-color:#184a97;
-margin-bottom:15px;
-font-size:28px;
+    color:#184a97;
+    margin-bottom:15px;
+    font-size:28px;
 }
 
-/* ================= FOOTER ================= */
+/* FOOTER */
 
 footer{
-background:#184a97;
-color:#fff;
-text-align:center;
-padding:40px 20px;
-margin-top:50px;
+    background:#184a97;
+    color:#fff;
+    text-align:center;
+    padding:40px 20px;
+    margin-top:50px;
 }
 
 footer p{
-margin:10px 0;
-font-size:16px;
+    margin:10px 0;
+    font-size:16px;
 }
 
 </style>
@@ -285,6 +340,8 @@ font-size:16px;
 <header>
 
 <div class="top-header">
+
+<!-- LOGO -->
 
 <div class="logo-section">
 
@@ -314,11 +371,15 @@ PRIVATE LIMITED
 
 </div>
 
+<!-- ================= MENU ================= -->
+
 <nav>
 
 <ul>
 
 <li><a href="index.html">Home</a></li>
+
+<!-- ABOUT -->
 
 <li class="has-dropdown">
 
@@ -335,7 +396,213 @@ PRIVATE LIMITED
 
 </li>
 
-<li><a href="career.html">Career</a></li>
+<!-- ASSETS -->
+
+<li class="has-dropdown">
+
+<a href="#">Assets ▼</a>
+
+<div class="dropdown">
+
+<div class="submenu-item">
+
+<a href="#">NHIT ▶</a>
+
+<div class="submenu">
+
+<!-- ================= R1 ================= -->
+
+<div class="submenu-item">
+
+<a href="#">R1 ▶</a>
+
+<div class="submenu">
+
+<a href="Undvariya.html">Undvariya</a>
+<a href="Khemana.html">Khemana</a>
+<a href="Kognoli.html">Kognoli</a>
+<a href="Hattargi.html">Hattargi</a>
+<a href="Pullur.html">Pullur</a>
+<a href="Dhaneshwar.html">Dhaneshwar</a>
+<a href="Bassi.html">Bassi</a>
+<a href="Aroli.html">Aroli</a>
+
+</div>
+
+</div>
+
+<!-- ================= R2 ================= -->
+
+<div class="submenu-item">
+
+<a href="#">R2 ▶</a>
+
+<div class="submenu">
+
+<a href="Kelapur.html">Kelapur</a>
+<a href="Raibha.html">Raibha</a>
+<a href="Raksha.html">Raksha</a>
+<a href="Daroda.html">Daroda</a>
+
+</div>
+
+</div>
+
+<!-- ================= R3 ================= -->
+
+<div class="submenu-item">
+
+<a href="#">R3 ▶</a>
+
+<div class="submenu">
+
+<a href="Usaka.html">Usaka</a>
+<a href="Odaki-Pipkar.html">Odaki Pipkar</a>
+<a href="Kherswani.html">Kherswani</a>
+<a href="Mohtara.html">Mohtara</a>
+<a href="Boharipaar.html">Boharipaar</a>
+<a href="Patgaon.html">Patgaon</a>
+<a href="Dahalapara.html">Dahalapara</a>
+<a href="Galia.html">Galia</a>
+<a href="Madai.html">Madai</a>
+<a href="Khawasa.html">Khawasa</a>
+<a href="Bankapur.html">Bankapur</a>
+<a href="Hebbalu.html">Hebbalu</a>
+<a href="Chalageri.html">Chalageri</a>
+
+</div>
+
+</div>
+
+<!-- ================= R4 ================= -->
+
+<div class="submenu-item">
+
+<a href="#">R4 ▶</a>
+
+<div class="submenu">
+
+<a href="Balibhasa.html">Balibhasa</a>
+<a href="Chhapar.html">Chhapar</a>
+<a href="Bhadarabad.html">Bhadarabad</a>
+<a href="Madapam.html">Madapam</a>
+<a href="Nathavalasa.html">Nathavalasa</a>
+<a href="Mahasamudram.html">Mahasamudram</a>
+<a href="Bhojpuri.html">Bhojpuri</a>
+<a href="Mudipar.html">Mudipar</a>
+<a href="Mokha.html">Mokha</a>
+<a href="Faridpur.html">Faridpur</a>
+<a href="Maigalganj.html">Maigalganj</a>
+<a href="Veeravalli.html">Veeravalli</a>
+<a href="Marripalem.html">Marripalem</a>
+<a href="Dukkavanipalem.html">Dukkavanipalem</a>
+<a href="Gadanki.html">Gadanki</a>
+<a href="Tarpongi.html">Tarpongi</a>
+
+</div>
+
+</div>
+
+<!-- ================= R5 ================= -->
+
+<div class="submenu-item">
+
+<a href="#">R5 ▶</a>
+
+<div class="submenu">
+
+<a href="Kurankhed.html">Kurankhed</a>
+<a href="Taroda-Kasba.html">Taroda Kasba</a>
+<a href="Dasarkhed.html">Dasarkhed</a>
+<a href="Nasirabad.html">Nasirabad</a>
+<a href="Kalaparru.html">Kalaparru</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="submenu-item">
+
+<a href="#">RIIT ▶</a>
+
+<div class="submenu">
+
+<a href="future-assets.html">Future Assets</a>
+<a href="#">Upcoming Corridors</a>
+
+</div>
+
+</div>
+
+</div>
+
+</li>
+
+<!-- PROCUREMENT -->
+
+<li class="has-dropdown">
+
+<a href="#">Procurement ▼</a>
+
+<div class="dropdown">
+
+<div class="submenu-item">
+
+<a href="#">Tenders ▶</a>
+
+<div class="submenu">
+
+<a href="active-tenders.html">Active Tenders</a>
+<a href="archived-tenders.html">Archived Tenders</a>
+
+</div>
+
+</div>
+
+<a href="procurement-sop.html">Procurement SOP</a>
+
+</div>
+
+</li>
+
+<!-- MEDIA -->
+
+<li class="has-dropdown">
+
+<a href="#">Media ▼</a>
+
+<div class="dropdown">
+
+<a href="news.html">News</a>
+<a href="events.html">Events</a>
+
+</div>
+
+</li>
+
+<!-- RESOURCE CENTER -->
+
+<li class="has-dropdown">
+
+<a href="#">Resource Center ▼</a>
+
+<div class="dropdown">
+
+<a href="internal-complaints.html">
+Internal Complaints Committee
+</a>
+
+</div>
+
+</li>
+
+<li>
+<a href="career.html">Career</a>
+</li>
 
 </ul>
 
@@ -345,18 +612,15 @@ PRIVATE LIMITED
 
 </header>
 
-<!-- ================= TITLE ================= -->
+<!-- TITLE -->
 
 <section class="page-banner">
-
-<h2>Aroli Toll Plaza</h2>
-
+<h2>Dhaneshwar Toll Plaza</h2>
 </section>
 
-<!-- ================= CONTENT ================= -->
+<!-- CONTENT -->
 
 <section class="content-section">
-
 <div class="image-gallery">
 
 <img src="https://raw.githubusercontent.com/MJ-shaikh/test/main/Aroli.jpg"
@@ -366,16 +630,19 @@ onclick="openPopup(0)">
 <img src="https://raw.githubusercontent.com/MJ-shaikh/test/main/Aroli%202.jpg"
 class="project-image"
 onclick="openPopup(1)">
-
 </div>
-
-<h3>NHIT R1 Highway Corridor</h3>
-
-<p>
-It starts near Chittorgarh in the state of Rajasthan at km 891+929 and ends near Kota in the state of Rajasthan at km 1052+429. The asset has three toll plazas at Bassi (km 929+629), Aroli (km 986+469), and Dhaneshwar (km 1032+979).</p>
+<h3>Dhaneshwar Toll Plaza</h3>
 
 <p>
-The toll plaza is equipped with ETC systems, FASTag operations, CCTV surveillance, WIM systems, traffic monitoring infrastructure, and ATMS-based intelligent transportation management systems.
+Chittorgarh – Kota (NH-27)
+A four-lane road on NH-27 with project length of 160.50 kms.
+
+It starts near Chittorgarh in the state of Rajasthan at km 891+929 and ends near Kota in the state of Rajasthan at km 1052+429. The asset has three toll plazas at Bassi (km 929+629), Aroli (km 986+469), and Dhaneshwar (km 1032+979).
+
+The road is part of the East – West corridor envisaged under National Highway Development Program (Phase – II). The road serves the east-west long-distance traffic which is majorly plying between Lucknow, Gorakhpur in eastern region and Palanpur, Rajkot in western region. Apart from long distance traffic, it also serves the short distance traffic which is mainly generated between Bundi, Kota, Baran, Udaipur and Chittorgarh areas.</p>
+
+<p>
+The project supports efficient highway operation, toll collection management, ITS systems monitoring, and safe traffic movement across the corridor.
 </p>
 
 <div class="info-box">
@@ -384,7 +651,7 @@ The toll plaza is equipped with ETC systems, FASTag operations, CCTV surveillanc
 
 <p><b>Asset Group:</b> NHIT R1</p>
 
-<p><b>Location:</b> Maharashtra</p>
+<p><b>Location:</b> Rajasthan</p>
 
 <p><b>Operated By:</b> NHIT</p>
 
@@ -396,21 +663,15 @@ The toll plaza is equipped with ETC systems, FASTag operations, CCTV surveillanc
 
 </section>
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 
 <footer>
 
-<p>
-National Highways InvIT Project Managers Pvt. Ltd.
-</p>
+<p>National Highways InvIT Project Managers Pvt. Ltd.
 
-<p>
 1st Floor, Asia Bhawan (Gate No. 2), Road No. 205,
-</p>
 
-<p>
-Sector-9, Dwarka, New Delhi-110077
-</p>
+Sector-9, Dwarka, New Delhi-110077</p>
 
 <p>Email: info.nhipmpl@nhai.org</p>
 
@@ -418,7 +679,7 @@ Sector-9, Dwarka, New Delhi-110077
 
 </footer>
 
-<!-- ================= IMAGE POPUP ================= -->
+<!-- IMAGE POPUP -->
 
 <div id="popup" class="popup">
 
@@ -439,12 +700,11 @@ onclick="nextImage()">❯</span>
 
 const images = [
 
-"https://raw.githubusercontent.com/MJ-shaikh/test/main/Aroli.jpg",
+"https://raw.githubusercontent.com/MJ-shaikh/test/main/Dhaneshwar.jpg",
 
-"https://raw.githubusercontent.com/MJ-shaikh/test/main/Aroli%202.jpg"
+"https://raw.githubusercontent.com/MJ-shaikh/test/main/Dhaneshwar%202.jpg"
 
 ];
-
 let current = 0;
 
 function openPopup(index){
@@ -454,13 +714,11 @@ current = index;
 document.getElementById("popup").style.display="flex";
 
 document.getElementById("popup-img").src = images[current];
-
 }
 
 function closePopup(){
 
 document.getElementById("popup").style.display="none";
-
 }
 
 function nextImage(){
@@ -472,7 +730,6 @@ current = 0;
 }
 
 document.getElementById("popup-img").src = images[current];
-
 }
 
 function prevImage(){
@@ -484,7 +741,6 @@ current = images.length - 1;
 }
 
 document.getElementById("popup-img").src = images[current];
-
 }
 
 </script>
