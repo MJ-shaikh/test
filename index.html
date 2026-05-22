@@ -32,9 +32,17 @@ margin-bottom:50px;
 .project-slider{
 display:flex;
 gap:20px;
-overflow:hidden;
+overflow-x:auto;
+overflow-y:hidden;
 scroll-behavior:smooth;
 width:100%;
+padding:5px;
+scrollbar-width:none;
+-ms-overflow-style:none;
+}
+
+.project-slider::-webkit-scrollbar{
+display:none;
 }
 .project-card{
 
@@ -2517,7 +2525,7 @@ The National Highways InvIT Project Managers Private Limited, a company incorpor
 
 <h2 class="section-title">
 
-NHIT TMS PROJECTS
+NHIT PROJECTS
 
 </h2>
 
@@ -3218,7 +3226,9 @@ document.querySelector(".prev").addEventListener("click", prevSlide);
 /* AUTO SLIDE */
 
 setInterval(nextSlide, 4000);
-/* ================= PROJECT SLIDER ================= */
+<script>
+
+/* ================= PROJECT SLIDER AUTO SCROLL ================= */
 
 const projectSlider = document.querySelector('.project-slider');
 
@@ -3226,64 +3236,121 @@ const nextBtn = document.querySelector('.next-btn');
 
 const prevBtn = document.querySelector('.prev-btn');
 
-nextBtn.addEventListener('click', () => {
+const projectCards = document.querySelectorAll('.project-card');
+
+let cardWidth = projectCards[0].offsetWidth + 20;
+
+/* NEXT BUTTON */
+
+nextBtn.addEventListener('click', ()=>{
 
 projectSlider.scrollBy({
-
-left:350,
+left:cardWidth,
 behavior:'smooth'
-
 });
 
 });
 
-prevBtn.addEventListener('click', () => {
+/* PREVIOUS BUTTON */
+
+prevBtn.addEventListener('click', ()=>{
 
 projectSlider.scrollBy({
-
-left:-350,
+left:-cardWidth,
 behavior:'smooth'
-
 });
 
 });
 
-/* ================= IMAGE POPUP ================= */
+/* AUTO SCROLL */
 
-function openPopup(event,card){
+let autoSlide = setInterval(autoScrollProjects,3000);
 
-event.preventDefault();
+function autoScrollProjects(){
 
-let img = card.querySelector("img").src;
+if(
+projectSlider.scrollLeft + projectSlider.clientWidth
+>= projectSlider.scrollWidth - 5
+){
 
-document.getElementById("popupImg").src = img;
+projectSlider.scrollTo({
+left:0,
+behavior:'smooth'
+});
 
-document.getElementById("imagePopup").style.display = "flex";
+}else{
 
-document.body.style.overflow = "hidden";
+projectSlider.scrollBy({
+left:cardWidth,
+behavior:'smooth'
+});
+
+}
 
 }
 
-function closePopup(){
+/* PAUSE ON HOVER */
 
-document.getElementById("imagePopup").style.display = "none";
+projectSlider.addEventListener('mouseenter',()=>{
 
-document.body.style.overflow = "auto";
-
-}
-
-/* CLOSE POPUP ON OUTSIDE CLICK */
-
-document.getElementById("imagePopup").addEventListener("click", function(e){
-
-if(e.target.id === "imagePopup"){
-
-closePopup();
-
-}
+clearInterval(autoSlide);
 
 });
-        </script>
+
+projectSlider.addEventListener('mouseleave',()=>{
+
+autoSlide = setInterval(autoScrollProjects,3000);
+
+});
+
+/* ================= PROJECT WISE SEQUENTIAL DISPLAY ================= */
+
+/* ROUND 1 → ROUND 2 → ROUND 3 → ROUND 4 → ROUND 5 */
+
+const projectOrder = [
+
+/* ROUND 1 */
+
+'Aburoad – Swaropganj',
+'Palanpur – Abu Road',
+'Belgaum – Kagal',
+'Pullur',
+
+/* ROUND 2 */
+
+'Hubli – Haveri',
+'Raipur – Simga',
+
+/* ROUND 3 */
+
+'Rewa – Katni – Jabalpur',
+'Lakhnadon – Khawasa',
+'Kaljhar – Patacharkuchi',
+
+/* ROUND 4 */
+
+'Madapam',
+'Chichra – Kharagpur',
+'Anandapuram – Pendurthi',
+'Chittoor – Mallavaram',
+
+/* ROUND 5 */
+
+'Narasannapeta – Ranasthalam'
+
+];
+
+/* SMOOTH CONTINUOUS EFFECT */
+
+projectSlider.style.scrollSnapType = 'x mandatory';
+
+projectCards.forEach(card=>{
+
+card.style.scrollSnapAlign = 'start';
+
+});
+
+</script>
 </body>
 
 </html>
