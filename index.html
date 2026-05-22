@@ -180,93 +180,56 @@ transform:rotate(360deg);
             z-index: 9999;
         }
 
-       .top-header{
+        .top-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 25px;
+    width:100%;
+    flex-wrap:nowrap;
+}
+
+/* LOGO + COMPANY */
+.logo-section{
 display:flex;
-justify-content:space-between;
 align-items:center;
-padding:16px 40px;
-width:100%;
-
-background:
-linear-gradient(135deg,#001f5c,#003b9b,#005eff,#002147);
-
-position:relative;
-overflow:hidden;
-
-box-shadow:0 8px 25px rgba(0,0,0,0.25);
-
-border-bottom:2px solid rgba(255,255,255,0.15);
+gap:4px;   /* reduced space */
+min-width:auto;
 }
 
-/* SHINING EFFECT */
-.top-header::before{
-content:'';
-position:absolute;
-top:0;
-left:-100%;
-width:40%;
-height:100%;
-background:linear-gradient(
-90deg,
-transparent,
-rgba(255,255,255,0.35),
-transparent
-);
-animation:shine 5s infinite;
-}
-
-@keyframes shine{
-0%{
-left:-100%;
-}
-100%{
-left:140%;
-}
-}
-
-/* LOGO WHITE BACKGROUND */
+/* LOGO */
 .logo-section img{
-width:115px;
+width:155px;   /* increased logo size */
 height:auto;
 display:block;
-background:white;
-padding:6px;
-border-radius:14px;
+}
+/* COMPANY TEXT */
 
-box-shadow:
-0 0 15px rgba(255,255,255,0.6),
-0 4px 15px rgba(0,0,0,0.25);
+.company-text{
+display:flex;
+flex-direction:column;
+justify-content:center;
+margin-left:-3px;   /* pulls text closer to logo */
 }
 
 /* COMPANY NAME */
 .company-heading{
-
-font-size:30px;
-line-height:1.12;
+font-size:18px;
+line-height:1.08;
 font-weight:900;
-color:#ffffff;
-
+color:#0056b3;
 text-transform:uppercase;
-
-letter-spacing:1px;
-
-text-shadow:
-0 0 8px rgba(255,255,255,0.8),
-0 0 15px rgba(255,255,255,0.5),
-0 2px 10px rgba(0,0,0,0.5);
-
+margin:0;
+letter-spacing:0.2px;
 }
 
-/* SUBTEXT */
+/* SUB TEXT */
 .company-subtext{
-font-size:15px;
+font-size:12px;
 font-weight:700;
-color:#ffffff;
-margin-top:4px;
-
-text-shadow:
-0 0 5px rgba(255,255,255,0.5),
-0 2px 6px rgba(0,0,0,0.5);
+color:#003366;
+margin-top:3px;
+text-align:left;
 }
         /* ================= MENU ================= */
 
@@ -328,7 +291,7 @@ display:inline-block;
 
 nav ul li a{
 text-decoration:none;
-color:white;
+color:#111;
 padding:14px 18px;
 display:block;
 font-size:15px;
@@ -339,8 +302,8 @@ white-space:nowrap;
 }
 
 nav ul li a:hover{
-background:rgba(255,255,255,0.12);
-color:#ffcc00;
+color:#0056b3;
+background:rgba(0,86,179,0.08);
 }
 
 /* ================= DROPDOWN ================= */
@@ -735,15 +698,10 @@ letter-spacing:0.5px;
     }
 
     .logo-section{
-display:flex;
-align-items:center;
-gap:18px;
-}
-     .company-text{
-display:flex;
-flex-direction:column;
-justify-content:center;
-}      
+        display:flex;
+        align-items:center;
+    }
+
     nav{
         margin-left:auto;
     }
@@ -773,7 +731,7 @@ justify-content:center;
             .company-text h1 {
                 font-size: 15px;
             }
-        
+
             .company-text p {
                 font-size: 11px;
             }
