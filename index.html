@@ -1539,66 +1539,87 @@ text-transform:uppercase;
 text-shadow:0 0 10px rgba(255,204,0,0.45);
 }
 
+/* ================= DIGITAL COUNTER FRAME ================= */
+
 .digital-counter-frame{
-padding:22px 40px;
-border-radius:22px;
-background:linear-gradient(145deg,#021a33,#003366,#021a33);
+
+width:420px;
+height:140px;
 
 display:flex;
 justify-content:center;
 align-items:center;
 
-width:fit-content;
-margin:auto;
+margin:0 auto;
+
+padding:0;
+
+border-radius:24px;
+
+background:
+linear-gradient(145deg,#021a33,#003366,#021a33);
+
+border:2px solid rgba(255,255,255,0.15);
 
 box-shadow:
-0 0 20px rgba(0,140,255,0.35),
-0 0 40px rgba(0,140,255,0.18),
-inset 0 0 12px rgba(255,255,255,0.08);
-
-border:2px solid rgba(255,255,255,0.12);
+0 0 25px rgba(0,140,255,0.35),
+0 0 45px rgba(0,140,255,0.22),
+inset 0 0 15px rgba(255,255,255,0.08);
 
 position:relative;
 overflow:hidden;
 }
 
+/* SHINE EFFECT */
+
 .digital-counter-frame::before{
+
 content:'';
 position:absolute;
 top:0;
-left:-150%;
+left:-160%;
 width:120%;
 height:100%;
+
 background:linear-gradient(
 90deg,
 transparent,
-rgba(255,255,255,0.18),
+rgba(255,255,255,0.22),
 transparent
 );
+
 animation:shine 4s linear infinite;
 }
 
+/* DIGITAL IMAGE */
+
 .digital-counter{
-width:340px;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+width:360px !important;
 height:auto;
 
-display:block;
 margin:auto;
 
 position:relative;
-z-index:2;
+z-index:5;
 
 filter:
-brightness(2)
-contrast(2.5)
-drop-shadow(0 0 8px rgba(255,255,255,1))
-drop-shadow(0 0 16px rgba(255,255,255,1))
-drop-shadow(0 0 25px rgba(0,255,255,0.95))
-drop-shadow(0 0 40px rgba(0,170,255,0.85));
+brightness(2.4)
+contrast(3)
+drop-shadow(0 0 10px rgba(255,255,255,1))
+drop-shadow(0 0 18px rgba(255,255,255,1))
+drop-shadow(0 0 28px rgba(0,255,255,1))
+drop-shadow(0 0 45px rgba(0,170,255,0.95));
 
-transform:scale(1.12);
+transform:scale(1.35);
+
+object-fit:contain;
 }
-
 @keyframes shine{
 0%{
 left:-150%;
@@ -3173,7 +3194,7 @@ Sector-9, Dwarka
 
 <img
 class="digital-counter"
-src="https://hitwebcounter.com/counter/counter.php?page=20431241&style=0011&nbdigits=7&type=page&initCount=1250">
+src="https://hitwebcounter.com/counter/counter.php?page=20431241&style=0006&nbdigits=7&type=page&initCount=1250">
 
 </div>
 
