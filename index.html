@@ -636,6 +636,68 @@ position:relative;
 overflow:hidden;
 
 }
+        <style>
+
+/* existing css */
+
+.company-footer{
+...
+}
+
+/* ADD NEW CODE HERE */
+
+.counter-box{
+
+display:flex;
+justify-content:center;
+align-items:center;
+height:100%;
+
+}
+
+.digital-counter{
+
+width:190px;
+padding:28px 22px;
+background:rgba(0,0,0,0.10);
+border:1px solid rgba(255,255,255,0.18);
+border-radius:12px;
+text-align:center;
+
+}
+
+.counter-label{
+
+font-size:14px;
+font-weight:700;
+letter-spacing:2px;
+color:#dce8ff;
+margin-bottom:14px;
+
+}
+
+.counter-number{
+
+font-size:62px;
+font-weight:300;
+line-height:1;
+color:white;
+margin-bottom:14px;
+
+}
+
+.counter-live{
+
+font-size:13px;
+font-weight:600;
+letter-spacing:2px;
+color:#c5d8ff;
+
+}
+
+/* remaining css */
+
+</style>
 
 /* FOOTER CONTAINER */
 
@@ -3127,14 +3189,25 @@ NHAI OLD BUILDING, G5 & G6, DWARKA SECTOR 10
 </div>
  <!-- FOOTER BOX 2 -->
 
-            <div class="footer-box">
+<div class="footer-box counter-box">
 
-                <h3></h3>
+<div class="digital-counter">
 
-                <ul>
-           </ul>
+<div class="counter-label">
+TOTAL VISITORS
+</div>
 
-            </div>
+<div class="counter-number" id="visitorCount">
+563285
+</div>
+
+<div class="counter-live">
+LIVE COUNTER
+</div>
+
+</div>
+
+</div>
 
 
             <!-- FOOTER BOX 3 -->
@@ -3165,13 +3238,6 @@ Sector-9, Dwarka
 </div>
 
         </div>
-<!-- VISITOR COUNTER -->
-
-<div class="digital-counter">
-
-<div class="counter-label">
-TOTAL VISITORS
-</div>
 
 <div class="counter-number" id="visitorCount">
 563275
