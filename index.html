@@ -1517,6 +1517,75 @@ font-size:12px;
 }
 
 }
+        /* ================= DIGITAL VISITOR COUNTER ================= */
+
+.visitor-counter{
+margin-top:10px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding-bottom:12px;
+text-align:center;
+}
+
+.visitor-title{
+font-size:22px;
+font-weight:800;
+letter-spacing:2px;
+color:#ffcc00;
+margin-bottom:18px;
+text-transform:uppercase;
+text-shadow:0 0 10px rgba(255,204,0,0.45);
+}
+
+.digital-counter-frame{
+padding:18px 30px;
+border-radius:20px;
+background:linear-gradient(145deg,#021a33,#003366,#021a33);
+box-shadow:
+0 0 20px rgba(0,140,255,0.35),
+0 0 40px rgba(0,140,255,0.18),
+inset 0 0 12px rgba(255,255,255,0.08);
+border:2px solid rgba(255,255,255,0.12);
+position:relative;
+overflow:hidden;
+}
+
+.digital-counter-frame::before{
+content:'';
+position:absolute;
+top:0;
+left:-150%;
+width:120%;
+height:100%;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,0.18),
+transparent
+);
+animation:shine 4s linear infinite;
+}
+
+.digital-counter{
+width:260px;
+height:auto;
+position:relative;
+z-index:2;
+filter:
+drop-shadow(0 0 10px rgba(0,255,255,0.7))
+brightness(1.15);
+}
+
+@keyframes shine{
+0%{
+left:-150%;
+}
+100%{
+left:150%;
+}
+}
     </style>
 
 </head>
@@ -3077,12 +3146,17 @@ Sector-9, Dwarka
 
 <div class="visitor-counter">
 
-<h3>Total Visitors Counts</h3>
+<h3 class="visitor-title">TOTAL VISITORS</h3>
 
-<img src="https://hitwebcounter.com/counter/counter.php?page=20431241&style=0001&nbdigits=6&type=page&initCount=0">
+<div class="digital-counter-frame">
+
+<img
+class="digital-counter"
+src="https://hitwebcounter.com/counter/counter.php?page=20431241&style=0038&nbdigits=7&type=page&initCount=1250">
 
 </div>
 
+</div>
 <!-- FOOTER BOTTOM -->
 
 <div class="footer-bottom">
