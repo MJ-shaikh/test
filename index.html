@@ -180,64 +180,96 @@ transform:rotate(360deg);
             z-index: 9999;
         }
 
-        .top-header{
+       .top-header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 40px;
+padding:16px 40px;
 width:100%;
 
-background:linear-gradient(135deg,#003366,#0056b3,#0b3d91);
+background:
+linear-gradient(135deg,#001f5c,#003b9b,#005eff,#002147);
 
-backdrop-filter:blur(10px);
+position:relative;
+overflow:hidden;
 
-box-shadow:0 8px 25px rgba(0,0,0,0.18);
+box-shadow:0 8px 25px rgba(0,0,0,0.25);
 
-border-bottom:1px solid rgba(255,255,255,0.15);
+border-bottom:2px solid rgba(255,255,255,0.15);
 }
 
-/* LOGO + COMPANY */
-.logo-section{
-display:flex;
-align-items:center;
-gap:4px;   /* reduced space */
-min-width:auto;
+/* SHINING EFFECT */
+.top-header::before{
+content:'';
+position:absolute;
+top:0;
+left:-100%;
+width:40%;
+height:100%;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,0.35),
+transparent
+);
+animation:shine 5s infinite;
 }
 
-/* LOGO */
+@keyframes shine{
+0%{
+left:-100%;
+}
+100%{
+left:140%;
+}
+}
+
+/* LOGO WHITE BACKGROUND */
 .logo-section img{
-width:120px;   /* increased logo size */
-height:auto;
-display:block;
-}
-/* COMPANY TEXT */
 
-.company-text{
-display:flex;
-flex-direction:column;
-justify-content:center;
-margin-left:-3px;   /* pulls text closer to logo */
+width:130px;
+background:white;
+padding:8px;
+border-radius:14px;
+
+box-shadow:
+0 0 15px rgba(255,255,255,0.6),
+0 4px 15px rgba(0,0,0,0.25);
+
 }
 
 /* COMPANY NAME */
 .company-heading{
-font-size:22px;
-line-height:1.15;
+
+font-size:30px;
+line-height:1.12;
 font-weight:900;
-color:#dbe9ff;
+color:#ffffff;
+
 text-transform:uppercase;
-margin:0;
-letter-spacing:0.3px;
-white-space:nowrap;
+
+letter-spacing:1px;
+
+text-shadow:
+0 0 8px rgba(255,255,255,0.8),
+0 0 15px rgba(255,255,255,0.5),
+0 2px 10px rgba(0,0,0,0.5);
+
 }
 
-/* SUB TEXT */
+/* SUBTEXT */
 .company-subtext{
-font-size:15px;
+
+font-size:16px;
 font-weight:700;
-color:#dbe9ff;
-margin-top:6px;
-text-align:left;
+color:#ffffff;
+
+margin-top:8px;
+
+text-shadow:
+0 0 5px rgba(255,255,255,0.5),
+0 2px 6px rgba(0,0,0,0.5);
+
 }
         /* ================= MENU ================= */
 
